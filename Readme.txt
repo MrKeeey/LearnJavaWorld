@@ -1,4 +1,6 @@
 Welcome to the DICH!
 
-> Hello World!
-x
+ [X] Hello World!
+ [ ] For
+
+ [ ] Random Food
