@@ -16,27 +16,25 @@ public class Food {
         //Random all food + without repeats
         char[] InputArray = {'a', 'p', 'm', 'f', 'r'};
         char[] OutputArray = new char[InputArray.length];
-        int k = 0, rnd = 0, counter = 0;
+        int k = 0, rnd, counter = 0;
+
+        rnd = rand.nextInt(InputArray.length);
+        OutputArray[k] = InputArray[rnd];
+        k++;
 
         while (k != InputArray.length) {
-            if (OutputArray[0] == 0) {
-                rnd = rand.nextInt(InputArray.length);
-                OutputArray[k] = InputArray[rnd];
-                k++;
+            rnd = rand.nextInt(InputArray.length);
+            for (int j = 0; j < k; j++) {
+            if (OutputArray[j] == InputArray[rnd]) {
+                counter = 0;
+                break;
             } else {
-                rnd = rand.nextInt(InputArray.length);
-                for (int j = 0; j < k; j++) {
-                    if (OutputArray[j] == InputArray[rnd]) {
-                        counter = 0;
-                        break;
-                    } else {
-                        counter++;
-                        if (counter == k) {
-                            OutputArray[k] = InputArray[rnd];
-                            k++;
-                            counter = 0;
-                            break;
-                        }
+                counter++;
+                if (counter == k) {
+                    OutputArray[k] = InputArray[rnd];
+                    k++;
+                    counter = 0;
+                    break;
                     }
                 }
             }
