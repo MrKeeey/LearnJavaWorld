@@ -6,19 +6,16 @@ public class StackTest {
         char[] InputArray = {'a', 'p', 'm', 'f', 'r'};
         Stack Food = new Stack();
         Random random = new Random();
-        int randomnumber;
 
-        for (int i = 0; i<InputArray.length; i++){
-            Food.add(InputArray[i]);
-        }
+        for (char element : InputArray) Food.add(element);
         System.out.println(InputArray);
         System.out.println(Food);
 
         for (int i = 0; i < InputArray.length; i++){
             try {
-                randomnumber = random.nextInt(Food.size());
-                InputArray[i] = (char) Food.get(randomnumber);
-                Food.remove(randomnumber);
+                int randomizer = random.nextInt(Food.size());
+                InputArray[i] = (char) Food.get(randomizer);
+                Food.remove(randomizer);
             } catch (EmptyStackException e){
                 System.out.println("Stack Empty");
             }
