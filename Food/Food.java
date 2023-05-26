@@ -16,11 +16,10 @@ public class Food {
         //Random all food + without repeats
         char[] InputArray = {'a', 'p', 'm', 'f', 'r'};
         char[] OutputArray = new char[InputArray.length];
-        int k = 0, rnd, counter = 0;
+        int k = 1, rnd, counter = 0;
 
         rnd = rand.nextInt(InputArray.length);
         OutputArray[k] = InputArray[rnd];
-        k++;
 
         while (k != InputArray.length) {
             rnd = rand.nextInt(InputArray.length);
