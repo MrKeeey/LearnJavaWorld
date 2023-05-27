@@ -1,5 +1,5 @@
 import java.util.Random;
-public class Food {
+public class RandomTest {
     public static void main(String[] args) {
         //Test how work random
         Random random = new Random();
