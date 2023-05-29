@@ -13,16 +13,16 @@ public class StackTest {
 
         //Random element from Stack + rewrite array + clear Stack
         //try catch can be deleted
-        for (int i = 0; i < InputArray.length; i++){
+        for (int counter = 0; counter < InputArray.length; counter++){
             try {
                 int randomizer = random.nextInt(SortStack.size());
-                InputArray[i] = (String) SortStack.get(randomizer);
+                InputArray[counter] = (String) SortStack.get(randomizer);
                 SortStack.remove(randomizer);
             } catch (EmptyStackException e){
                 System.out.println("Stack Empty");
             }
         }
         System.out.println(Arrays.toString(InputArray));
-        System.out.println(SortStack);
+        System.out.print(SortStack);
     }
 }
