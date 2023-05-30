@@ -1,8 +1,6 @@
-import java.io.IOException;
 import java.util.*;
-
 public class StackTest {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String[] InputArray = {"Eggs", "Rice", "Fish", "Meat", "Water"};
         Stack SortStack = new Stack();
         Random random = new Random();
