@@ -15,6 +15,7 @@ public class StackTest {
         for (int counter = 0; counter < InputArray.length; counter++){
             try {
                 int randomizer = random.nextInt(SortStack.size());
+                //int randomizer = (int) (Math.random() * SortStack.size());
                 InputArray[counter] = (String) SortStack.get(randomizer);
                 SortStack.remove(randomizer);
             } catch (EmptyStackException e){

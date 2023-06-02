@@ -11,13 +11,9 @@ public class RandomPhrase {
                                 "подход", "уровень завоеванного внимания", "портал", "период времени", "обзор",
                                 "образец", "пункт следования"};
 
-        int OneLength = WordListOne.length;
-        int TwoLength = WordListTwo.length;
-        int ThreeLength = WordListThree.length;
-
-        int Rand1 = (int) (Math.random() * OneLength);
-        int Rand2 = (int) (Math.random() * TwoLength);
-        int Rand3 = (int) (Math.random() * ThreeLength);
+        int Rand1 = (int) (Math.random() * WordListOne.length);
+        int Rand2 = (int) (Math.random() * WordListTwo.length);
+        int Rand3 = (int) (Math.random() * WordListThree.length);
 
         String Phrase = WordListOne[Rand1] + " " + WordListTwo[Rand2] + " " + WordListThree[Rand3];
         System.out.println("Все что вам нужно, - это " + Phrase);
