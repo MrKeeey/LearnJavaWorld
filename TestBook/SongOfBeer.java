@@ -1,7 +1,4 @@
-import java.io.FileReader;
-import java.util.*;
-import java.io.FileNotFoundException;
-public class TestBook {
+public class SongOfBeer {
     public static void main(String[] args) {
         int size = 27;
         String name = "Fikus";
