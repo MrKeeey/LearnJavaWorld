@@ -1,16 +1,11 @@
+package LearnWithBook.chapter1;
+
 public class SongOfBeer {
     public static void main(String[] args) {
-        int size = 27;
-        String name = "Fikus";
-       /* try {
-          //  readTheFile("myfile.txt");
-            int i = 0;
-        } catch (FileNotFoundException ex) {
-            System.out.println("File doesn't exist");
-        }*/
 
         int BeerNum = 99, remainder;
         String Bottle = "Бутылок";
+
         while (BeerNum > 0){
             System.out.println(BeerNum + " " + Bottle + " пива на стене");
             System.out.println(BeerNum + " " + Bottle + " пива!");

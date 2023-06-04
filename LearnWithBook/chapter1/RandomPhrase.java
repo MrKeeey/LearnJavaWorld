@@ -1,5 +1,8 @@
+package LearnWithBook.chapter1;
+
 public class RandomPhrase {
     public static void main(String[] args) {
+
         String[] WordListOne = {"круглосуточный", "трехзвенный", "30000-фунтовый", "взаимный", "обюдный выигрыш",
                                 "фронтэнд", "на основе вебтехнологий", "проникающий", "умный", "шесть сигм",
                                 "метод критического пути", "динамичный"};

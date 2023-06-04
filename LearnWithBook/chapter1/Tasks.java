@@ -1,6 +1,8 @@
-package TestBook;
+package LearnWithBook.chapter1;
+
 public class Tasks {
     public static void main(String[] args) {
+        //task 1
         int i = 3;
 
         while (i > 0){
@@ -14,6 +16,8 @@ public class Tasks {
             }
         }
         System.out.println();
+
+        //task 2
         int x = 0, y = 0;
         while (x < 5){
             y = x - y;
@@ -21,6 +25,7 @@ public class Tasks {
             x++;
         }
         System.out.println();
+
         x = 0;
         y = 0;
         while (x < 5){
@@ -29,6 +34,7 @@ public class Tasks {
             x++;
         }
         System.out.println();
+
         x = 0;
         y = 0;
         while (x < 5){
@@ -38,6 +44,7 @@ public class Tasks {
             x++;
         }
         System.out.println();
+
         x = 0;
         y = 0;
         while (x < 5){
@@ -47,6 +54,7 @@ public class Tasks {
             x++;
         }
         System.out.println();
+
         x = 0;
         y = 0;
         while (x < 5){
@@ -56,6 +64,29 @@ public class Tasks {
             }
             y = y + 2;
             System.out.print(x + "" + y + " ");
+            x++;
+        }
+        System.out.println();
+
+        //task 3
+        x = 0;
+        while (x < 4){
+            System.out.print("a");
+            if (x < 1){
+                System.out.print(" ");
+            }
+            System.out.print("n");
+            if (x > 1){
+                System.out.print(" oyster");
+                x = x + 2;
+            }
+            if (x == 1){
+                System.out.print("noys");
+            }
+            if (x < 1){
+                System.out.print("oise");
+            }
+            System.out.println("");
             x++;
         }
     }
