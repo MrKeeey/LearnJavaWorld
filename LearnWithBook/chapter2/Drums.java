@@ -21,7 +21,6 @@ class TestDrums {
             drums.playSnare();
             drums.TopHat = false;
         }
-
         drums.playTopHat();
     }
 }
