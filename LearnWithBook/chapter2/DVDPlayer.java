@@ -1,4 +1,4 @@
-class DVDPlayer {
+public class DVDPlayer {
 
     boolean Record = false;
 
@@ -16,7 +16,7 @@ class TestDVDPlayer {
         dvd.Record = true;
         dvd.playDVD();
 
-        if (dvd.Record == true){
+        if (dvd.Record){
             dvd.recordDVD();
         }
     }
