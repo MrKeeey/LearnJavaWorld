@@ -1,8 +1,8 @@
 Welcome to the DICH!
 
  [X] Hello World!
- [X] RandomTest
- [X] StackTest
+ [X] HelloWorld.RandomTest
+ [X] HelloWorld.StackTest
 
  [ ] For
 
