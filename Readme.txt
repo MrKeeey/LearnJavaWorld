@@ -10,7 +10,7 @@ Welcome to the DICH!
 
  [X] chapter1.RandomPhrase
  [X] chapter1.SongOfBeer
- [X] chapter1.Tasks
+ [X] chapter1.Echo
 
  [X] chapter2.Dog
  [X] chapter2.Drums
