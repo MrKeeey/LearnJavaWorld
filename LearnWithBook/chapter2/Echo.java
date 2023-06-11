@@ -14,8 +14,6 @@ class EchoTest{
 
         while (x < 4){
             e1.hello();
-            System.out.println(e1.count);
-            System.out.println(e2.count);
             e1.count++;
 
             if (x > 0){
@@ -25,6 +23,13 @@ class EchoTest{
             if (x > 1){
                 e2.count = e2.count + e1.count;
             }
+            /*if (x > 1){
+                if (x == 3){
+                    e2.count = e2.count * e1.count;
+                } else {
+                    e2.count = e2.count + e1.count;
+                }
+            } */
             x++;
         }
         System.out.println(e2.count);
