@@ -6,7 +6,7 @@ public class Dog {
         int counter = 0, bottle5 = 5;
         double bottle55 = 5.55, costbottle5 = 2.1, costbottle55 = 2.68;
 
-        while (counter < 10) {
+        while (counter < 11) {
             System.out.println(bottle5 + " = " + String.format("%.2f", costbottle5) + " | " + bottle55 + " = " + String.format("%.2f", costbottle55));
             bottle5 = bottle5 + 5;
             costbottle5 = costbottle5 + 2.1;
@@ -25,6 +25,7 @@ class DogTest {
         Dog d = new Dog();
         d.size = 40;
         d.bark();
+        //a bootle with 5l or 5.55l
         d.TaskBottle();
     }
 }
