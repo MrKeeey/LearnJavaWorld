@@ -24,7 +24,5 @@ class TestDrums {
         if (drums.Snare){
             drums.playSnare();
         }
-
-
     }
 }
