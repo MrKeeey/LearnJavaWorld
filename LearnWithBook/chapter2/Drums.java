@@ -17,10 +17,14 @@ class TestDrums {
 
         Drums drums = new Drums();
 
+        drums.playSnare();
+        drums.Snare = false;
+        drums.playTopHat();
+
         if (drums.Snare){
             drums.playSnare();
-            drums.TopHat = false;
         }
-        drums.playTopHat();
+
+
     }
 }

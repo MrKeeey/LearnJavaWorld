@@ -16,12 +16,13 @@ class EchoTest{
             e1.hello();
             e1.count++;
 
-            if (x > 0){
+            if (x > 0){                                //x == 3
                 e2.count++;
             }
 
-            if (x > 1){
+            if (x > 1){                                // x > 0
                 e2.count = e2.count + e1.count;
+                System.out.println(e2.count);
             }
             /*if (x > 1){
                 if (x == 3){
