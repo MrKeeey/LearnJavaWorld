@@ -14,9 +14,10 @@ class Cat{
 public class DogCat {
     public static void main(String[] args) {
         Dog d = new Dog();
-        Cat d = new Cat();
+        d = null;
+        //Cat d = new Cat();
 
-        //d.bark();
-        d.meow();
+        d.bark();
+        //d.meow();
     }
 }
