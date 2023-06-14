@@ -13,11 +13,11 @@ class Cat{
 }
 public class DogCat {
     public static void main(String[] args) {
-        Dog d = new Dog();
-        d = null;
-        //Cat d = new Cat();
+        Dog dog = new Dog();
+        //dog = null;
+        Cat cat = new Cat();
 
-        d.bark();
-        //d.meow();
+        dog.bark();
+        cat.meow();
     }
 }
