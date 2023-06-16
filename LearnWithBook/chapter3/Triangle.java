@@ -1,5 +1,4 @@
 package LearnWithBook.chapter3;
-
 public class Triangle {
     double area;
     int height, lenght;
@@ -17,6 +16,7 @@ public class Triangle {
             System.out.println(" = " + ta[x].area);
             x++;
         }
+
         int y = x;
         x = 27;
         Triangle t5 = ta[2];
@@ -24,6 +24,7 @@ public class Triangle {
         System.out.print("y = " + y);
         System.out.println(", t5 area = " + t5.area);
     }
+
     void setArea(){
         area = (height * lenght) / 2;
     }

@@ -1,5 +1,4 @@
 package LearnWithBook.chapter3;
-
 public class TestArrays {
     public static void main(String[] args) {
         int y = 0;
@@ -17,6 +16,7 @@ public class TestArrays {
         islands[3] = "Cozumel";
 
         int ref;
+
         while (y < 4) {
             ref = index[y];
             System.out.print("island = ");
