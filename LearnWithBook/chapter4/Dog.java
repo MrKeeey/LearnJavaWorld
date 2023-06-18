@@ -13,6 +13,17 @@ public class Dog {
             System.out.println("Yip! Yip!");
         }
     }
+
+    void bark (int NumOfBarks){
+        while (NumOfBarks > 0){
+            System.out.println("Gav!");
+            NumOfBarks--;
+        }
+    }
+
+    int giveSecretCode(){
+        return 42;
+    }
 }
 class DogTest {
     public static void main(String[] args) {
@@ -27,5 +38,9 @@ class DogTest {
         one.bark();
         two.bark();
         three.bark();
+
+        one.bark(3);
+        int theSecretCode = two.giveSecretCode();
+        System.out.println(theSecretCode + " = " + two.giveSecretCode());
     }
 }
