@@ -21,4 +21,3 @@ public class Sum {
         System.out.println("Summ your numbers is " + result);
     }
 }
-
