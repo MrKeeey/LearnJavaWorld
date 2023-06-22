@@ -8,7 +8,6 @@ class SumTest {
         summa.go();
         summa.SummResult(-2343, 2863);
         summa.SummResult(firstnumber, secondnumber);
-        System.out.println();
     }
 }
 public class Sum {
