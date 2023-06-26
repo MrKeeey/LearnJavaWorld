@@ -1,3 +1,5 @@
+import com.sun.source.tree.ClassTree;
+
 import java.util.EmptyStackException;
 import java.util.Scanner;
 public class SimpleDotComGame {
@@ -7,16 +9,22 @@ public class SimpleDotComGame {
         int randomNum = (int) (Math.random() * 6);
         int[] locations = {randomNum, randomNum + 1, randomNum + 2};
         int count = 0;
+        String userGuess;
 
         play.setLocationCells(locations);
         while (play.numOfHits != locations.length){
             System.out.print("Enter a number: ");
             try {
-                play.checkYourself(scanner.nextLine());
+                userGuess = scanner.nextLine();
+                if (Integer.parseInt(userGuess) == play.lastGuess) {
+                    System.out.println("You already use this number. Try again.");
+                } else {
+                    play.checkYourself(userGuess);
+                    count++;
+                }
             } catch(NumberFormatException e) {
                 System.out.println("Wrong symbol. You can enter only numbers. Try again...");
             }
-            count++;
         }
         if (count == locations.length) {
             System.out.print("You took " + count + " guesses. Great, this is the minimum number of attempts.");
@@ -26,13 +34,12 @@ public class SimpleDotComGame {
 
 class SimpleDotCom {
     int[] locationCells;
-    int numOfHits = 0;
+    int numOfHits = 0, lastGuess = -1;
     String checkYourself (String stringGuess) {
         int guess = Integer.parseInt(stringGuess);
         String result = "Miss";
-
+        lastGuess = guess;
         for (int count = 0; count < locationCells.length; count++) {
-            //int lastguess = 0;
             if (guess == locationCells[count]){
                 locationCells[count] = -1;
                 result = "Hit";
