@@ -4,9 +4,9 @@ public class SimpleDotComGame {
     public static void main(String[] args) {
         SimpleDotCom play = new SimpleDotCom();
         Scanner scanner = new Scanner(System.in);
-        int[] locations = {2,3,4};
+        int randomNum = (int) (Math.random() * 6);
+        int[] locations = {randomNum, randomNum + 1, randomNum + 2};
         int count = 0;
-        //String userGuest = "2";
 
         play.setLocationCells(locations);
         while (play.numOfHits != locations.length){
@@ -17,7 +17,6 @@ public class SimpleDotComGame {
                 System.out.println("Wrong symbol. You can enter only numbers. Try again...");
             }
             count++;
-            //String result = play.checkYourself(userGuest);
         }
         if (count == locations.length) {
             System.out.print("You took " + count + " guesses. Great, this is the minimum number of attempts.");
@@ -33,6 +32,7 @@ class SimpleDotCom {
         String result = "Miss";
 
         for (int count = 0; count < locationCells.length; count++) {
+            //int lastguess = 0;
             if (guess == locationCells[count]){
                 locationCells[count] = -1;
                 result = "Hit";
