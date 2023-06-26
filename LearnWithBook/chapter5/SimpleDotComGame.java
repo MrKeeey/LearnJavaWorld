@@ -6,13 +6,13 @@ public class SimpleDotComGame {
     public static void main(String[] args) {
         SimpleDotCom play = new SimpleDotCom();
         Scanner scanner = new Scanner(System.in);
-        int randomNum = (int) (Math.random() * 6);
+        int randomNum = (int) (Math.random() * 5);
         int[] locations = {randomNum, randomNum + 1, randomNum + 2};
         int count = 0;
         String userGuess;
 
         play.setLocationCells(locations);
-        while (play.numOfHits != locations.length){
+        while (/*play.numOfHits != locations.length*/ !play.result.equals("Kill")){
             System.out.print("Enter a number: ");
             try {
                 userGuess = scanner.nextLine();
@@ -35,9 +35,10 @@ public class SimpleDotComGame {
 class SimpleDotCom {
     int[] locationCells;
     int numOfHits = 0, lastGuess = -1;
+    String result = " ";
     String checkYourself (String stringGuess) {
         int guess = Integer.parseInt(stringGuess);
-        String result = "Miss";
+        result = "Miss";
         lastGuess = guess;
         for (int count = 0; count < locationCells.length; count++) {
             if (guess == locationCells[count]){
