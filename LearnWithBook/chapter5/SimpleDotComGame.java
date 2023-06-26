@@ -27,8 +27,8 @@ public class SimpleDotComGame {
             }
         }
         if (count == locations.length) {
-            System.out.print("You took " + count + " guesses. Great, this is the minimum number of attempts.");
-        } else System.out.print("You took " + count + " guesses.");
+            System.out.println("You took " + count + " guesses. Great, this is the minimum number of attempts.");
+        } else System.out.println("You took " + count + " guesses.");
     }
 }
 
@@ -41,7 +41,6 @@ class SimpleDotCom {
         lastGuess = guess;
         for (int count = 0; count < locationCells.length; count++) {
             if (guess == locationCells[count]){
-                locationCells[count] = -1;
                 result = "Hit";
                 numOfHits++;
                 break;
