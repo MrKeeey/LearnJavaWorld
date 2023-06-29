@@ -1,5 +1,3 @@
-import com.sun.source.tree.ClassTree;
-
 import java.util.EmptyStackException;
 import java.util.Scanner;
 public class SimpleDotComGame {
