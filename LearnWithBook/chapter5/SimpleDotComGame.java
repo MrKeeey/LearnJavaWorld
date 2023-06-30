@@ -1,4 +1,3 @@
-import java.util.EmptyStackException;
 import java.util.Scanner;
 public class SimpleDotComGame {
     public static void main(String[] args) {
@@ -16,18 +15,18 @@ public class SimpleDotComGame {
             System.out.print("Enter a number: ");
             try {
                 userGuess = scanner.nextLine();
-                int intuserGuess = Integer.parseInt(userGuess);
-                    if (intuserGuess == hitarr[intuserGuess] && flag[intuserGuess]) {
-                        System.out.println("You already use this number. Try again.");
-                    } else {
-                        play.checkYourself(userGuess);
-                        flag[intuserGuess] = true;
-                        count++;
-                    }
+                int intuserGuess = Integer.parseInt(scanner.nextLine());
+                if (intuserGuess == hitarr[intuserGuess] && flag[intuserGuess]) {
+                    System.out.println("You already use this number. Try again.");
+                } else {
+                    play.checkYourself(userGuess);
+                    flag[intuserGuess] = true;
+                    count++;
+                }
             } catch(NumberFormatException e) {
                 System.out.println("Wrong symbol. You can enter only numbers. Try again...");
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("You can use only 0 - 6 numbers. Try again...");
+                System.out.println("You can only use numbers from 0 to 6. Try again...");
             }
         }
         if (count == locations.length) {
@@ -50,9 +49,7 @@ class SimpleDotCom {
                 break;
             }
         }
-
         if (numOfHits == locationCells.length) result = "Kill";
-
         System.out.println(result);
         return result;
     }
