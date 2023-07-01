@@ -1,4 +1,3 @@
-package LearnWithBook.chapter6;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -46,11 +45,10 @@ public class DotComGame {
 class DotCom {
     private ArrayList<String> locationCells;
     //int numOfHits = 0;
-    String result = " ";
+    public String result = " ";
     public void setLocationCells (ArrayList<String> locs){
         locationCells = locs;
     }
-
     String checkYourself (String stringGuess) {
         result = "Miss";
         int index = locationCells.indexOf(stringGuess);
