@@ -15,7 +15,7 @@ public class SimpleDotComGame {
             System.out.print("Enter a number: ");
             try {
                 userGuess = scanner.nextLine();
-                int intuserGuess = Integer.parseInt(scanner.nextLine());
+                int intuserGuess = Integer.parseInt(userGuess);
                 if (intuserGuess == hitarr[intuserGuess] && flag[intuserGuess]) {
                     System.out.println("You already use this number. Try again.");
                 } else {
