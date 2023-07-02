@@ -4,6 +4,9 @@ public class RandomTest {
         //Test how work random
         Random random = new Random();
         int randomizer = 0, counter = 0;
+        char s = 'B';
+        int symbol = s;
+        System.out.println(symbol);
 
         while (randomizer != 5){
             randomizer = random.nextInt(10);
