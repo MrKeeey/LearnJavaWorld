@@ -97,14 +97,13 @@ public class DotComBust {
         }
     }
     public static void main(String[] args) {
-        String[][] hitarr = new String[72][7];
-        for (int symbol = 'A'; symbol < 'G'; symbol++ ){
+        ArrayList <String> hitarr = new ArrayList<String>();
+        for (int symbol = 0; symbol < 7; symbol++ ){
             for (int number = 0; number < 7; number++){
-                hitarr[symbol][number] = (char)symbol + "" + number;
-
+                hitarr.add((char)(symbol + 65) + "" + number);
             }
         }
-        System.out.println(Arrays.deepToString(hitarr));
+        System.out.println(hitarr);
         DotComBust game = new DotComBust();
         game.setUpGame();
         game.startPlaying();
