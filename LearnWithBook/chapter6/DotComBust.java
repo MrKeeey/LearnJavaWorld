@@ -1,13 +1,9 @@
 package LearnWithBook.chapter6;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 public class DotComBust {
     Scanner scanner = new Scanner(System.in);
     String userGuess;
-
-    boolean[] flag = new boolean[7];
-
     ArrayList<DotCom> dotComList = new ArrayList<DotCom>();
     int numOfGuesses = 0;
 
@@ -53,26 +49,28 @@ public class DotComBust {
         }
     }
     private void startPlaying(){
+        ArrayList <String> hitarr = new ArrayList<String>();
+
+        for (int symbol = 0; symbol < 7; symbol++ ){
+            for (int number = 0; number < 7; number++){
+                hitarr.add((char)(symbol + 65) + "" + number);
+            }
+        }
+
         while (!dotComList.isEmpty()){
-            System.out.print("Enter a number: ");
-            try {
-                userGuess = scanner.nextLine();
-                /*int intuserGuess = Integer.parseInt(userGuess);
-                if (intuserGuess == hitarr[intuserGuess] && flag[intuserGuess]) {
-                    System.out.println("You already use this number. Try again.");
-                } else {*/
-                    checkUserGuess(userGuess);
-                    //flag[intuserGuess] = true;
-                    numOfGuesses++;
-                //}
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("You can only use numbers from 0 to 6. Try again...");
+            System.out.print("Enter a guess: ");
+            userGuess = scanner.nextLine();
+            if (hitarr.contains(userGuess)) {
+                hitarr.remove(userGuess);
+                checkUserGuess(userGuess);
+                numOfGuesses++;
+            } else {
+                System.out.println("Wrong input or you already use this guess. Try again.");
             }
         }
         finishGame();
     }
     private void checkUserGuess(String userGuess){
-        //numOfGuesses++;
         String result = "Miss";
         for (DotCom dotComToTest : dotComList){
             result = dotComToTest.checkYourself(userGuess);
@@ -86,7 +84,7 @@ public class DotComBust {
     }
     private void finishGame(){
         System.out.println("All Dot Coms are dead! Your stock is now worthless.");
-        if (numOfGuesses == dotComList.size()) {
+        if (numOfGuesses == 9) {
             System.out.println("You took " + numOfGuesses + " guesses. Great, this is the minimum number of attempts.");
         } else if (numOfGuesses <= 18) {
             System.out.println("It only took you " + numOfGuesses + " guesses.");
@@ -97,13 +95,6 @@ public class DotComBust {
         }
     }
     public static void main(String[] args) {
-        ArrayList <String> hitarr = new ArrayList<String>();
-        for (int symbol = 0; symbol < 7; symbol++ ){
-            for (int number = 0; number < 7; number++){
-                hitarr.add((char)(symbol + 65) + "" + number);
-            }
-        }
-        System.out.println(hitarr);
         DotComBust game = new DotComBust();
         game.setUpGame();
         game.startPlaying();
