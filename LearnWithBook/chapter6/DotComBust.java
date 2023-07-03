@@ -6,26 +6,38 @@ public class DotComBust {
     String userGuess;
     ArrayList<DotCom> dotComList = new ArrayList<DotCom>();
     int numOfGuesses = 0;
+    ArrayList <String> randomarr = new ArrayList<String>();
 
     private ArrayList<String> genaratesite(){
-        ArrayList<String> point = new ArrayList<String>();
+        ArrayList <String> point = new ArrayList<String>();
+
         int vertOrgoriz = (int)(Math.random() * 2);
         int symbol = (int)((Math.random() * 5) + 'A');
         int number = (int)(Math.random() * 5);
+
         String firstpoint = (char)symbol + "" + number;
-        String thirdpoint;
         String secondpoint;
-        if (vertOrgoriz == 1){
-            secondpoint = (char)(symbol + 1) + "" + number;
-            thirdpoint = (char)(symbol + 2) + "" + number;
+        String thirdpoint;
+
+        if (vertOrgoriz == 1) {
+            secondpoint = (char) (symbol + 1) + "" + number;
+            thirdpoint = (char) (symbol + 2) + "" + number;
         } else {
-            secondpoint = (char)symbol + "" + (number + 1);
-            thirdpoint = (char)symbol + "" + (number + 2);
+            secondpoint = (char) symbol + "" + (number + 1);
+            thirdpoint = (char) symbol + "" + (number + 2);
         }
-        point.add(firstpoint);
-        point.add(secondpoint);
-        point.add(thirdpoint);
-        System.out.println(point);
+
+        if (randomarr.contains(firstpoint) && randomarr.contains(secondpoint) && randomarr.contains(thirdpoint)) {
+            randomarr.remove(firstpoint);
+            randomarr.remove(secondpoint);
+            randomarr.remove(thirdpoint);
+            point.add(firstpoint);
+            point.add(secondpoint);
+            point.add(thirdpoint);
+            System.out.println(point);
+        } else {
+            genaratesite();
+        }
         return point;
     }
     private void setUpGame() {
@@ -42,6 +54,12 @@ public class DotComBust {
         System.out.println("Your goal is to sink three dot coms.");
         System.out.println("Pets.com, eToys.com, Go2.com");
         System.out.println("Try to sink them all in the fewest number of guesses.");
+
+        for (int symbol = 0; symbol < 7; symbol++ ){
+            for (int number = 0; number < 7; number++){
+                randomarr.add((char)(symbol + 65) + "" + number);
+            }
+        }
 
         for (DotCom dotComToSet : dotComList){
             ArrayList<String> newLocation = genaratesite();
@@ -113,6 +131,7 @@ class DotCom{
 
     String checkYourself (String userInput) {
         String result = "Miss";
+        System.out.println(locationCells);
         int index = locationCells.indexOf(userInput);
         if (index >= 0){
             locationCells.remove(index);
