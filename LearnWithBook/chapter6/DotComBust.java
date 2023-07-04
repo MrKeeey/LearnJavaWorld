@@ -6,7 +6,7 @@ public class DotComBust {
     String userGuess;
     ArrayList<DotCom> dotComList = new ArrayList<DotCom>();
     int numOfGuesses = 0;
-    ArrayList <String> randomarr = new ArrayList<String>();
+    ArrayList <String> createsite = new ArrayList<String>();
 
     private ArrayList<String> genaratesite(){
         ArrayList <String> point = new ArrayList<String>();
@@ -27,10 +27,10 @@ public class DotComBust {
             thirdpoint = (char) symbol + "" + (number + 2);
         }
 
-        if (randomarr.contains(firstpoint) && randomarr.contains(secondpoint) && randomarr.contains(thirdpoint)) {
-            randomarr.remove(firstpoint);
-            randomarr.remove(secondpoint);
-            randomarr.remove(thirdpoint);
+        if (createsite.contains(firstpoint) && createsite.contains(secondpoint) && createsite.contains(thirdpoint)) {
+            createsite.remove(firstpoint);
+            createsite.remove(secondpoint);
+            createsite.remove(thirdpoint);
             point.add(firstpoint);
             point.add(secondpoint);
             point.add(thirdpoint);
@@ -57,7 +57,7 @@ public class DotComBust {
 
         for (int symbol = 0; symbol < 7; symbol++ ){
             for (int number = 0; number < 7; number++){
-                randomarr.add((char)(symbol + 65) + "" + number);
+                createsite.add((char)(symbol + 65) + "" + number);
             }
         }
 
@@ -67,19 +67,19 @@ public class DotComBust {
         }
     }
     private void startPlaying(){
-        ArrayList <String> hitarr = new ArrayList<String>();
+        ArrayList <String> repeatenter = new ArrayList<String>();
 
         for (int symbol = 0; symbol < 7; symbol++ ){
             for (int number = 0; number < 7; number++){
-                hitarr.add((char)(symbol + 65) + "" + number);
+                repeatenter.add((char)(symbol + 65) + "" + number);
             }
         }
 
         while (!dotComList.isEmpty()){
             System.out.print("Enter a guess: ");
             userGuess = scanner.nextLine();
-            if (hitarr.contains(userGuess)) {
-                hitarr.remove(userGuess);
+            if (repeatenter.contains(userGuess)) {
+                repeatenter.remove(userGuess);
                 checkUserGuess(userGuess);
                 numOfGuesses++;
             } else {
