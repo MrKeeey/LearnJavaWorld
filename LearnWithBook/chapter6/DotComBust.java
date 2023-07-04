@@ -6,10 +6,10 @@ public class DotComBust {
     String userGuess;
     ArrayList<DotCom> dotComList = new ArrayList<DotCom>();
     int numOfGuesses = 0;
-    ArrayList <String> createsite = new ArrayList<String>();
+    ArrayList <String> checkCoordinatesSite = new ArrayList<String>();
 
-    private ArrayList<String> genaratesite(){
-        ArrayList <String> point = new ArrayList<String>();
+    private ArrayList<String> genarateCoordinatesSite(){
+        ArrayList <String> coordinates = new ArrayList<String>();
 
         int vertOrgoriz = (int)(Math.random() * 2);
         int symbol = (int)((Math.random() * 5) + 'A');
@@ -27,18 +27,18 @@ public class DotComBust {
             thirdpoint = (char) symbol + "" + (number + 2);
         }
 
-        if (createsite.contains(firstpoint) && createsite.contains(secondpoint) && createsite.contains(thirdpoint)) {
-            createsite.remove(firstpoint);
-            createsite.remove(secondpoint);
-            createsite.remove(thirdpoint);
-            point.add(firstpoint);
-            point.add(secondpoint);
-            point.add(thirdpoint);
-            System.out.println(point);
+        if (checkCoordinatesSite.contains(firstpoint) && checkCoordinatesSite.contains(secondpoint) && checkCoordinatesSite.contains(thirdpoint)) {
+            checkCoordinatesSite.remove(firstpoint);
+            checkCoordinatesSite.remove(secondpoint);
+            checkCoordinatesSite.remove(thirdpoint);
+            coordinates.add(firstpoint);
+            coordinates.add(secondpoint);
+            coordinates.add(thirdpoint);
+            System.out.println(coordinates);
         } else {
-            genaratesite();
+            genarateCoordinatesSite();
         }
-        return point;
+        return coordinates;
     }
     private void setUpGame() {
         DotCom firstsite = new DotCom();
@@ -57,29 +57,29 @@ public class DotComBust {
 
         for (int symbol = 0; symbol < 7; symbol++ ){
             for (int number = 0; number < 7; number++){
-                createsite.add((char)(symbol + 65) + "" + number);
+                checkCoordinatesSite.add((char)(symbol + 65) + "" + number);
             }
         }
 
         for (DotCom dotComToSet : dotComList){
-            ArrayList<String> newLocation = genaratesite();
+            ArrayList<String> newLocation = genarateCoordinatesSite();
             dotComToSet.setLocationCells(newLocation);
         }
     }
     private void startPlaying(){
-        ArrayList <String> repeatenter = new ArrayList<String>();
+        ArrayList <String> checkRepeatEnter = new ArrayList<String>();
 
         for (int symbol = 0; symbol < 7; symbol++ ){
             for (int number = 0; number < 7; number++){
-                repeatenter.add((char)(symbol + 65) + "" + number);
+                checkRepeatEnter.add((char)(symbol + 65) + "" + number);
             }
         }
 
         while (!dotComList.isEmpty()){
             System.out.print("Enter a guess: ");
             userGuess = scanner.nextLine();
-            if (repeatenter.contains(userGuess)) {
-                repeatenter.remove(userGuess);
+            if (checkRepeatEnter.contains(userGuess)) {
+                checkRepeatEnter.remove(userGuess);
                 checkUserGuess(userGuess);
                 numOfGuesses++;
             } else {
