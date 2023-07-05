@@ -12,14 +12,18 @@ public class DotComBust {
         ArrayList <String> coordinates = new ArrayList<String>();
 
         int vertOrgoriz = (int)(Math.random() * 2);
-        int symbol = (int)((Math.random() * 5) + 'A');
+        int symbol = (int)((Math.random() * 7) + 'A');
         int number = (int)(Math.random() * 5);
+
 
         String firstpoint = (char)symbol + "" + number;
         String secondpoint;
         String thirdpoint;
 
-        if (vertOrgoriz == 1) {
+        if ((char)symbol == 'F' || (char)symbol == 'G') {           //don't need this but work faster
+            vertOrgoriz = 1;
+        }
+        if (vertOrgoriz == 0) {
             secondpoint = (char) (symbol + 1) + "" + number;
             thirdpoint = (char) (symbol + 2) + "" + number;
         } else {
@@ -34,10 +38,11 @@ public class DotComBust {
             coordinates.add(firstpoint);
             coordinates.add(secondpoint);
             coordinates.add(thirdpoint);
-            System.out.println(coordinates);
+
         } else {
             genarateCoordinatesSite();
         }
+        System.out.println(coordinates);
         return coordinates;
     }
     private void setUpGame() {
@@ -63,6 +68,7 @@ public class DotComBust {
 
         for (DotCom dotComToSet : dotComList){
             ArrayList<String> newLocation = genarateCoordinatesSite();
+            System.out.println(newLocation + "11");
             dotComToSet.setLocationCells(newLocation);
         }
     }
@@ -88,10 +94,10 @@ public class DotComBust {
         }
         finishGame();
     }
-    private void checkUserGuess(String userGuess){
+    private void checkUserGuess(String usrGuess){
         String result = "Miss";
         for (DotCom dotComToTest : dotComList){
-            result = dotComToTest.checkYourself(userGuess);
+            result = dotComToTest.checkYourself(usrGuess);
             if (result.equals("Hit")) break;
             if (result.equals("Kill")) {
                 dotComList.remove(dotComToTest);
@@ -131,7 +137,7 @@ class DotCom{
 
     String checkYourself (String userInput) {
         String result = "Miss";
-        System.out.println(locationCells);
+        //System.out.println(locationCells);
         int index = locationCells.indexOf(userInput);
         if (index >= 0){
             locationCells.remove(index);
