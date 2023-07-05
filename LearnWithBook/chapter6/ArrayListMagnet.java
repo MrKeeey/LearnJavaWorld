@@ -1,7 +1,4 @@
-package LearnWithBook.chapter6;
-
 import java.util.ArrayList;
-
 public class ArrayListMagnet {
     public static void printAl(ArrayList<String> al){
         for ( String element : al){
@@ -9,6 +6,7 @@ public class ArrayListMagnet {
         }
         System.out.println(" ");
     }
+
     public static void main(String[] args) {
         ArrayList <String> a = new ArrayList<String>();
         a.add(0, "Zero");
@@ -31,5 +29,17 @@ public class ArrayListMagnet {
         }
         printAl(a);
         printAl(a);
+
+        System.out.println(random());
+    }
+
+     private static int random(){
+        int symbol = (int)((Math.random() * 2));    //рандомим
+        System.out.println(symbol);
+        if (symbol == 1){
+            symbol = random();                               //если 1 то рандомим заново
+        }
+
+        return symbol;
     }
 }

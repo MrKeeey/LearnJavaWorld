@@ -39,7 +39,7 @@ public class DotComBust {
             coordinates.add(secondpoint);
             coordinates.add(thirdpoint);
         } else {
-            genarateCoordinatesSite();
+            coordinates = genarateCoordinatesSite();
         }
         System.out.println(coordinates);
         return coordinates;
