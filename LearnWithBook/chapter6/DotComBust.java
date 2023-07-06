@@ -41,7 +41,7 @@ public class DotComBust {
         } else {
             coordinates = genarateCoordinatesSite();
         }
-        System.out.println(coordinates);
+        //System.out.println(coordinates);
         return coordinates;
     }
     private void setUpGame() {
@@ -67,7 +67,6 @@ public class DotComBust {
 
         for (DotCom dotComToSet : dotComList){
             ArrayList<String> newLocation = genarateCoordinatesSite();
-            System.out.println(newLocation + "11");
             dotComToSet.setLocationCells(newLocation);
         }
     }

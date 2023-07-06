@@ -16,9 +16,6 @@ public class ArrayListMagnet {
         printAl(a);
 
         a.remove(2);
-        if (a.contains("Two")){
-            a.add("2.2");
-        }
         if (a.contains("Three")){
             a.add("Four");
         }
@@ -28,18 +25,9 @@ public class ArrayListMagnet {
             a.add(4, "4.2");
         }
         printAl(a);
-        printAl(a);
-
-        System.out.println(random());
-    }
-
-     private static int random(){
-        int symbol = (int)((Math.random() * 2));    //рандомим
-        System.out.println(symbol);
-        if (symbol == 1){
-            symbol = random();                               //если 1 то рандомим заново
+        if (a.contains("Two")){
+            a.add("2.2");
         }
-
-        return symbol;
+        printAl(a);
     }
 }
