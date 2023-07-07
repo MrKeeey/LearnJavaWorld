@@ -1,4 +1,3 @@
-package LearnWithBook.chapter6;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class DotComBust {
@@ -14,7 +13,6 @@ public class DotComBust {
         int vertOrgoriz = (int)(Math.random() * 2);
         int symbol = (int)((Math.random() * 7) + 'A');
         int number = (int)(Math.random() * 5);
-
 
         String firstpoint = (char)symbol + "" + number;
         String secondpoint;
