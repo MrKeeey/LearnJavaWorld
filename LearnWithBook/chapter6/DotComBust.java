@@ -8,6 +8,7 @@ public class DotComBust {
     ArrayList <String> checkCoordinatesSite = new ArrayList<String>();
 
     private ArrayList<String> genarateCoordinatesSite(){
+
         ArrayList <String> coordinates = new ArrayList<String>();
 
         int vertOrgoriz = (int)(Math.random() * 2);
