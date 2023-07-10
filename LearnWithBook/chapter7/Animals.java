@@ -22,7 +22,7 @@ public class Animals {
     }
 
     public void roam(){
-
+        System.out.println("I'm walking");
     }
 }
 
@@ -49,4 +49,21 @@ class Hippo extends Animals {
 }
 class Lion extends Animals {
 
+}
+
+class Vet{
+    public void giveShot (Animals a){
+        a.roam();
+    }
+}
+
+class petOwner {
+    public void start(){
+        Vet v = new Vet();
+        Dog d = new Dog();
+        Hippo h = new Hippo();
+
+        v.giveShot(d);
+        v.giveShot(h);
+    }
 }
