@@ -42,13 +42,27 @@ class Cat extends Animals {
     }
 }
 class Wolf extends Animals {
+    public void roam(){
+        super.roam();
+        System.out.println("Wolf");
+    }
 
 }
 class Hippo extends Animals {
-
+    public void roam(){
+        super.roam();
+        System.out.println("Hippo");
+    }
 }
 class Lion extends Animals {
-
+    public void roam(){
+        super.roam();
+        System.out.println("Lion");
+    }
+    public void eat(){
+        super.eat();
+        System.out.println("LION");
+    }
 }
 
 class Vet{
