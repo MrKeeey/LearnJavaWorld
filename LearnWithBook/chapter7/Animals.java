@@ -18,50 +18,48 @@ public class Animals {
     }
 
     public void eat(){
-        System.out.print("Eating");
+        System.out.print("eating ");
     }
 
     public void roam(){
-        System.out.println("I'm walking");
+        System.out.println("walking");
     }
 }
 
 class Dog extends Animals {
     @Override
     public void eat() {
+        System.out.print("Dog ");
         super.eat();
-        System.out.println(" Dog ");
-
     }
 }
 class Cat extends Animals {
     public void eat() {
+        System.out.print("Cat ");
         super.eat();
-        System.out.println(" Cat ");
-
     }
 }
 class Wolf extends Animals {
     public void roam(){
+        System.out.print("Wolf ");
         super.roam();
-        System.out.println("Wolf");
     }
 
 }
 class Hippo extends Animals {
     public void roam(){
+        System.out.print("Hippo ");
         super.roam();
-        System.out.println("Hippo");
     }
 }
 class Lion extends Animals {
     public void roam(){
+        System.out.print("Lion ");
         super.roam();
-        System.out.println("Lion");
     }
     public void eat(){
+        System.out.print("LION ");
         super.eat();
-        System.out.println("LION");
     }
 }
 
@@ -77,7 +75,7 @@ class petOwner {
         Dog d = new Dog();
         Hippo h = new Hippo();
 
-        v.giveShot(d);
-        v.giveShot(h);
+        //v.giveShot(d);
+        //v.giveShot(h);
     }
 }
