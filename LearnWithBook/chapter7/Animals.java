@@ -40,6 +40,9 @@ class Cat extends Animals {
     }
 }
 class Wolf extends Animals {
+    public void eat(){
+        //super.eat();
+    }
     public void roam(){
         System.out.print("Wolf ");
         super.roam();
@@ -47,6 +50,9 @@ class Wolf extends Animals {
 
 }
 class Hippo extends Animals {
+    public void eat(){
+        //super.eat();
+    }
     public void roam(){
         System.out.print("Hippo ");
         super.roam();
@@ -54,11 +60,11 @@ class Hippo extends Animals {
 }
 class Lion extends Animals {
     public void roam(){
-        System.out.print("Lion ");
-        super.roam();
+        //System.out.print("LION ");
+        //super.roam();
     }
     public void eat(){
-        System.out.print("LION ");
+        System.out.print("Lion ");
         super.eat();
     }
 }
