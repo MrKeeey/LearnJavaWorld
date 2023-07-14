@@ -1,5 +1,4 @@
 package LearnWithBook.chapter7;
-
 public class MonsterTest {
     public static void main(String[] args) {
         Monster[] monstr = new Monster[3];
@@ -21,7 +20,7 @@ class Monster {
 }
 
 class Vampire extends Monster {
-    boolean frighten(int x) {
+    boolean frighten(int b) {
         System.out.println("a bite?");
         return false;
     }
