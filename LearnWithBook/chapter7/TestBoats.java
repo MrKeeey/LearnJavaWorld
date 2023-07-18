@@ -5,6 +5,10 @@ public class TestBoats {
         Sailboat b2 = new Sailboat();
         Rowboat b3 = new Rowboat();
 
+        b2.setLength(32);
+        b1.getLength();
+        b3.rowTheBoat();
+        b1.move();
 
     }
 }
@@ -21,9 +25,10 @@ class Boat {
     }
 
     public void move() {
-        System.out.println("drift");
+        System.out.println("hoist snail");
     }
 }
+
 class Rowboat extends Boat {
     public void rowTheBoat() {
         System.out.println("stroke natasha");
@@ -32,5 +37,8 @@ class Rowboat extends Boat {
 }
 
 class Sailboat extends Boat {
+    public void rowTheBoat() {
+        System.out.println("drift");
+    }
 
 }
