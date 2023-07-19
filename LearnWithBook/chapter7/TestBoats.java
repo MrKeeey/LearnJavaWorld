@@ -29,12 +29,10 @@ class Sailboat extends Boat {
     public void move() {
         System.out.print("hoist sail");
     }
-
 }
 
 class Rowboat extends Boat {
     public void rowTheBoat() {
         System.out.print("stroke natasha");
     }
-
 }
