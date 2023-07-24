@@ -16,3 +16,16 @@ Welcome to the DICH!
  [X] chapter2.Drums
  [X] chapter2.DVDPlayer
  [X] chapter2.GameLauncher.java
+
+ [X] chapter3.
+
+ [X] chapter4.
+
+ [X] chapter5.
+
+ [X] chapter6.
+
+ [X] chapter7.
+
+ [X] chapter8.
+
