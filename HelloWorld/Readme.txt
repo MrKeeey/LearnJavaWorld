@@ -1,7 +1,7 @@
  Welcome to the DICH!
 
- [X] Hello World!
- [X] HelloWorld.RandomTest
- [X] HelloWorld.ScannerandBufferedReader
- [X] HelloWorld.StackTest
- [X] HelloWorld.WhileForIF
+ [X] HelloWorld
+ [X] RandomTest
+ [X] ScannerandBufferedReader
+ [X] StackTest
+ [X] WhileForIF
