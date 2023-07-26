@@ -1,11 +1,12 @@
 package LearnWithBook.chapter8;
 abstract public class Animals {
 
-    public void roam() {
-        System.out.println("walking");
-    }
+    abstract public void roam();
     public static void main(String[] args) {
-
+        Dog dog = new Dog();
+        dog.roam();
+        Cat cat = new Cat();
+        cat.roam();
     }
 }
  abstract class Canine extends Animals {
@@ -15,11 +16,15 @@ abstract public class Animals {
  }
 
  abstract class Feline extends Animals {
-
+     public void roam() {
+         System.out.println("running");
+     }
  }
 
 class Hippo {
-
+    public void roam() {
+        System.out.println("looking");
+    }
 }
 
 class Dog extends Canine {
