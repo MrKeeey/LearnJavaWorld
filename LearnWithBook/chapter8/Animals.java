@@ -7,6 +7,7 @@ abstract public class Animals {
         dog.roam();
         Cat cat = new Cat();
         cat.roam();
+
     }
 }
  abstract class Canine extends Animals {
@@ -31,7 +32,6 @@ class Dog extends Canine {
     public void go() {
         Canine canine;
         canine = new Dog();
-        //canine = new Canine();
         canine.roam();
     }
 
