@@ -7,7 +7,7 @@ abstract public class Animals {
         dog.roam();
         Cat cat = new Cat();
         cat.roam();
-
+        dog.go();
     }
 }
  abstract class Canine extends Animals {
