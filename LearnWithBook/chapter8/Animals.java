@@ -8,6 +8,7 @@ abstract public class Animals {
         Cat cat = new Cat();
         cat.roam();
         dog.go();
+
     }
 }
  abstract class Canine extends Animals {
@@ -22,7 +23,10 @@ abstract public class Animals {
      }
  }
 
-class Hippo {
+interface Pets {
+    abstract void roam();
+}
+class Hippo implements Pets {
     public void roam() {
         System.out.println("looking");
     }
