@@ -24,7 +24,7 @@ abstract public class Animals {
  }
 
 interface Pets {
-    abstract void roam();
+    void roam();
 }
 class Hippo implements Pets {
     public void roam() {
@@ -41,7 +41,7 @@ class Dog extends Canine {
 
 }
 
-class Wolf extends Canine {
+class Wolf extends Canine implements Pets {
 
 }
 
