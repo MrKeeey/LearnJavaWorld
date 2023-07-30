@@ -38,7 +38,6 @@ class Dog extends Canine {
         canine = new Dog();
         canine.roam();
     }
-
 }
 
 class Wolf extends Canine implements Pets {
