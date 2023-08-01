@@ -1,5 +1,5 @@
 interface Nose {
-    public int iMethod();
+    int iMethod();
 }
 
 abstract class Picasso implements Nose {
