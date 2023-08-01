@@ -11,7 +11,7 @@ abstract class Picasso implements Nose {
 class Clowns extends Picasso {
 
 }
-class Acts implements Nose {
+class Acts extends Picasso {
     public int iMethod() {
         return 5;
     }
