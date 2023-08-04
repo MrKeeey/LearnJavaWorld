@@ -7,4 +7,4 @@ public class TestBoo extends Boo {
 }
 class Boo {
 
- }
+}
