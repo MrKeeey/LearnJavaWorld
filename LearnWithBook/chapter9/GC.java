@@ -7,6 +7,21 @@ public class GC {
         return newGC;
     }
     public static void main(String[] args) {
+        GC gc1;
+        GC gc2 = new GC();
+        GC gc3 = new GC();
+        GC gc4 = gc3;
+        gc1 = doStuff();
+
+        //copyGC = null;
+        //gc2 = null;
+        //newGC = gc3;
+        //gc1 = null;
+        //newGC = null;
+        //gc4 = null;
+        //gc3 = gc2;
+        //gc1 = gc4;
+        //gc3 = null;
 
     }
 
