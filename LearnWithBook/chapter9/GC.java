@@ -13,15 +13,15 @@ public class GC {
         GC gc4 = gc3;
         gc1 = doStuff();
 
-        //copyGC = null;
-        //gc2 = null;
-        //newGC = gc3;
-        //gc1 = null;
-        //newGC = null;
-        //gc4 = null;
-        //gc3 = gc2;
-        //gc1 = gc4;
-        //gc3 = null;
+        //copyGC = null;            -
+        gc2 = null;
+        //newGC = gc3;              -
+        gc1 = null;
+        //newGC = null;             -
+        gc4 = null;
+        gc3 = gc2;
+        gc1 = gc4;
+        gc3 = null;
 
     }
 
