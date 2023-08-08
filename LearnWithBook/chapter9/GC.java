@@ -18,10 +18,10 @@ public class GC {
         //newGC = gc3;              -
         gc1 = null;
         //newGC = null;             -
-        gc4 = null;
-        gc3 = gc2;
+        //gc4 = null;
+        //gc3 = gc2;
         gc1 = gc4;
-        gc3 = null;
+        //gc3 = null;
 
     }
 

@@ -26,11 +26,18 @@ class RetentionBot {
 public class TestLifeSupportSim {
     public static void main(String[] args) {
         ArrayList aList = new ArrayList();
+        System.out.println(aList);
         V2Radiator v2 = new V2Radiator(aList);
+        /*for (Object str: aList) {
+            System.out.println(str);
+        }*/
+        System.out.println(aList);
         V3Radiator v3 = new V3Radiator(aList);
+        System.out.println(aList);
         for (int count = 0; count < 20; count++){
             RetentionBot ret = new RetentionBot(aList);
         }
+        System.out.println(aList);
     }
 }
 
@@ -42,8 +49,10 @@ class SimUnit {
 
     int powerUse(){
         if ("Hot Machine".equals(botType)){
+            System.out.println("2");
             return 2;
         } else {
+            System.out.println("4");
             return 4;
         }
     }
