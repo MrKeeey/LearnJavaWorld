@@ -6,6 +6,11 @@ class V2Radiator {
             list.add(new SimUnit("V2Radiator"));
         }
     }
+    ArrayList test;
+    void setTime(ArrayList t) { test = t; }
+    ArrayList getTime(){
+        return test;
+    }
 }
 
 class V3Radiator extends V2Radiator {
@@ -18,6 +23,7 @@ class V3Radiator extends V2Radiator {
 }
 
 class RetentionBot {
+
     RetentionBot(ArrayList rlist){
         rlist.add(new SimUnit("Hot Machine"));
     }
@@ -28,10 +34,7 @@ public class TestLifeSupportSim {
         ArrayList aList = new ArrayList();
         System.out.println(aList);
         V2Radiator v2 = new V2Radiator(aList);
-        /*for (Object str: aList) {
-            System.out.println(str);
-        }*/
-        System.out.println(aList);
+        System.out.println();
         V3Radiator v3 = new V3Radiator(aList);
         System.out.println(aList);
         for (int count = 0; count < 20; count++){
