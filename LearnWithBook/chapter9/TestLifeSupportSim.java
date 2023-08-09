@@ -14,6 +14,8 @@ class V2Radiator {
 }
 
 class V3Radiator extends V2Radiator {
+    public ArrayList info;
+    info = new SimUnit("V3Radiator");
     V3Radiator(ArrayList lglist){
         super(lglist);
         for (int count = 0; count < 10; count++){
