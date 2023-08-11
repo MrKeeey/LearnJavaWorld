@@ -16,15 +16,11 @@ class V2Radiator {
 }
 
 class V3Radiator extends V2Radiator {
-    public String info = "V3Radiator";
-    /*V3Radiator v3 = new V3Radiator();
-    V3Radiator(){
-
-    }*/
+    public String infov3 = "V3Radiator";
     V3Radiator(ArrayList lglist){
         super(lglist);
         for (int count = 0; count < 10; count++){
-            lglist.add(new SimUnit(info));
+            lglist.add(new SimUnit(infov3));
         }
     }
 }
