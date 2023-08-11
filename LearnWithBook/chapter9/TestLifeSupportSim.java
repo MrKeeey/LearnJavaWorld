@@ -1,25 +1,29 @@
 import java.util.*;
 
 class V2Radiator {
+    private String info = "V2Radiator";
+    V2Radiator v3 = new V2Radiator();
+    V2Radiator(){
+
+    }
     V2Radiator(ArrayList list){
         for (int count = 0; count < 5; count++){
-            list.add(new SimUnit("V2Radiator"));
+            list.add(new SimUnit(info));
         }
     }
-    ArrayList test;
-    void setTime(ArrayList t) { test = t; }
-    ArrayList getTime(){
-        return test;
-    }
+
 }
 
 class V3Radiator extends V2Radiator {
-    public ArrayList info;
-    info = new SimUnit("V3Radiator");
+    private String info = "V2Radiator";
+    V3Radiator v3 = new V3Radiator();
+    V3Radiator(){
+
+    }
     V3Radiator(ArrayList lglist){
         super(lglist);
         for (int count = 0; count < 10; count++){
-            lglist.add(new SimUnit("V3Radiator"));
+            lglist.add(new SimUnit(info));
         }
     }
 }
