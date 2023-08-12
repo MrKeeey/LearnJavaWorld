@@ -2,26 +2,27 @@ package LearnWithBook.chapter9;
 import java.util.ArrayList;
 
 class Animals {
-    public String infoA = "Animals";
     Animals(ArrayList list){
         for (int count = 0; count < 5; count++){
-            list.add(new SimUnit(infoA));
+            list.add(new SimUnit("Animals"));
         }
     }
-    /*@Override
-    public String toString(){
-        return infoA + " ";
-    }*/
+}
+
+class Cat {
+    Cat(ArrayList list){
+        for (int count = 0; count < 5; count++){
+            list.add(new SimUnit("Meow"));
+        }
+    }
 }
 
 public class Test {
     public static void main(String[] args) {
         ArrayList aList = new ArrayList();
+        Animals animal = new Animals(aList);
+        Cat cat = new Cat(aList);
         System.out.println(aList);
-        Animals a = new Animals(aList);
-        for (Object al : aList) {
-            System.out.print(al + " ");
-        }
     }
 }
 
@@ -30,5 +31,8 @@ class SimUnit {
 
     SimUnit(String type) {
         botType = type;
+    }
+    public String toString(){
+        return botType;
     }
 }
