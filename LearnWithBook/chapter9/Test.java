@@ -28,7 +28,6 @@ public class Test {
 
 class SimUnit {
     String botType;
-
     SimUnit(String type) {
         botType = type;
     }

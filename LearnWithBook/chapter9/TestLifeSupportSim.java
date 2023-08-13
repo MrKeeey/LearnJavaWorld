@@ -25,11 +25,8 @@ class RetentionBot {
 public class TestLifeSupportSim {
     public static void main(String[] args) {
         ArrayList aList = new ArrayList();
-        System.out.println(aList);
         V2Radiator v2 = new V2Radiator(aList);
-        System.out.println(aList);
         V3Radiator v3 = new V3Radiator(aList);
-        System.out.println(aList);
         for (int count = 0; count < 20; count++){
             RetentionBot ret = new RetentionBot(aList);
         }
@@ -51,6 +48,7 @@ class SimUnit {
             return 4;
         }
     }
+
     public String toString(){
         return botType;
     }
