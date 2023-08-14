@@ -35,3 +35,5 @@
  [X] chapter7.TestBoats.java
 
  [X] chapter8.
+
+ [X] chapter9.
