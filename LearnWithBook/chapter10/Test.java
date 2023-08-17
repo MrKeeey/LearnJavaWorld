@@ -6,5 +6,7 @@ public class Test {
         int min = Math.min(56, 12);
         int abs = Math.abs(-343);
         System.out.println(rnd + " " + min + " " + abs);
+
+
     }
 }
