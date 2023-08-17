@@ -7,6 +7,19 @@ public class Test {
         int abs = Math.abs(-343);
         System.out.println(rnd + " " + min + " " + abs);
 
-
+        System.out.println(Player.playerCount);
+        Player player = new Player("SEMMII");
+        System.out.println(Player.playerCount);
+        player.playerCount = 53;
+        System.out.println(Player.playerCount);
     }
 }
+class Player{
+    static int playerCount;
+    private String name;
+    public Player(String n){
+        name =n;
+        playerCount++;
+    }
+}
+
