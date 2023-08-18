@@ -12,14 +12,20 @@ public class Test {
         System.out.println(Player.playerCount);
         player.playerCount = 53;
         System.out.println(Player.playerCount);
+        System.out.println(Player.TT + " " + Player.SS);
     }
 }
 class Player{
     static int playerCount;
+    public static final int TT = 15;
+    public static final int SS;
     private String name;
     public Player(String n){
         name =n;
         playerCount++;
+    }
+    static {
+        SS = (int) Math.random() * 15 + 1;
     }
 }
 
