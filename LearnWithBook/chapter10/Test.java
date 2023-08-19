@@ -9,9 +9,10 @@ public class Test {
 
         System.out.println(Player.playerCount);
         Player player = new Player("SEMMII");
-        System.out.println(Player.playerCount);
+        System.out.println(Player.playerCount + " " + player.name);
         player.playerCount = 53;
         System.out.println(Player.playerCount);
+
         System.out.println(Player.TT + " " + Player.SS);
     }
 }
@@ -19,9 +20,9 @@ class Player{
     static int playerCount;
     public static final int TT = 15;
     public static final int SS;
-    private String name;
+    public String name;
     public Player(String n){
-        name =n;
+        name = n;
         playerCount++;
     }
     static {
