@@ -25,7 +25,7 @@ class Player{
         playerCount++;
     }
     static {
-        SS = (int) Math.random() * 15 + 1;
+        SS = (int) (Math.random() * 15);
     }
 }
 
