@@ -14,6 +14,8 @@ public class Test {
         System.out.println(Player.playerCount);
 
         System.out.println(Player.TT + " " + Player.SS);
+
+        Player.test();
     }
 }
 class Player{
@@ -25,8 +27,13 @@ class Player{
         name = n;
         playerCount++;
     }
+
     static {
         SS = (int) (Math.random() * 15);
+    }
+
+    static void test() {
+        System.out.println("Static method");
     }
 }
 
