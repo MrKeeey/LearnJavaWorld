@@ -14,7 +14,6 @@ public class Test {
         System.out.println(Player.playerCount);
 
         System.out.println(Player.TT + " " + Player.SS);
-
         Player.test();
     }
 }
@@ -23,6 +22,7 @@ class Player{
     public static final int TT = 15;
     public static final int SS;
     public String name;
+
     public Player(String n){
         name = n;
         playerCount++;
