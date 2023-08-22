@@ -10,7 +10,7 @@ public class Test {
         System.out.println(Player.playerCount);
         Player player = new Player("SEMMII");
         System.out.println(Player.playerCount + " " + player.name);
-        player.playerCount = 53;
+        Player.playerCount = 53;
         System.out.println(Player.playerCount);
 
         System.out.println(Player.TT + " " + Player.SS);
