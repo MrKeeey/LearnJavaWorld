@@ -19,8 +19,8 @@ public class Test {
 }
 class Player{
     static int playerCount;
-    public static final int TT = 15;
-    public static final int SS;
+    static final int TT = 15;
+    static final int SS;
     public String name;
 
     public Player(String n){
