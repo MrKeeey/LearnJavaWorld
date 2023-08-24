@@ -11,7 +11,6 @@ public class AllFinalTest {
         System.out.println(poof.GreatMagicPoof());
 
         Woof woof = new Woof();
-        System.out.println(woof.Msg);
     }
 }
 
@@ -43,5 +42,7 @@ class Poof {
 }
 
 final class Woof {
-    String Msg = "This is WooF";
+    Woof(){
+        System.out.println("This is WooF");
+    }
 }
