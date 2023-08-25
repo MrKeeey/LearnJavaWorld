@@ -34,8 +34,14 @@
  [X] chapter7.MonsterTest.java
  [X] chapter7.TestBoats.java
 
- [X] chapter8.
+ [X] chapter8.Animals.java
+ [X] chapter8.Of76.java
 
- [X] chapter9.
+ [X] chapter9.GC
+ [X] chapter9.SonOfBoo.java
+ [X] chapter9.Test.java
+ [X] chapter9.TestDuck.java
+ [X] chapter9.TestLifeSupportSim.java
 
- [x]chapter10.
+ [x] chapter10.
+ [x] chapter10.
