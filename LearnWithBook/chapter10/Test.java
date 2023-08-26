@@ -10,6 +10,7 @@ public class Test {
         System.out.println(Player.playerCount);
         Player player = new Player("SEMMII");
         System.out.println(Player.playerCount + " " + player.name);
+        System.out.println(player.playerCount + " " + player.name);         //same but worst
         Player.playerCount = 53;
         System.out.println(Player.playerCount);
 
@@ -35,5 +36,7 @@ class Player{
     static void test() {
         System.out.println("Static method");
     }
+
+
 }
 
