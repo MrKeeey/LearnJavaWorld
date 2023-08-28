@@ -16,7 +16,7 @@ public class Test {
 
         System.out.println(Player.TT + " " + Player.SS);
         Player.test();
-        player.meow();      //same but worst
+        player.test();      //same but worst
     }
 }
 class Player{
@@ -38,8 +38,5 @@ class Player{
         System.out.println("Static method");
     }
 
-    static void meow() {
-        System.out.println("Meow");
-    }
 }
 
