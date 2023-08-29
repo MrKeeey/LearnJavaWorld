@@ -37,6 +37,5 @@ class Player{
     static void test() {
         System.out.println("Static method");
     }
-
 }
 
