@@ -11,6 +11,7 @@ public class AllFinalTest {
         System.out.println(poof.GreatMagicPoof());
 
         Woof woof = new Woof();
+        System.out.println(woof.stopMeow);
     }
 }
 
@@ -22,8 +23,7 @@ class BDay {
         mounth = 15;
     }
     void doStuff(final int c){
-        int count = c;
-        System.out.println("Working " + count + " years");
+        System.out.println("Working " + c + " years");
     }
 
     int Years(){
@@ -45,4 +45,6 @@ final class Woof {
     Woof(){
         System.out.println("This is WooF");
     }
+
+    final String stopMeow = "Stop Meow here! Woof is here!";
 }
