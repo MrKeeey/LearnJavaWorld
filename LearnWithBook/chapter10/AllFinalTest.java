@@ -43,8 +43,8 @@ class Poof {
 
 final class Woof {
     Woof(){
-        System.out.println("This is WooF");
+        System.out.println("This is Woof!");
     }
 
-    final String stopMeow = "Stop Meow here! Woof is here!";
+    final String stopMeow = "Stop Meow here!";
 }
