@@ -5,12 +5,14 @@ public class teste {
         tt TT = new tt();
         System.out.println(TT.name);
         System.out.println(tt.names);
+        System.out.println(tt.count);
     }
 }
 
 class tt {
     final String name = "Meow";
     static String names = "So much meow";
+    final static int count = 9;
     tt(){
        System.out.println("TT");
     }
