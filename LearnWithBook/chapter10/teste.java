@@ -5,7 +5,7 @@ public class teste {
         tt TT = new tt();
         System.out.println(TT.name);
         System.out.println(tt.names);
-        System.out.println(tt.count);
+        System.out.println(tt.count + TT.count);
     }
 }
 
@@ -16,5 +16,6 @@ class tt {
     tt(){
        System.out.println("TT");
     }
+
 
 }
