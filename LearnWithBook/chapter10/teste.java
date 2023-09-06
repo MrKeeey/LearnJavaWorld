@@ -1,5 +1,7 @@
 package LearnWithBook.chapter10;
 
+import LearnWithBook.chapter4.Sum;
+
 public class teste {
     public static void main(String[] args) {
         tt TT = new tt();
@@ -15,7 +17,10 @@ class tt {
     final static int count = 9;
     tt(){
        System.out.println("TT");
+       new tt("Felix");
     }
 
-
+    tt(String PetName){
+        System.out.println(PetName);
+    }
 }
