@@ -8,6 +8,7 @@ public class teste {
         System.out.println(TT.name);
         System.out.println(tt.names);
         System.out.println(tt.count + TT.count);
+        new tt("Felix");
     }
 }
 
@@ -15,12 +16,11 @@ class tt {
     final String name = "Meow";
     static String names = "So much meow";
     final static int count = 9;
-    tt(){
+    public tt(){
        System.out.println("TT");
-       new tt("Felix");
     }
 
-    tt(String PetName){
+    public tt(String PetName){
         System.out.println(PetName);
     }
 }
