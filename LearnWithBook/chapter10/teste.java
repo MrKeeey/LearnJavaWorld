@@ -9,6 +9,7 @@ public class teste {
         System.out.println(tt.names);
         System.out.println(tt.count + TT.count);
         new tt("Felix");
+        new tt(tt.count);
     }
 }
 
@@ -22,5 +23,9 @@ class tt {
 
     public tt(String PetName){
         System.out.println(PetName);
+    }
+
+    public tt(int x){
+        System.out.println(x+1);
     }
 }
