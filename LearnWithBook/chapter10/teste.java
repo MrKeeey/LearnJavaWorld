@@ -3,6 +3,7 @@ package LearnWithBook.chapter10;
 import LearnWithBook.chapter4.Sum;
 
 public class teste {
+    private static int size;
     public static void main(String[] args) {
         tt TT = new tt();
         System.out.println(TT.name);
@@ -10,6 +11,17 @@ public class teste {
         System.out.println(tt.count + TT.count);
         new tt("Felix");
         new tt(tt.count);
+
+        size = 25;
+        System.out.println("Size: " + getSize());
+    }
+
+    public void setSize(int s) {
+        size = s;
+    }
+
+    public static int getSize(){
+        return size;
     }
 }
 
