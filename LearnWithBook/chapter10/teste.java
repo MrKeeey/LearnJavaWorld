@@ -16,7 +16,7 @@ public class teste {
         System.out.println("Size: " + getSize());
     }
 
-    public void setSize(int s) {
+    public static void setSize(int s) {
         size = s;
     }
 
