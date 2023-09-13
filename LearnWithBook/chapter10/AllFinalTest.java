@@ -16,11 +16,11 @@ public class AllFinalTest {
 }
 
 class BDay {
-    final int day = 8;
+    final int day = 15;
     final int mounth;
 
     BDay() {
-        mounth = 15;
+        mounth = 8;
     }
     void doStuff(final int c){
         System.out.println("Working " + c + " years");

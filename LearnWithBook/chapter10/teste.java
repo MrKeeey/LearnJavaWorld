@@ -8,7 +8,7 @@ public class teste {
         tt TT = new tt();
         System.out.println(TT.name);
         System.out.println(tt.names);
-        System.out.println(tt.count + TT.count);
+        System.out.println(tt.count*2);
         new tt("Felix");
         new tt(tt.count);
 
