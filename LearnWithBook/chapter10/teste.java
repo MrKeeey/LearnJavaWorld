@@ -4,6 +4,7 @@ import LearnWithBook.chapter4.Sum;
 
 public class teste {
     private static int size;
+
     public static void main(String[] args) {
         tt TT = new tt();
         System.out.println(TT.name);
@@ -12,6 +13,7 @@ public class teste {
         new tt("Felix");
         new tt(tt.count);
 
+        System.out.println(tt.UseCount);
         size = 25;
         System.out.println("Size: " + getSize());
     }
@@ -26,18 +28,22 @@ public class teste {
 }
 
 class tt {
+    static int UseCount;
     final String name = "Meow";
     static String names = "So much meow";
     final static int count = 9;
     public tt(){
-       System.out.println("TT");
+        UseCount++;
+        System.out.println("TT");
     }
 
     public tt(String PetName){
+        UseCount++;
         System.out.println(PetName);
     }
 
     public tt(int x){
+        UseCount++;
         System.out.println(x+1);
     }
 }
