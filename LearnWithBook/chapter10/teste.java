@@ -16,12 +16,13 @@ public class teste {
         System.out.println(tt.UseCount);
         size = 25;
         System.out.println("Size: " + getSize());
+        setSize(99);
+        System.out.println(size + " Size: " + getSize());
     }
 
     public static void setSize(int s) {
         size = s;
     }
-
     public static int getSize(){
         return size;
     }
