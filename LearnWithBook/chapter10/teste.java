@@ -14,7 +14,7 @@ public class teste {
         new tt(tt.count);
 
         System.out.println(tt.UseCount);
-        setSize(25);
+        setSize(25+tt.count);
         System.out.println("Size: " + getSize());
         setSize(99);
         System.out.println(size + " Size: " + getSize());
