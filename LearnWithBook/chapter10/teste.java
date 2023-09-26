@@ -9,12 +9,12 @@ public class teste {
         tt TT = new tt();
         System.out.println(TT.name);
         System.out.println(tt.names);
-        System.out.println(tt.count*2);
+        System.out.println(tt.count * 2);
         new tt("Felix");
         new tt(tt.count);
 
         System.out.println(tt.UseCount);
-        setSize(25+tt.count);
+        setSize(25 + tt.count);
         System.out.println("Size: " + getSize());
         setSize(99);
         System.out.println(size + " Size: " + getSize());
@@ -45,6 +45,6 @@ class tt {
 
     public tt(int x){
         UseCount++;
-        System.out.println(x+1);
+        System.out.println(x + 1);
     }
 }
