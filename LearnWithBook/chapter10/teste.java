@@ -35,7 +35,7 @@ class tt {
     final static int count = 9;
     public tt(){
         UseCount++;
-        System.out.println("TT");
+        System.out.print("TT ");
     }
 
     public tt(String PetName){
@@ -45,6 +45,6 @@ class tt {
 
     public tt(int x){
         UseCount++;
-        System.out.println(x + 1);
+        System.out.println(x+1);
     }
 }
