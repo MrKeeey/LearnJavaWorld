@@ -1,7 +1,4 @@
 package LearnWithBook.chapter10;
-
-import LearnWithBook.chapter4.Sum;
-
 public class teste {
     private static int size;
 
@@ -33,6 +30,7 @@ class tt {
     final String name = "Meow";
     static String names = "So much meow";
     final static int count = 9;
+
     public tt(){
         UseCount++;
         System.out.print("TT ");
