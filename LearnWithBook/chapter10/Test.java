@@ -1,6 +1,9 @@
 package LearnWithBook.chapter10;
 
 public class Test {
+    Integer i = 0;
+    int j;
+
     public static void main(String[] args) {
         int rnd = (int) Math.round(42.2);
         int min = Math.min(56, 12);
@@ -17,6 +20,17 @@ public class Test {
         System.out.println(Player.TT + " " + Player.SS);
         Player.test();
         player.test();      //same but worst
+
+        Test t = new Test();
+        t.go();
+    }
+
+    public void go(){
+        Integer k = new Integer(5);  //old
+        j = i + k;
+        System.out.println(j);
+        System.out.println(i);
+
     }
 }
 class Player{
