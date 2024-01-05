@@ -11,5 +11,13 @@ public class parse {
         boolean bb = Boolean.parseBoolean(strB);
 
         System.out.println(str + " " + x + " " + d + " " + b + " " + bb);
+
+        double strD = 42.5;
+        String doubleStr = "" + strD;
+
+        double strD2 = 42.6;
+        String doubleStr2 = Double.toString(strD2);
+
+        System.out.println(doubleStr + " " + doubleStr2);
     }
 }
