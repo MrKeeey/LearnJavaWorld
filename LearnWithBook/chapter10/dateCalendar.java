@@ -13,12 +13,13 @@ public class dateCalendar {
         System.out.println(String.format("%tB %<td - %<tA", today));                    //same but sort
 
         Calendar cal = Calendar.getInstance();
-        System.out.println(cal.get(cal.HOUR_OF_DAY));
+        System.out.println(cal.get(cal.HOUR));
 
         if(cal.get(cal.HOUR_OF_DAY) >= 12){
             System.out.println(cal.get(cal.HOUR_OF_DAY) + " PM");
         }else{
             System.out.println(cal.get(cal.HOUR_OF_DAY) + " AM");
         }
+
     }
 }
