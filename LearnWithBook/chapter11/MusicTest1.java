@@ -10,6 +10,8 @@ public class MusicTest1 {
         } catch(MidiUnavailableException ex) {
             System.out.println("Fail");
             ex.printStackTrace();
+        } finally {
+            System.out.println("Done!");
         }
     }
     public static void main(String[] args) {
