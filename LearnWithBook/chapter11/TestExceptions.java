@@ -1,5 +1,9 @@
 package LearnWithBook.chapter11;
 
+import javax.sound.midi.MidiSystem;
+import javax.sound.midi.MidiUnavailableException;
+import javax.sound.midi.Sequencer;
+
 public class TestExceptions {
     public static void main(String[] args) {
 
@@ -8,7 +12,7 @@ public class TestExceptions {
             System.out.println("Start try");
             doRisky(test);
             System.out.println("End try");
-        } catch (ScaryException se) {
+        } catch (MidiUnavailableException se) {
             System.out.println("Scary Exception");
         } finally {
             System.out.println("Finally");
@@ -16,16 +20,13 @@ public class TestExceptions {
         System.out.println("End of main");
     }
 
-    static void doRisky(String test) throws ScaryException {
+    static void doRisky(String test) throws MidiUnavailableException {
+        Sequencer sequencer = MidiSystem.getSequencer();
         System.out.println("Start risky");
         if ("yes".equals(test)) {
-            //throw new ScaryException;
-            System.out.println("Fixed");
+            throw new MidiUnavailableException();
         }
         System.out.println("End risky");
     }
 
-    static class ScaryException extends Throwable {
-        //System.out.println("Fixed");
-    }
 }
