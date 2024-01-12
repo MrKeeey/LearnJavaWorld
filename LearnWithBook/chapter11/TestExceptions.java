@@ -1,8 +1,6 @@
 package LearnWithBook.chapter11;
 
-import javax.sound.midi.MidiSystem;
-import javax.sound.midi.MidiUnavailableException;
-import javax.sound.midi.Sequencer;
+import javax.sound.midi.*;
 
 public class TestExceptions {
     public static void main(String[] args) {
@@ -28,5 +26,4 @@ public class TestExceptions {
         }
         System.out.println("End risky");
     }
-
 }
