@@ -1,6 +1,7 @@
 package LearnWithBook.chapter11;
 
 import javax.sound.midi.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MiniMusicCmdLine {
@@ -8,9 +9,13 @@ public class MiniMusicCmdLine {
         MiniMusicCmdLine mini = new MiniMusicCmdLine();
         Scanner scanner = new Scanner(System.in);
 
-        int instrument = scanner.nextInt();;
-        int note = scanner.nextInt();;
-        mini.play(instrument, note);
+        try {
+            int instrument = scanner.nextInt();
+            int note = scanner.nextInt();
+            mini.play(instrument, note);
+        } catch (InputMismatchException ex) {
+            System.out.println("Wrong input! Write only numbers please!");
+        }
     }
 
     public void play(int instrument, int note){
