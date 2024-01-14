@@ -6,19 +6,11 @@ import java.util.Scanner;
 public class MiniMusicCmdLine {
     public static void main(String[] args) {
         MiniMusicCmdLine mini = new MiniMusicCmdLine();
-        String str1, str2;
-
         Scanner scanner = new Scanner(System.in);
-        str1 = scanner.nextLine();
-        str2 = scanner.nextLine();
 
-        if (str1 == null && str2 == null) {
-            System.out.println("You forgot to write arguments for instruments. Try again!");
-        } else {
-            int instrument = Integer.parseInt(str1);
-            int note = Integer.parseInt(str2);
-            mini.play(instrument, note);
-        }
+        int instrument = scanner.nextInt();;
+        int note = scanner.nextInt();;
+        mini.play(instrument, note);
     }
 
     public void play(int instrument, int note){
