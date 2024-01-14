@@ -1,15 +1,22 @@
 package LearnWithBook.chapter11;
 
 import javax.sound.midi.*;
+import java.util.Scanner;
 
 public class MiniMusicCmdLine {
     public static void main(String[] args) {
         MiniMusicCmdLine mini = new MiniMusicCmdLine();
-        if (args.length < 2) {
+        String str1, str2;
+
+        Scanner scanner = new Scanner(System.in);
+        str1 = scanner.nextLine();
+        str2 = scanner.nextLine();
+
+        if (str1 == null && str2 == null) {
             System.out.println("You forgot to write arguments for instruments. Try again!");
         } else {
-            int instrument = Integer.parseInt(args[0]);
-            int note = Integer.parseInt(args[1]);
+            int instrument = Integer.parseInt(str1);
+            int note = Integer.parseInt(str2);
             mini.play(instrument, note);
         }
     }
