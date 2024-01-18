@@ -1,6 +1,7 @@
 package LearnWithBook.chapter12;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -35,4 +36,9 @@ public class SimpleGui1 implements ActionListener {
         button.setText("Congratulations! You got hired!");
         button2.setText("End");
     }
+
+    public void paint(Graphics g) {
+        g.drawRect(100, 100, 100, 50);
+    }
+
 }
