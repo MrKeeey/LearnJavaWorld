@@ -9,16 +9,16 @@ import java.awt.event.WindowEvent;
 
 public class MyDrawPanel extends JPanel {
     public MyDrawPanel() {
+        JFrame frame = new JFrame("My first button");
+        JPanel panel = new JPanel();
 
-        setVisible(true);
-        setSize(300, 300);
-        AWTEventMonitor.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e)
-            {
-                System.exit(0);
-            }
-        });
+        frame.setVisible(true);
+        frame.setSize(300, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JButton button = new JButton("Interview");
+        panel.add(button);
+        frame.add(panel);
 
     }
     public void paintComponent(Graphics g) {

@@ -10,7 +10,6 @@ public class SimpleGui1 implements ActionListener {
     public static void main(String[] args) {
         SimpleGui1 gui = new SimpleGui1();
         gui.go();
-
     }
 
     public void go() {
@@ -36,9 +35,4 @@ public class SimpleGui1 implements ActionListener {
         button.setText("Congratulations! You got hired!");
         button2.setText("End");
     }
-
-    public void paint(Graphics g) {
-        g.drawRect(100, 100, 100, 50);
-    }
-
 }

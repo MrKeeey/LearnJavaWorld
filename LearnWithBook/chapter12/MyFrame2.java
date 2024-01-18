@@ -10,7 +10,7 @@ public class MyFrame2 extends Frame {
     {
         setTitle("My paint");
         setVisible(true);
-        setSize(300, 200);
+        setSize(300, 300);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e)
