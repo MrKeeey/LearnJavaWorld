@@ -36,6 +36,8 @@ public class SimpleGiu3C implements ActionListener {
 class MyDrawPanel extends JPanel {
     public void paintComponent(Graphics g) {
 
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
+
         Graphics2D g2d = (Graphics2D) g;
 
         int red = (int) (Math.random() * 255);
