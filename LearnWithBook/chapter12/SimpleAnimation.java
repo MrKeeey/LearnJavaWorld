@@ -16,10 +16,7 @@ public class SimpleAnimation {
         JFrame frame = new JFrame("Animation");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //JPanel panel = new JPanel();
         drawPanel drawpanel = new drawPanel();
-
-        //frame.getContentPane().add(BorderLayout.CENTER, panel);
         frame.getContentPane().add(BorderLayout.CENTER, drawpanel);
 
         frame.setSize(400, 400);
