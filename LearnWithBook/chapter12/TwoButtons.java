@@ -40,6 +40,7 @@ public class TwoButtons {
 
     class LabelLisener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            //random string label
             /* new Random().nextBytes(array);
             String generationString = new String(array, Charset.forName("UTF-8"));
             label.setText(" " + generationString + " ");*/
