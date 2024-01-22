@@ -20,7 +20,8 @@ public class MiniMusicPlayer2 implements ControllerEventListener {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             drawPanel2 drawpanel2 = new drawPanel2();
             frame.getContentPane().add(BorderLayout.CENTER, drawpanel2);
-
+            //frame.setContentPane(drawpanel2);
+            //frame.setBounds(30, 30, 400, 400);
             frame.setSize(400, 400);
             frame.setVisible(true);
 
@@ -76,7 +77,7 @@ public class MiniMusicPlayer2 implements ControllerEventListener {
         public void paintComponent (Graphics graphics) {
 
             if (flag) {
-
+                System.out.println("la");
                 int red = (int) (Math.random() * 255);
                 int green = (int) (Math.random() * 255);
                 int blue = (int) (Math.random() * 255);

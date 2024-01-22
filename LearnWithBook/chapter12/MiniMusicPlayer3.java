@@ -1,13 +1,14 @@
 package LearnWithBook.chapter12;
 
 import javax.sound.midi.*;
+import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
 public class MiniMusicPlayer3 {
 
     static JFrame frame = new JFrame("My First Music Video");
-    static DrawPanel m1;
+    static DrawPanel ml;
 
     public static void main(String[] args) {
         MiniMusicPlayer3 miniplayer = new MiniMusicPlayer3();
@@ -15,12 +16,10 @@ public class MiniMusicPlayer3 {
     }
 
     public void setUpGui() {
-        m1 = new DrawPanel();
+        ml = new DrawPanel();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.setContentPane(m1);
-        frame.getContentPane().add(BorderLayout.CENTER, m1);
-        frame.setSize(400, 400);
-        //frame.setBounds(30, 30, 300, 300);
+        frame.setContentPane(ml);
+        frame.setBounds(30, 30, 400, 400);
         frame.setVisible(true);
     }
 
@@ -30,7 +29,7 @@ public class MiniMusicPlayer3 {
         try {
             Sequencer sequencer = MidiSystem.getSequencer();
             sequencer.open();
-            sequencer.addControllerEventListener(m1, new int[] {127});
+            sequencer.addControllerEventListener(ml, new int[] {127});
             Sequence seq = new Sequence(Sequence.PPQ, 4);
             Track track = seq.createTrack();
 
@@ -75,13 +74,11 @@ public class MiniMusicPlayer3 {
 
         public void paintComponents(Graphics g) {
             if (msg) {
-
-                int red = (int) (Math.random() * 255);
-                int green = (int) (Math.random() * 255);
-                int blue = (int) (Math.random() * 255);
-                Color randomColor = new Color(red, green, blue);
-                g.setColor(randomColor);
-                //g.setColor(new Color(red, green, blue));
+                System.out.print("la ");
+                int red = (int) ((Math.random() * 255) + 1);
+                int green = (int) ((Math.random() * 255) + 1);
+                int blue = (int) ((Math.random() * 255) + 1);
+                g.setColor(new Color(red, green, blue));
 
                 int x = (int) ((Math.random() * 250) + 10);
                 int y = (int) ((Math.random() * 250) + 10);
