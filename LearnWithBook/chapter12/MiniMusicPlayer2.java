@@ -77,7 +77,6 @@ public class MiniMusicPlayer2 implements ControllerEventListener {
         public void paintComponent (Graphics graphics) {
 
             if (flag) {
-                System.out.println("la");
                 int red = (int) (Math.random() * 255);
                 int green = (int) (Math.random() * 255);
                 int blue = (int) (Math.random() * 255);
