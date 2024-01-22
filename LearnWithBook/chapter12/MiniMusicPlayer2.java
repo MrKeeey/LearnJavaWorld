@@ -1,8 +1,13 @@
 package LearnWithBook.chapter12;
 
 import javax.sound.midi.*;
+import javax.swing.*;
+import java.awt.*;
 
 public class MiniMusicPlayer2 implements ControllerEventListener {
+
+    JFrame frame = new JFrame("Animation");
+    boolean flag = false;
 
     public static void main(String[] args) {
         MiniMusicPlayer2 miniplayer = new MiniMusicPlayer2();
@@ -11,6 +16,13 @@ public class MiniMusicPlayer2 implements ControllerEventListener {
 
     public void go() {
         try {
+
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            drawPanel2 drawpanel2 = new drawPanel2();
+            frame.getContentPane().add(BorderLayout.CENTER, drawpanel2);
+
+            frame.setSize(400, 400);
+            frame.setVisible(true);
 
             Sequencer sequencer = MidiSystem.getSequencer();
             sequencer.open();
@@ -36,9 +48,14 @@ public class MiniMusicPlayer2 implements ControllerEventListener {
         }
     }
 
-    @Override
     public void controlChange(ShortMessage event) {
-        System.out.print("la ");
+        flag = true;
+        frame.repaint();
+        try {
+            Thread.sleep(50);
+        } catch(Exception ex) {
+             ex.printStackTrace();
+        }
     }
 
     public static MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
@@ -53,5 +70,28 @@ public class MiniMusicPlayer2 implements ControllerEventListener {
             ex.printStackTrace();
         }
         return event;
+    }
+
+    class drawPanel2 extends JPanel {
+        public void paintComponent (Graphics graphics) {
+
+            if (flag) {
+
+                int red = (int) (Math.random() * 255);
+                int green = (int) (Math.random() * 255);
+                int blue = (int) (Math.random() * 255);
+                Color randomColor = new Color(red, green, blue);
+
+                int x = (int) ((Math.random() * 250) + 10);
+                int y = (int) ((Math.random() * 250) + 10);
+                int width = (int) ((Math.random() * 80) + 10);
+                int height = (int) ((Math.random() * 80) + 10);
+
+                graphics.setColor(randomColor);
+                graphics.fillRect(x, y, width, height);
+                flag = false;
+
+            }
+        }
     }
 }
