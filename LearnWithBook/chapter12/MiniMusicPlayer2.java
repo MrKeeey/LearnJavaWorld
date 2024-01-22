@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class MiniMusicPlayer2 implements ControllerEventListener {
 
-    JFrame frame = new JFrame("Animation");
-    boolean flag = false;
+    static JFrame frame = new JFrame("Animation");
+    static boolean flag = false;
 
     public static void main(String[] args) {
         MiniMusicPlayer2 miniplayer = new MiniMusicPlayer2();
