@@ -33,7 +33,6 @@ public class MiniMusicPlayer3 {
             Sequence seq = new Sequence(Sequence.PPQ, 4);
             Track track = seq.createTrack();
 
-            //int r = 0;
             for (int i = 0; i < 60; i +=4) {
                 int r = (int)((Math.random() * 50) + 1);
                 track.add(makeEvent(144, 1, r, 100, i));
@@ -69,12 +68,12 @@ public class MiniMusicPlayer3 {
 
         public void controlChange(ShortMessage event) {
             msg = true;
-            frame.repaint();
+            repaint();
         }
 
-        public void paintComponents(Graphics g) {
+        public void paintComponent (Graphics g) {
             if (msg) {
-                System.out.print("la ");
+
                 int red = (int) ((Math.random() * 255) + 1);
                 int green = (int) ((Math.random() * 255) + 1);
                 int blue = (int) ((Math.random() * 255) + 1);
