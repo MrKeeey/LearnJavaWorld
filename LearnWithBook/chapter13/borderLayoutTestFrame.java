@@ -4,12 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class borderLayoutTestFrame {
+
     public static void main(String[] args) {
         borderLayoutTestFrame gui = new borderLayoutTestFrame();
         gui.go();
     }
 
-    public void go(){
+    public void go() {
 
         JFrame frame = new JFrame("BorderLayout");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,5 +30,6 @@ public class borderLayoutTestFrame {
 
         frame.setSize(300, 300);
         frame.setVisible(true);
-    };
+
+    }
 }

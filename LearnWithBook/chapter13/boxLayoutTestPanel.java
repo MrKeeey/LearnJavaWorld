@@ -3,24 +3,23 @@ package LearnWithBook.chapter13;
 import javax.swing.*;
 import java.awt.*;
 
-public class flowLayoutTestPanel {
+public class boxLayoutTestPanel {
 
     public static void main(String[] args) {
-        flowLayoutTestPanel gui = new flowLayoutTestPanel();
+        boxLayoutTestPanel gui = new boxLayoutTestPanel();
         gui.go();
     }
 
     public void go() {
 
-        JFrame frame = new JFrame("FlowLayout");
+        JFrame frame = new JFrame("BoxLayout");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
-        JPanel panel2 = new JPanel();
         panel.setBackground(Color.gray);
-        panel2.setBackground(Color.gray);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        JButton button = new JButton("Shock me");
+        JButton button = new JButton("Shock Me");
         JButton buttonTwo = new JButton("Bliss");
         JButton buttonThree = new JButton("Huh? Huh?");
 
@@ -29,9 +28,9 @@ public class flowLayoutTestPanel {
         panel.add(buttonThree);
 
         frame.getContentPane().add(BorderLayout.EAST, panel);
-        frame.getContentPane().add(BorderLayout.WEST, panel2);
         frame.setSize(250, 200);
         frame.setVisible(true);
 
     }
+
 }
