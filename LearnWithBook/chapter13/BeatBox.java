@@ -35,21 +35,22 @@ public class BeatBox {
 
         checkboxList = new ArrayList<JCheckBox>();
         Box buttonBox = new Box(BoxLayout.Y_AXIS);
+        buttonBox.setBorder(BorderFactory.createEmptyBorder(5, 10, 0, 0));
 
         JButton start = new JButton("Start");
         start.addActionListener(new MyStartListener());
         buttonBox.add(start);
 
         JButton stop = new JButton("Stop");
-        start.addActionListener(new MyStopListener());
+        stop.addActionListener(new MyStopListener());
         buttonBox.add(stop);
 
         JButton upTempo = new JButton("Tempo Up");
-        start.addActionListener(new MyUpTempoListener());
+        upTempo.addActionListener(new MyUpTempoListener());
         buttonBox.add(upTempo);
 
         JButton downTempo = new JButton("Tempo Down");
-        start.addActionListener(new MydownTempoListener());
+        downTempo.addActionListener(new MydownTempoListener());
         buttonBox.add(downTempo);
 
         Box nameBox = new Box(BoxLayout.Y_AXIS);
@@ -127,7 +128,7 @@ public class BeatBox {
 
     }
 
-    private void makeTracks(int[] list) {
+    public void makeTracks(int[] list) {
         for (int i = 0; i < 16; i++) {
             int key = list[i];
             if (key != 0) {
@@ -137,7 +138,7 @@ public class BeatBox {
         }
     }
 
-    private MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
+    public MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
         MidiEvent event = null;
         try {
             ShortMessage msg = new ShortMessage();
@@ -149,29 +150,32 @@ public class BeatBox {
         return event;
     }
 
-    private class MyStartListener implements ActionListener {
+    public class MyStartListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             buildTrackAndStart();
         }
     }
 
-    private class MyStopListener implements ActionListener {
+    public class MyStopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             sequencer.stop();
+            System.out.println("work?");
         }
     }
 
-    private class MyUpTempoListener implements ActionListener {
+    public class MyUpTempoListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             float tempoFactor = sequencer.getTempoFactor();
-            sequencer.setTempoFactor((float) (tempoFactor * 1.03));
+            sequencer.setTempoFactor((float) (tempoFactor * 1.5));
+            System.out.println("up");
         }
     }
 
-    private class MydownTempoListener implements ActionListener {
+    public class MydownTempoListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             float tempoFactor = sequencer.getTempoFactor();
-            sequencer.setTempoFactor((float) (tempoFactor * .97));
+            sequencer.setTempoFactor((float) (tempoFactor * .5));
+            System.out.println("down");
         }
     }
 }
