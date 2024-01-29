@@ -17,34 +17,36 @@ public class testBox {
 
         JFrame frame = new JFrame("Box");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new GridBagLayout());
+
         GridBagConstraints constraints = new GridBagConstraints();
+        constraints.insets = new Insets(2, 2, 2, 2);
+
+        JPanel buttonBox = new JPanel();
+        buttonBox.setLayout(new GridBagLayout());
+
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        constraints.weightx = 0.33;
-
-
-        Box buttonBox = new Box(BoxLayout.Y_AXIS);
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
         JButton start = new JButton("Start");
-        buttonBox.add(start);
-        JButton stop = new JButton("StopStop");
-        buttonBox.add(stop);
-        buttonBox.setSize(100, 100);
+        buttonBox.add(start, constraints);
 
-        Box nameBox = new Box(BoxLayout.PAGE_AXIS);
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        constraints.ipadx = 0;
+        constraints.ipady = 0;
+        JButton stop = new JButton("StopStop");
+        buttonBox.add(stop, constraints);
+
+        Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
             nameBox.add(new Label(instrumentNames[i]));
         }
 
-
-
         buttonBox.setBorder(BorderFactory.createEmptyBorder(5, 10, 0, 0));
         nameBox.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
-        frame.getContentPane().add(nameBox, constraints);
-        constraints.gridx = 1;
-        frame.getContentPane().add(buttonBox, constraints);
-
+        frame.getContentPane().add(BorderLayout.WEST, nameBox);
+        frame.getContentPane().add(BorderLayout.EAST, buttonBox);
 
         //frame.setSize(300, 300);
         //frame.setBounds(50, 50, 300, 300);
