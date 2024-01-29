@@ -80,7 +80,6 @@ public class BeatBox {
         theFrame.setBounds(50, 50, 300, 300);
         theFrame.pack();
         theFrame.setVisible(true);
-
     }
 
     private void setUpMidi() {
@@ -125,7 +124,6 @@ public class BeatBox {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
     }
 
     public void makeTracks(int[] list) {
@@ -159,7 +157,6 @@ public class BeatBox {
     public class MyStopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             sequencer.stop();
-            System.out.println("work?");
         }
     }
 
@@ -167,7 +164,6 @@ public class BeatBox {
         public void actionPerformed(ActionEvent e) {
             float tempoFactor = sequencer.getTempoFactor();
             sequencer.setTempoFactor((float) (tempoFactor * 1.5));
-            System.out.println("up");
         }
     }
 
@@ -175,7 +171,6 @@ public class BeatBox {
         public void actionPerformed(ActionEvent e) {
             float tempoFactor = sequencer.getTempoFactor();
             sequencer.setTempoFactor((float) (tempoFactor * .5));
-            System.out.println("down");
         }
     }
 }
