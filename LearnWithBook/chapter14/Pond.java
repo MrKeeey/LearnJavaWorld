@@ -5,7 +5,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Pond implements Serializable {
-    transient public Duck duck = new Duck();
+    transient public Duck duck = new Duck();            //transient = skip
 
     public static void main(String[] args) {
 

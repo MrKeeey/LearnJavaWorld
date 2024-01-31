@@ -1,8 +1,6 @@
 package LearnWithBook.chapter14;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 
 public class Box implements Serializable {
 
@@ -27,8 +25,9 @@ public class Box implements Serializable {
     public static void main(String[] args) {
 
         Box myBox = new Box();
-        myBox.setWidth(50);
-        myBox.setHeight(20);
+        myBox.setWidth(55);
+        myBox.setHeight(25);
+        System.out.println(myBox.getWidth() + " " + myBox.getHeight());
 
         try {
 
@@ -40,5 +39,22 @@ public class Box implements Serializable {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+
+        myBox.setWidth(0);
+        myBox.setHeight(0);
+        System.out.println(myBox.getWidth() + " " + myBox.getHeight());
+
+        try {
+
+            FileInputStream fileInput = new FileInputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\box.res");
+            ObjectInput is = new ObjectInputStream(fileInput);
+            Object one = is.readObject();
+            myBox = (Box) one;
+            is.close();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        System.out.println(myBox.getWidth() + " " + myBox.getHeight());
     }
 }
