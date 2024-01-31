@@ -25,8 +25,8 @@ public class Box implements Serializable {
     public static void main(String[] args) {
 
         Box myBox = new Box();
-        myBox.setWidth(55);
-        myBox.setHeight(25);
+        myBox.setWidth(123);
+        myBox.setHeight(345);
         System.out.println(myBox.getWidth() + " " + myBox.getHeight());
 
         try {
@@ -42,19 +42,21 @@ public class Box implements Serializable {
 
         myBox.setWidth(0);
         myBox.setHeight(0);
+        //myBox = null;
         System.out.println(myBox.getWidth() + " " + myBox.getHeight());
 
         try {
 
             FileInputStream fileInput = new FileInputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\box.res");
             ObjectInput is = new ObjectInputStream(fileInput);
-            Object one = is.readObject();
-            myBox = (Box) one;
+            Object myBoxRestore = is.readObject();
+            myBox = (Box) myBoxRestore;                 //Box myBoxRestore = (Box) is.readObject(); myBoxRestore.getWidth()
             is.close();
+
+            System.out.println(myBox.getWidth() + " " + myBox.getHeight());
+
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-        System.out.println(myBox.getWidth() + " " + myBox.getHeight());
     }
 }
