@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class QuizCardBuilder {
 
+    private String text;
     private JTextArea question;
     private JTextArea answer;
     private ArrayList<QuizCardBuilder> cardList;
@@ -111,12 +112,29 @@ public class QuizCardBuilder {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             for (QuizCardBuilder card:cardList) {
-                //writer.write(card.getQuestion() + "/");
-                //writer.write(card.getAnswer() + "\n");
+                writer.write(card.getQuestion() + "/");
+                writer.write(card.getAnswer() + "\n");
             }
             writer.close();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+    }
+
+    public void setQuestion(JTextArea question) {
+        this.question = question;
+    }
+
+    public JTextArea getQuestion() {
+
+        return question;
+    }
+
+    public void setAnswer(JTextArea answer) {
+        this.answer = answer;
+    }
+
+    public JTextArea getAnswer() {
+        return answer;
     }
 }
