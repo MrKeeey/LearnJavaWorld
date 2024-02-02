@@ -74,16 +74,15 @@ public class QuizCardBuilder {
         frame.setVisible(true);
     }
 
-    private class NextCardListener implements ActionListener {
+    public class NextCardListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             QuizCard card = new QuizCard(question.getText(), answer.getText());
             cardList.add(card);
-            //System.out.println(card);
             clearCard();
         }
     }
 
-    private class SaveMenuListener implements ActionListener {
+    public class SaveMenuListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             QuizCard card = new QuizCard(question.getText(), answer.getText());
             cardList.add(card);
@@ -93,20 +92,20 @@ public class QuizCardBuilder {
         }
     }
 
-    private class NewMenuListener implements ActionListener {
+    public class NewMenuListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             cardList.clear();
             clearCard();
         }
     }
 
-    public void clearCard() {
+    private void clearCard() {
         question.setText("");
         answer.setText("");
         question.requestFocus();
     }
 
-    public void saveFile(File file) {
+    private void saveFile(File file) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             for (QuizCard card:cardList) {
@@ -118,23 +117,21 @@ public class QuizCardBuilder {
             exception.printStackTrace();
         }
     }
+}
 
-    public class QuizCard {
-        public String getQuest() {
-            return quest;
-        }
+class QuizCard {
+    String quest, ans;
 
-        String quest;
+    QuizCard(String q, String a) {
+        quest = q;
+        ans = a;
+    }
 
-        public String getAns() {
-            return ans;
-        }
+    public String getQuest() {
+        return quest;
+    }
 
-        String ans;
-
-        QuizCard(String q, String a) {
-            quest = q;
-            ans = a;
-        }
+    public String getAns() {
+        return ans;
     }
 }
