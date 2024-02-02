@@ -10,7 +10,7 @@ public class QuizCardBuilder {
 
     private JTextArea question;
     private JTextArea answer;
-    private ArrayList cardList;
+    private ArrayList<QuizCardBuilder> cardList;
     private JFrame frame;
 
     public static void main(String[] args) {
@@ -46,7 +46,7 @@ public class QuizCardBuilder {
         JButton nextButton = new JButton("Next Card");
         nextButton.addActionListener(new NextCardListener());
 
-        cardList = new ArrayList();
+        cardList = new ArrayList<QuizCardBuilder>();
         JLabel qLabel = new JLabel("Question: ");
         JLabel aLabel = new JLabel("Answer: ");
 
@@ -110,7 +110,7 @@ public class QuizCardBuilder {
     public void saveFile(File file) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            for (Object card:cardList) {
+            for (QuizCardBuilder card:cardList) {
                 //writer.write(card.getQuestion() + "/");
                 //writer.write(card.getAnswer() + "\n");
             }
