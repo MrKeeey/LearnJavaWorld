@@ -8,10 +8,9 @@ import java.util.ArrayList;
 
 public class QuizCardBuilder {
 
-    private String text;
     private JTextArea question;
     private JTextArea answer;
-    private ArrayList<QuizCardBuilder> cardList;
+    private ArrayList<QuizCard> cardList;
     private JFrame frame;
 
     public static void main(String[] args) {
@@ -47,7 +46,7 @@ public class QuizCardBuilder {
         JButton nextButton = new JButton("Next Card");
         nextButton.addActionListener(new NextCardListener());
 
-        cardList = new ArrayList<QuizCardBuilder>();
+        cardList = new ArrayList<QuizCard>();
         JLabel qLabel = new JLabel("Question: ");
         JLabel aLabel = new JLabel("Answer: ");
 
@@ -77,17 +76,16 @@ public class QuizCardBuilder {
 
     private class NextCardListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            //QuizCardBuilder card = new QuizCardBuilder(question.getText(), answer.getText());
-            QuizCardBuilder card = new QuizCardBuilder();
+            QuizCard card = new QuizCard(question.getText(), answer.getText());
             cardList.add(card);
+            //System.out.println(card);
             clearCard();
         }
     }
 
     private class SaveMenuListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            //QuizCardBuilder card = new QuizCardBuilder(question.getText(), answer.getText());
-            QuizCardBuilder card = new QuizCardBuilder();
+            QuizCard card = new QuizCard(question.getText(), answer.getText());
             cardList.add(card);
             JFileChooser fileSave = new JFileChooser();
             fileSave.showSaveDialog(frame);
@@ -111,9 +109,9 @@ public class QuizCardBuilder {
     public void saveFile(File file) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            for (QuizCardBuilder card:cardList) {
-                writer.write(card.getQuestion() + "/");
-                writer.write(card.getAnswer() + "\n");
+            for (QuizCard card:cardList) {
+                writer.write(card.getQuest() + "/");
+                writer.write(card.getAns() + "\n");
             }
             writer.close();
         } catch (Exception exception) {
@@ -121,20 +119,22 @@ public class QuizCardBuilder {
         }
     }
 
-    public void setQuestion(JTextArea question) {
-        this.question = question;
-    }
+    public class QuizCard {
+        public String getQuest() {
+            return quest;
+        }
 
-    public JTextArea getQuestion() {
+        String quest;
 
-        return question;
-    }
+        public String getAns() {
+            return ans;
+        }
 
-    public void setAnswer(JTextArea answer) {
-        this.answer = answer;
-    }
+        String ans;
 
-    public JTextArea getAnswer() {
-        return answer;
+        QuizCard(String q, String a) {
+            quest = q;
+            ans = a;
+        }
     }
 }
