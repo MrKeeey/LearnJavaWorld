@@ -2,6 +2,8 @@ package LearnWithBook.chapter14;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 import java.util.ArrayList;
 
 public class QuizCardBuilder {
@@ -42,7 +44,7 @@ public class QuizCardBuilder {
         aScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         JButton nextButton = new JButton("Next Card");
-        //nextButton.addActionListener(new NextCardListener());
+        nextButton.addActionListener(new NextCardListener());
 
         cardList = new ArrayList();
         JLabel qLabel = new JLabel("Question: ");
@@ -59,8 +61,8 @@ public class QuizCardBuilder {
         JMenuItem newMenuItem = new JMenuItem("New");
         JMenuItem saveMenuItem = new JMenuItem("Save");
 
-        //newMenuItem.addActionListener();
-        //saveMenuItem.addActionListener();
+        newMenuItem.addActionListener(new NewMenuListener());
+        saveMenuItem.addActionListener(new SaveMenuListener());
 
         fileMenu.add(newMenuItem);
         fileMenu.add(saveMenuItem);
@@ -70,5 +72,51 @@ public class QuizCardBuilder {
         frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
         frame.setSize(500, 600);
         frame.setVisible(true);
+    }
+
+    private class NextCardListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            //QuizCardBuilder card = new QuizCardBuilder(question.getText(), answer.getText());
+            QuizCardBuilder card = new QuizCardBuilder();
+            cardList.add(card);
+            clearCard();
+        }
+    }
+
+    private class SaveMenuListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            //QuizCardBuilder card = new QuizCardBuilder(question.getText(), answer.getText());
+            QuizCardBuilder card = new QuizCardBuilder();
+            cardList.add(card);
+            JFileChooser fileSave = new JFileChooser();
+            fileSave.showSaveDialog(frame);
+            saveFile(fileSave.getSelectedFile());
+        }
+    }
+
+    private class NewMenuListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            cardList.clear();
+            clearCard();
+        }
+    }
+
+    public void clearCard() {
+        question.setText("");
+        answer.setText("");
+        question.requestFocus();
+    }
+
+    public void saveFile(File file) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            for (Object card:cardList) {
+                //writer.write(card.getQuestion() + "/");
+                //writer.write(card.getAnswer() + "\n");
+            }
+            writer.close();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 }
