@@ -88,7 +88,9 @@ public class QuizCardBuilder {
             cardList.add(card);
             JFileChooser fileSave = new JFileChooser();
             fileSave.showSaveDialog(frame);
-            saveFile(fileSave.getSelectedFile());
+            if (fileSave.getSelectedFile() != null) {
+                saveFile(fileSave.getSelectedFile());
+            }
         }
     }
 
@@ -109,8 +111,8 @@ public class QuizCardBuilder {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             for (QuizCard card:cardList) {
-                writer.write(card.getQuest() + "/");
-                writer.write(card.getAns() + "\n");
+                writer.write(card.getQuestion() + "/");
+                writer.write(card.getAnswer() + "\n");
             }
             writer.close();
         } catch (Exception exception) {
@@ -120,18 +122,18 @@ public class QuizCardBuilder {
 }
 
 class QuizCard {
-    String quest, ans;
+    String question, answer;
 
     QuizCard(String q, String a) {
-        quest = q;
-        ans = a;
+        question = q;
+        answer = a;
     }
 
-    public String getQuest() {
-        return quest;
+    public String getQuestion() {
+        return question;
     }
 
-    public String getAns() {
-        return ans;
+    public String getAnswer() {
+        return answer;
     }
 }
