@@ -2,14 +2,17 @@ package LearnWithBook.chapter14;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.ArrayList;
 
 public class QuizCardPlayer {
 
     private JTextArea display;
-    private JTextArea answer;
     private ArrayList<QuizCard> cardList;
     private QuizCard currentCard;
+    private int currentCardIndex;
     private JFrame frame;
     private JButton nextButton;
     private boolean isShowAnswer;
@@ -20,6 +23,7 @@ public class QuizCardPlayer {
     }
 
     public void go() {
+
         frame = new JFrame("Quiz Card Player");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -36,7 +40,8 @@ public class QuizCardPlayer {
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         nextButton = new JButton("Show Question");
-        //nextButton.addActionListener(new NextCardListener());
+        nextButton.setEnabled(false);
+        nextButton.addActionListener(new NextCardListener());
 
         mainPanel.add(scroll);
         mainPanel.add(nextButton);
@@ -44,14 +49,77 @@ public class QuizCardPlayer {
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
         JMenuItem loadMenuItem = new JMenuItem("Load card set");
-        //loadMenuItem.addActionListener(new OpenMenuListener());
+        loadMenuItem.addActionListener(new OpenMenuListener());
         fileMenu.add(loadMenuItem);
         menuBar.add(fileMenu);
 
         frame.setJMenuBar(menuBar);
         frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
-        frame.setSize(600, 500);
+        frame.setSize(500, 450);
         frame.setVisible(true);
 
+    }
+
+    public class NextCardListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            if (isShowAnswer) {
+                display.setText(currentCard.getAnswer());
+                nextButton.setText("Next Card");
+                isShowAnswer = false;
+            } else {
+                if (currentCardIndex < cardList.size()) {
+                    showNextCard();
+                } else {
+                    display.setText("That was last Card");
+                    nextButton.setEnabled(false);
+                    currentCard = null;
+                    cardList.clear();
+                    currentCardIndex = 0;
+                }
+            }
+        }
+    }
+
+    public class OpenMenuListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JFileChooser fileOpen = new JFileChooser();
+            fileOpen.showOpenDialog(frame);
+            loadFile(fileOpen.getSelectedFile());
+        }
+    }
+
+    private void loadFile(File file) {
+        currentCard = null;
+        currentCardIndex = 0;
+        cardList = new ArrayList<QuizCard>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line = null;
+            while((line = reader.readLine()) != null){
+                makeCard(line);
+            }
+            reader.close();
+        } catch (Exception exception) {
+            display.setText("Couldn't read the card file!");
+            nextButton.setEnabled(false);
+            //exception.printStackTrace();
+        }
+        showNextCard();
+    }
+
+    private void makeCard(String lineToParse) {
+        String[] result = lineToParse.split("/");
+        QuizCard card = new QuizCard(result[0], result[1]);
+        cardList.add(card);
+        //System.out.println("Made a card");
+    }
+
+    private void showNextCard() {
+        currentCard = cardList.get(currentCardIndex);
+        currentCardIndex++;
+        display.setText(currentCard.getQuestion());
+        nextButton.setEnabled(true);
+        nextButton.setText("Show Answer");
+        isShowAnswer = true;
     }
 }
