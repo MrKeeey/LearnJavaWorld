@@ -89,24 +89,25 @@ public class QuizCardPlayer {
     }
 
     private void loadFile(File file) {
-        currentCard = null;
-        currentCardIndex = 0;
-        cardList = new ArrayList<QuizCard>();
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line = null;
-            while((line = reader.readLine()) != null){
-                makeCard(line);
+        if (file.exists()) {
+            currentCard = null;
+            currentCardIndex = 0;
+            cardList = new ArrayList<QuizCard>();
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    makeCard(line);
+                }
+                reader.close();
+            } catch (Exception exception) {
+                display.setText("Couldn't read the card file!");
+                nextButton.setEnabled(false);
+                //exception.printStackTrace();
             }
-            reader.close();
-        } catch (Exception exception) {
-            display.setText("Couldn't read the card file!");
-            nextButton.setEnabled(false);
-            //exception.printStackTrace();
+            showNextCard();
         }
-        showNextCard();
     }
-
     private void makeCard(String lineToParse) {
         String[] result = lineToParse.split("/");
         QuizCard card = new QuizCard(result[0], result[1]);
