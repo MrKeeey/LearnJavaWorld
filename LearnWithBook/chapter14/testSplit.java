@@ -10,15 +10,12 @@ public class testSplit {
     public static void main(String[] args) {
         testSplit split = new testSplit();
         System.out.println(split.splitMovies());
-        //split.editFinalLine();
+        split.writeFile();
     }
-
 
     ArrayList<String> splitMovies() {
 
         int maxLength = 0;
-        StringBuilder space = new StringBuilder();
-
         try {
 
             File myFile = new File("C:\\Users\\lineg\\Desktop\\123");
@@ -26,18 +23,21 @@ public class testSplit {
             BufferedReader reader = new BufferedReader(fileReader);
 
             String line = null;
-
             while ((line = reader.readLine()) != null) {
-                editFinalLine(line);
+                String [] buffer = line.split("/");
+                result.addAll(Arrays.asList(buffer));
+                if (maxLength < buffer[0].length()) {
+                    maxLength = buffer[0].length();
+                }
             }
             reader.close();
 
-            space.append(" ".repeat(maxLength));
-
-            for (String token : result) {
-                System.out.println(token);
+            for (int i = 0; i < result.size(); i++) {
+                if (i % 2 == 0) {
+                    int count = maxLength - result.get(i).length();
+                    result.set(i, (result.get(i) + (" ".repeat(count + 2))));
+                }
             }
-            System.out.println(result.get(2));
 
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -45,44 +45,23 @@ public class testSplit {
         return result;
     }
 
-    public void editFinalLine(String incLine) {
-
-        String [] ogo = incLine.split("/");
-
-        for (String token : ogo) {
-            result.add(token);
-        }
-
-        /*try {
-
-            FileWriter writer = new FileWriter("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\123.123");
-            BufferedWriter fileWriter = new BufferedWriter(writer);
-
-            for (String token : result) {
-                fileWriter.write(token + "\n");
-            }
-            fileWriter.close();
-
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }*/
-
-    }
     public void writeFile () {
+
         try {
 
-            FileWriter writer = new FileWriter("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\123.123");
+            FileWriter writer = new FileWriter("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\testSplit");
             BufferedWriter fileWriter = new BufferedWriter(writer);
 
-            for (String token : result) {
-                fileWriter.write(token);
+            for (int i = 0; i < result.size(); i++) {
+                if (i % 2 == 0 || i == result.size() - 1) {
+                    fileWriter.write(result.get(i));
+                } else fileWriter.write(result.get(i) + "\n");
             }
             fileWriter.close();
 
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
     }
 }
 
