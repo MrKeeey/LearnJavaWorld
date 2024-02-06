@@ -7,6 +7,8 @@ import java.util.Arrays;
 public class testSplit {
 
     ArrayList<String> result = new ArrayList<String>();
+    private int maxLength = 0;
+
     public static void main(String[] args) {
         testSplit split = new testSplit();
         System.out.println(split.splitMovies());
@@ -15,7 +17,6 @@ public class testSplit {
 
     ArrayList<String> splitMovies() {
 
-        int maxLength = 0;
         try {
 
             File myFile = new File("C:\\Users\\lineg\\Desktop\\123");
@@ -32,13 +33,6 @@ public class testSplit {
             }
             reader.close();
 
-            for (int i = 0; i < result.size(); i++) {
-                if (i % 2 == 0) {
-                    int count = maxLength - result.get(i).length();
-                    result.set(i, (result.get(i) + (" ".repeat(count + 2))));
-                }
-            }
-
         } catch (Exception exception) {
             exception.printStackTrace();
         }
@@ -53,9 +47,14 @@ public class testSplit {
             BufferedWriter fileWriter = new BufferedWriter(writer);
 
             for (int i = 0; i < result.size(); i++) {
-                if (i % 2 == 0 || i == result.size() - 1) {
-                    fileWriter.write(result.get(i));
-                } else fileWriter.write(result.get(i) + "\n");
+                if (i % 2 == 0) {
+                    int count = maxLength - result.get(i).length();
+                    fileWriter.write(result.get(i) + (" ".repeat(count + 2)));
+                } else {
+                    if (i == result.size() - 1) {
+                        fileWriter.write(result.get(i));
+                    } else fileWriter.write(result.get(i) + "\n");
+                }
             }
             fileWriter.close();
 
