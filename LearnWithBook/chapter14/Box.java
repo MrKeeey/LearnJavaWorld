@@ -4,6 +4,8 @@ import java.io.*;
 
 public class Box implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = -8861974339969088104L;
     private int width, height;
 
     public void setWidth(int w) {
@@ -25,17 +27,13 @@ public class Box implements Serializable {
     public static void main(String[] args) {
 
         Box myBox = new Box();
-        myBox.setWidth(123);
+        myBox.setWidth(120);
         myBox.setHeight(345);
         System.out.println(myBox.getWidth() + " " + myBox.getHeight());
 
-        try {
-
-            FileOutputStream fs = new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\box.res");
-            ObjectOutputStream os = new ObjectOutputStream(fs);
-            os.writeObject(myBox);
-            os.close();
-
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\box.res"))) {
+            oos.writeObject(myBox);
+            //don't need oos.close();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
