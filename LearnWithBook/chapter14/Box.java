@@ -46,7 +46,7 @@ public class Box implements Serializable {
         try {
 
             FileInputStream fileInput = new FileInputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\box.res");
-            ObjectInput is = new ObjectInputStream(fileInput);
+            ObjectInputStream is = new ObjectInputStream(fileInput);
             Object myBoxRestore = is.readObject();
             myBox = (Box) myBoxRestore;                 //Box myBoxRestore = (Box) is.readObject(); myBoxRestore.getWidth()
             is.close();
