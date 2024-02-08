@@ -4,6 +4,10 @@ import javax.sound.midi.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.*;
 
 public class BeatBox {
@@ -52,6 +56,14 @@ public class BeatBox {
         JButton downTempo = new JButton("Tempo Down");
         downTempo.addActionListener(new MydownTempoListener());
         buttonBox.add(downTempo);
+
+        JButton saveCheckboxInstruments = new JButton("Save Instruments");
+        saveCheckboxInstruments.addActionListener(new saveCheckboxInstrumentsListener());
+        buttonBox.add(saveCheckboxInstruments);
+
+        JButton loadCheckboxInstruments = new JButton("Load Instruments");
+        loadCheckboxInstruments.addActionListener(new loadCheckboxInstrumentsListener());
+        buttonBox.add(loadCheckboxInstruments);
 
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
@@ -171,6 +183,53 @@ public class BeatBox {
         public void actionPerformed(ActionEvent e) {
             float tempoFactor = sequencer.getTempoFactor();
             sequencer.setTempoFactor((float) (tempoFactor * .5));
+        }
+    }
+    public class saveCheckboxInstrumentsListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
+            boolean[] checkboxState = new boolean[256];
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox checkBox = checkboxList.get(i);
+                if (checkBox.isSelected()) {
+                    checkboxState[i] = true;
+                }
+            }
+
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter13\\Checkbox.ser"))) {
+                oos.writeObject(checkboxState);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        }
+    }
+
+
+    public class loadCheckboxInstrumentsListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
+            boolean[] checkboxState = null;
+
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter13\\Checkbox.ser"))) {
+                checkboxState = (boolean[]) ois.readObject();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox checkBox = checkboxList.get(i);
+                if (checkboxState[i]) {
+                    checkBox.setSelected(true);
+                } else {
+                    checkBox.setSelected(false);
+                }
+            }
+
+            sequencer.stop();
+            buildTrackAndStart();
+
         }
     }
 }
