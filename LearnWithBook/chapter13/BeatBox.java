@@ -54,15 +54,15 @@ public class BeatBox {
         buttonBox.add(upTempo);
 
         JButton downTempo = new JButton("Tempo Down");
-        downTempo.addActionListener(new MydownTempoListener());
+        downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
         JButton saveCheckboxInstruments = new JButton("Save Instruments");
-        saveCheckboxInstruments.addActionListener(new saveCheckboxInstrumentsListener());
+        saveCheckboxInstruments.addActionListener(new SaveCheckboxInstrumentsListener());
         buttonBox.add(saveCheckboxInstruments);
 
         JButton loadCheckboxInstruments = new JButton("Load Instruments");
-        loadCheckboxInstruments.addActionListener(new loadCheckboxInstrumentsListener());
+        loadCheckboxInstruments.addActionListener(new LoadCheckboxInstrumentsListener());
         buttonBox.add(loadCheckboxInstruments);
 
         Box nameBox = new Box(BoxLayout.Y_AXIS);
@@ -179,13 +179,14 @@ public class BeatBox {
         }
     }
 
-    public class MydownTempoListener implements ActionListener {
+    public class MyDownTempoListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             float tempoFactor = sequencer.getTempoFactor();
             sequencer.setTempoFactor((float) (tempoFactor * .5));
         }
     }
-    public class saveCheckboxInstrumentsListener implements ActionListener {
+
+    public class SaveCheckboxInstrumentsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
             boolean[] checkboxState = new boolean[256];
@@ -197,25 +198,35 @@ public class BeatBox {
                 }
             }
 
-            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter13\\Checkbox.ser"))) {
-                oos.writeObject(checkboxState);
-            } catch (Exception exception) {
-                exception.printStackTrace();
+            JFileChooser fileSave = new JFileChooser();
+            fileSave.showSaveDialog(theFrame);
+
+            //try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter13\\Checkbox.ser"))) {
+            if (fileSave.getSelectedFile() != null) {
+                try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileSave.getSelectedFile()))) {
+                    oos.writeObject(checkboxState);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
 
         }
     }
 
-
-    public class loadCheckboxInstrumentsListener implements ActionListener {
+    public class LoadCheckboxInstrumentsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
             boolean[] checkboxState = null;
 
-            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter13\\Checkbox.ser"))) {
-                checkboxState = (boolean[]) ois.readObject();
-            } catch (Exception exception) {
-                exception.printStackTrace();
+            JFileChooser fileOpen = new JFileChooser();
+            fileOpen.showOpenDialog(theFrame);
+
+            if (fileOpen.getSelectedFile() != null) {
+                try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileOpen.getSelectedFile()))) {
+                    checkboxState = (boolean[]) ois.readObject();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
 
             for (int i = 0; i < 256; i++) {

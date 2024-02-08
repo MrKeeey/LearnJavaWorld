@@ -84,7 +84,9 @@ public class QuizCardPlayer {
         public void actionPerformed(ActionEvent e) {
             JFileChooser fileOpen = new JFileChooser();
             fileOpen.showOpenDialog(frame);
-            loadFile(fileOpen.getSelectedFile());
+            if (fileOpen.getSelectedFile() != null) {
+                loadFile(fileOpen.getSelectedFile());
+            }
         }
     }
 
