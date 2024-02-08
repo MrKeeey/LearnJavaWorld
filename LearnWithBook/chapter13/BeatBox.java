@@ -216,7 +216,7 @@ public class BeatBox {
     public class LoadCheckboxInstrumentsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
-            boolean[] checkboxState = null;
+            boolean[] checkboxState = new boolean[256]; //null??
 
             JFileChooser fileOpen = new JFileChooser();
             fileOpen.showOpenDialog(theFrame);
