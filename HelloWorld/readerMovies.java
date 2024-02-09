@@ -8,7 +8,7 @@ import java.util.List;
 public class readerMovies {
 
     ArrayList<String> result = new ArrayList<String>();
-    private final int maxLength = 0;
+    private int maxNameLength, maxSeriesLength, maxDescriptionLength;
 
     public static void main(String[] args) {
         readerMovies myFile = new readerMovies();
@@ -39,17 +39,38 @@ public class readerMovies {
                         bufferSplit[0] = firstSplit[0].trim();
                         bufferSplit[1] = "s" + firstSplit[1].trim();
                         bufferSplit[2] = "--";
+                        if (maxNameLength < bufferSplit[0].length()) {
+                            maxNameLength = bufferSplit[0].length();
+                        }
+                        if (maxSeriesLength < bufferSplit[1].length()) {
+                            maxSeriesLength = bufferSplit[1].length();
+                        }
+                        if (maxDescriptionLength < bufferSplit[2].length()) {
+                            maxDescriptionLength = bufferSplit[2].length();
+                        }
 
                         if (bufferSplit[1].contains("/")) {
                             String[] secondSplit = bufferSplit[1].split("/");
                             bufferSplit[1] = secondSplit[0].trim();
                             bufferSplit[2] = secondSplit[1].trim();
+                            if (maxSeriesLength < bufferSplit[1].length()) {
+                                maxSeriesLength = bufferSplit[1].length();
+                            }
+                            if (maxDescriptionLength < bufferSplit[2].length()) {
+                                maxDescriptionLength = bufferSplit[2].length();
+                            }
                         }
 
                         if (bufferSplit[1].contains("з")) {
                             String[] secondSplit = bufferSplit[1].split("з");
                             bufferSplit[1] = secondSplit[0].trim();
                             bufferSplit[2] = "з" + secondSplit[1].trim();
+                            if (maxSeriesLength < bufferSplit[1].length()) {
+                                maxSeriesLength = bufferSplit[1].length();
+                            }
+                            if (maxDescriptionLength < bufferSplit[2].length()) {
+                                maxDescriptionLength = bufferSplit[2].length();
+                            }
                         }
 
                         if (bufferSplit[1].contains("?")) {
@@ -57,6 +78,12 @@ public class readerMovies {
                             String[] secondSplit = bufferSplit[1].split("\\?");
                             bufferSplit[1] = secondSplit[0].trim();
                             bufferSplit[2] = "???";
+                            if (maxSeriesLength < bufferSplit[1].length()) {
+                                maxSeriesLength = bufferSplit[1].length();
+                            }
+                            if (maxDescriptionLength < bufferSplit[2].length()) {
+                                maxDescriptionLength = bufferSplit[2].length();
+                            }
                         }
 
                         result.addAll(Arrays.asList(bufferSplit));
@@ -69,23 +96,50 @@ public class readerMovies {
                             bufferSplit[0] = firstSplit[0].trim();
                             bufferSplit[1] = "#" + firstSplit[1].trim();
                             bufferSplit[2] = "--";
+                            if (maxNameLength < bufferSplit[0].length()) {
+                                maxNameLength = bufferSplit[0].length();
+                            }
+                            if (maxSeriesLength < bufferSplit[1].length()) {
+                                maxSeriesLength = bufferSplit[1].length();
+                            }
+                            if (maxDescriptionLength < bufferSplit[2].length()) {
+                                maxDescriptionLength = bufferSplit[2].length();
+                            }
 
                             if (bufferSplit[1].contains("/")) {
                                 String[] secondSplit = bufferSplit[1].split("/");
                                 bufferSplit[1] = secondSplit[0].trim();
                                 bufferSplit[2] = secondSplit[1].trim();
+                                if (maxSeriesLength < bufferSplit[1].length()) {
+                                    maxSeriesLength = bufferSplit[1].length();
+                                }
+                                if (maxDescriptionLength < bufferSplit[2].length()) {
+                                    maxDescriptionLength = bufferSplit[2].length();
+                                }
                             }
 
                             if (bufferSplit[1].contains("з")) {
                                 String[] secondSplit = bufferSplit[1].split("з");
                                 bufferSplit[1] = secondSplit[0].trim();
                                 bufferSplit[2] = "з" + secondSplit[1].trim();
+                                if (maxSeriesLength < bufferSplit[1].length()) {
+                                    maxSeriesLength = bufferSplit[1].length();
+                                }
+                                if (maxDescriptionLength < bufferSplit[2].length()) {
+                                    maxDescriptionLength = bufferSplit[2].length();
+                                }
                             }
 
                             if (bufferSplit[1].contains("?")) {
                                 String[] secondSplit = bufferSplit[1].split("\\?");
                                 bufferSplit[1] = secondSplit[0].trim();
                                 bufferSplit[2] = "???";
+                                if (maxSeriesLength < bufferSplit[1].length()) {
+                                    maxSeriesLength = bufferSplit[1].length();
+                                }
+                                if (maxDescriptionLength < bufferSplit[2].length()) {
+                                    maxDescriptionLength = bufferSplit[2].length();
+                                }
                             }
 
                             result.addAll(Arrays.asList(bufferSplit));
@@ -96,6 +150,11 @@ public class readerMovies {
                             bufferSplit[1] = "--";
                             bufferSplit[2] = "--";
                             System.out.println(line);
+
+                            if (maxNameLength < bufferSplit[0].length()) {
+                                maxNameLength = bufferSplit[0].length();
+                            }
+
                             result.addAll(Arrays.asList(bufferSplit));
                         }
                     }
@@ -167,10 +226,24 @@ public class readerMovies {
             FileWriter fileWriter = new FileWriter("Z:\\NW\\y\\LearnWorld\\HelloWorld\\NewDataMovies.txt");
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
+            int count = maxNameLength + maxSeriesLength + maxDescriptionLength + 12;
+            writer.write("----" + "-".repeat(count) + "----" + "\n");
+            writer.write("||  " + "Название Шоу" + " ".repeat(maxNameLength - "Название Шоу".length() + 2) +
+                    "|  " + "Сезон / Серия" + " ".repeat(maxSeriesLength - "Сезон / Серия".length() + 2) +
+                    "|  " + "Описание" + " ".repeat(maxDescriptionLength - "Описание".length() + 2) +  "  ||" + "\n");
+            writer.write("----" + "-".repeat(count) + "----" + "\n");
+
             for (int i = 0; i < result.size(); i += 3) {
-                writer.write(result.get(i) + "  " + result.get(i + 1) + "  " + result.get(i + 2) + "\n");
+                int nameLength = maxNameLength - result.get(i).length();
+                int seriesLength = maxSeriesLength - result.get(i + 1).length();
+                int descriptionLength = maxDescriptionLength - result.get(i + 2).length();
+
+                writer.write("||  " + result.get(i) + " ".repeat(nameLength + 2) + "|  " +
+                        result.get(i + 1) + " ".repeat(seriesLength + 2) + "|  " +
+                        result.get(i + 2) + " ".repeat(descriptionLength + 2) + "  ||" + "\n");
             }
 
+            writer.write("----" + "-".repeat(count) + "----");
             writer.close();
 
         } catch (Exception ex) {
