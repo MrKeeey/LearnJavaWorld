@@ -39,7 +39,6 @@ class DungeonTest {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
         System.out.println(d.getX() + d.getY() + d.getZ());
     }
 }

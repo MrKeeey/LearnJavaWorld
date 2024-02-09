@@ -1,8 +1,6 @@
 package HelloWorld;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,14 +11,17 @@ public class readerMovies {
     private final int maxLength = 0;
 
     public static void main(String[] args) {
-        readerMovies readFile = new readerMovies();
-        readFile.go();
+        readerMovies myFile = new readerMovies();
+        myFile.readMoviesFile();
+        myFile.writeNewMoviesFile();
     }
 
-    public void go() {
+
+
+    public void readMoviesFile() {
         try {
 
-            File myFile = new File("Z:\\NW\\y\\LearnWorld\\HelloWorld\\dataFilms.txt");
+            File myFile = new File("Z:\\NW\\y\\LearnWorld\\HelloWorld\\dataMovies.txt");
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
@@ -35,7 +36,7 @@ public class readerMovies {
                 //}
             }*/
 
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 40; i++) {
                 line = reader.readLine();
 
                 if (!line.equals("")) {
@@ -61,10 +62,27 @@ public class readerMovies {
                 }
             }
             reader.close();
-            System.out.println(result);
+            System.out.println(result.get(1));
 
         } catch (Exception exception) {
             exception.printStackTrace();
+        }
+    }
+
+    public void writeNewMoviesFile() {
+
+        try {
+
+            FileWriter fileWriter = new FileWriter("Z:\\NW\\y\\LearnWorld\\HelloWorld\\NewDataMovies.txt");
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+
+            for (String str:result) {
+                writer.write(str);
+
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }
