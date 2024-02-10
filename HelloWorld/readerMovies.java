@@ -3,6 +3,7 @@ package HelloWorld;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class readerMovies {
 
@@ -133,6 +134,11 @@ public class readerMovies {
                 String[] firstSplit = line.split(splitSymbol);
                 bufferSplit[0] = firstSplit[0].trim();
                 bufferSplit[1] = splitSymbol + firstSplit[1].trim();
+                if (firstSplit.length > 2) {
+                    bufferSplit[1] = splitSymbol + firstSplit[1].trim() + splitSymbol + firstSplit[2];
+                } else {
+                    bufferSplit[1] = splitSymbol + firstSplit[1].trim();
+                }
                 bufferSplit[2] = "--";
                 makeLengthTableElements(2);
             }
@@ -150,14 +156,16 @@ public class readerMovies {
                         bufferSplit[2] = "з" + secondSplit[1].trim();
                         makeLengthTableElements(3);
                     }
-
                     case "?"-> {
                         String[] secondSplit = bufferSplit[1].split("\\?");
                         bufferSplit[1] = secondSplit[0].trim();
-                        bufferSplit[2] = "???";
+                        if (secondSplit.length > 1) {
+                            bufferSplit[2] = secondSplit[3].trim();
+                        } else {
+                            bufferSplit[2] = "???";
+                        }
                         makeLengthTableElements(3);
                     }
-
                     case "13 " -> {
                         String[] secondSplit = bufferSplit[1].split("13 ");
                         System.out.println(Arrays.toString(secondSplit));
@@ -165,14 +173,12 @@ public class readerMovies {
                         bufferSplit[2] = "13 " + secondSplit[1].trim();
                         makeLengthTableElements(3);
                     }
-
                     case "202" -> {
                         String[] secondSplit = bufferSplit[1].split("202");
                         bufferSplit[1] = secondSplit[0].trim();
                         bufferSplit[2] = "202" + secondSplit[1].trim();
                         makeLengthTableElements(3);
                     }
-
                     default -> System.out.println("Wrong split element");
                 }
             }
