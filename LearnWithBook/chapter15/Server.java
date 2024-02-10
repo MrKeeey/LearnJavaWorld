@@ -24,7 +24,6 @@ public class Server {
             writer.print("I'm Meow ><");
 
             System.out.println("End work");
-
             writer.close();
 
         } catch (Exception exception) {

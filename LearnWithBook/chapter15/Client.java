@@ -17,13 +17,10 @@ public class Client {
             InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
             BufferedReader reader = new BufferedReader(inputStreamReader);
 
-            //System.out.println(reader.readLine());
-            //System.out.println(reader.readLine());
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
-
             reader.close();
 
         } catch (Exception exception) {
