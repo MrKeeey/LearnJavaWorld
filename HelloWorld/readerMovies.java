@@ -26,7 +26,7 @@ public class readerMovies {
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            for (int i = 0; i < 210; i++) {
+            for (int i = 0; i < 250; i++) {
                 line = reader.readLine();
 
                 if (!line.equals("")) {
@@ -106,7 +106,8 @@ public class readerMovies {
             writer.write("-".repeat(count) + "\n");
             writer.write("||  " + "Название Фильма" + " ".repeat(maxNameLength - "Название Фильма".length()) +
                     "  |  " + "Название на Английском" + " ".repeat(maxSeriesLength - "Название на Английском".length()) +
-                    "  |  " + "Год" + " ".repeat(maxDescriptionLength - "Год".length()) +  "  ||" + "\n");
+                    "  |  " + "Год" + " ".repeat(maxDescriptionLength - "Год".length()) +
+                    "  |  " + "Описание" + " ".repeat("Описание".length()) +  "  ||" + "\n");
             writer.write("-".repeat(count) + "\n");
 
             for (int i = 429; i < result.size(); i += 3) {
