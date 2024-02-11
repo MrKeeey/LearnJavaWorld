@@ -26,7 +26,7 @@ public class readerMovies {
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            for (int i = 0; i < 200; i++) {
+            for (int i = 0; i < 210; i++) {
                 line = reader.readLine();
 
                 if (!line.equals("")) {
@@ -47,8 +47,8 @@ public class readerMovies {
                             makeSplit(13, "\\(1");
                             secondSplit();
                         } else {
-                                makeSplit(11, "(");
-                                secondSplit();
+                            makeSplit(11, "(");
+                            secondSplit();
                         }
                     } else {
                         makeSplit(0, "");
@@ -72,7 +72,7 @@ public class readerMovies {
             FileWriter fileWriter = new FileWriter("Z:\\NW\\y\\LearnWorld\\HelloWorld\\NewDataMovies.txt");
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
-            makeLengthTableElements(0, 102, 12, 13, 8);
+            makeLengthTableElements(0, 102, "Название Шоу".length(), "Сезон / Серия".length(), "Описание".length());
             int count = maxNameLength + maxSeriesLength + maxDescriptionLength + 18;
 
             writer.write("-".repeat(count) + "\n");
@@ -87,7 +87,7 @@ public class readerMovies {
             }
             writer.write("-".repeat(count) + "\n\n");
 
-            makeLengthTableElements(102, 429, 16, 13, 8);
+            makeLengthTableElements(102, 429, "Название Сериала".length(), "Сезон / Серия".length(), "Описание".length());
             count = maxNameLength + maxSeriesLength + maxDescriptionLength + 18;
             writer.write("-".repeat(count) + "\n");
             writer.write("||  " + "Название Сериала" + " ".repeat(maxNameLength - "Название Сериала".length()) +
@@ -101,7 +101,7 @@ public class readerMovies {
             }
             writer.write("-".repeat(count) + "\n\n");
 
-            makeLengthTableElements(429, result.size(), 15, 22, 3);
+            makeLengthTableElements(429, result.size(), "Название Фильма".length(), "Название на Английском".length(), "Год".length());
             count = maxNameLength + maxSeriesLength + maxDescriptionLength + 18;
             writer.write("-".repeat(count) + "\n");
             writer.write("||  " + "Название Фильма" + " ".repeat(maxNameLength - "Название Фильма".length()) +
