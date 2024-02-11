@@ -9,9 +9,7 @@ public class readerMovies {
     ArrayList<String> result = new ArrayList<String>();
     String[] bufferSplit = new String [3];
     String line = null;
-    private int maxNameLength = 12;
-    private int maxSeriesLength = 22;
-    private int maxDescriptionLength = 8;
+    private int maxNameLength, maxSeriesLength, maxDescriptionLength;
 
     public static void main(String[] args) {
         readerMovies myFile = new readerMovies();
@@ -66,7 +64,7 @@ public class readerMovies {
             FileWriter fileWriter = new FileWriter("Z:\\NW\\y\\LearnWorld\\HelloWorld\\NewDataMovies.txt");
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
-            makeLengthTableElements();
+            makeLengthTableElements(0, 102, 12, 13, 8);
             int count = maxNameLength + maxSeriesLength + maxDescriptionLength + 18;
 
             writer.write("-".repeat(count) + "\n");
@@ -77,10 +75,12 @@ public class readerMovies {
             for (int i = 0; i < 102; i += 3) {
                 writer.write("||  " + result.get(i) + " ".repeat(maxNameLength - result.get(i).length()) + "  |  " +
                         result.get(i + 1) + " ".repeat(maxSeriesLength - result.get(i + 1).length()) + "  |  " +
-                        result.get(i + 2) + " ".repeat(maxDescriptionLength - result.get(i + 2).length() ) + "  ||" + "\n");
+                        result.get(i + 2) + " ".repeat(maxDescriptionLength - result.get(i + 2).length()) + "  ||" + "\n");
             }
             writer.write("-".repeat(count) + "\n\n");
 
+            makeLengthTableElements(102, 429, 16, 13, 8);
+            count = maxNameLength + maxSeriesLength + maxDescriptionLength + 18;
             writer.write("-".repeat(count) + "\n");
             writer.write("||  " + "Название Сериала" + " ".repeat(maxNameLength - "Название Сериала".length()) +
                     "  |  " + "Сезон / Серия" + " ".repeat(maxSeriesLength - "Сезон / Серия".length()) +
@@ -93,6 +93,8 @@ public class readerMovies {
             }
             writer.write("-".repeat(count) + "\n\n");
 
+            makeLengthTableElements(429, result.size(), 15, 22, 3);
+            count = maxNameLength + maxSeriesLength + maxDescriptionLength + 18;
             writer.write("-".repeat(count) + "\n");
             writer.write("||  " + "Название Фильма" + " ".repeat(maxNameLength - "Название Фильма".length()) +
                     "  |  " + "Название на Английском" + " ".repeat(maxSeriesLength - "Название на Английском".length()) +
@@ -114,9 +116,13 @@ public class readerMovies {
 
     }
 
-    public void makeLengthTableElements() {
+    public void makeLengthTableElements(int fromElement, int toElement, int maxNameL, int maxSeriesL, int maxDescriptionL) {
 
-        for (int i = 0; i < result.size(); i +=3) {
+        maxNameLength = maxNameL;
+        maxSeriesLength = maxSeriesL;
+        maxDescriptionLength = maxDescriptionL;
+
+        for (int i = fromElement; i < toElement; i +=3) {
             if (maxNameLength < result.get(i).length()) {
                 maxNameLength = result.get(i).length();
             }
