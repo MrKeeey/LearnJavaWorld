@@ -10,7 +10,7 @@ public class readerMovies {
     String[] bufferSplit = new String [3];
     String line = null;
     private int maxNameLength = 12;
-    private int maxSeriesLength = 13;
+    private int maxSeriesLength = 22;
     private int maxDescriptionLength = 8;
 
     public static void main(String[] args) {
@@ -21,31 +21,33 @@ public class readerMovies {
 
 
     public void test() {
+
         try {
 
-            File myFile = new File("Z:\\NW\\y\\LearnWorld\\HelloWorld\\dataMovies.txt");
+            File myFile = new File("Z:\\NW\\y\\LearnWorld\\HelloWorld\\prosmfilms.txt");
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            for (int i = 0; i < 157; i++) {
+            for (int i = 0; i < 160; i++) {
                 line = reader.readLine();
 
                 if (!line.equals("")) {
-                    if (line.contains("s")) {
-
-                        makeSplit(1, "s");
+                    if (line.contains("s0")) {
+                        makeSplit(1, "s0");
                         secondSplit();
-
+                    } else if (line.contains("s1")) {
+                        makeSplit(1, "s1");
+                        secondSplit();
                     } else if (line.contains("#")) {
-
-                            makeSplit(1, "#");
-                            secondSplit();
-
-                        } else {
-                            makeSplit(0, "");
-                            result.addAll(Arrays.asList(bufferSplit));
-                        }
-
+                        makeSplit(1, "#");
+                        secondSplit();
+                    } else if(line.contains("(")) {
+                        //makeSplit(1, "(");
+                        //secondSplit();
+                    } else {
+                        makeSplit(0, "");
+                        result.addAll(Arrays.asList(bufferSplit));
+                    }
                 }
             }
             reader.close();
@@ -54,6 +56,7 @@ public class readerMovies {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+
     }
 
     public void writeNewMoviesFile() {
@@ -65,28 +68,50 @@ public class readerMovies {
 
             makeLengthTableElements();
             int count = maxNameLength + maxSeriesLength + maxDescriptionLength + 18;
+
             writer.write("-".repeat(count) + "\n");
             writer.write("||  " + "Название Шоу" + " ".repeat(maxNameLength - "Название Шоу".length()) +
                     "  |  " + "Сезон / Серия" + " ".repeat(maxSeriesLength - "Сезон / Серия".length()) +
                     "  |  " + "Описание" + " ".repeat(maxDescriptionLength - "Описание".length()) +  "  ||" + "\n");
             writer.write("-".repeat(count) + "\n");
-
-            for (int i = 0; i < result.size(); i += 3) {
-                int nameLength = maxNameLength - result.get(i).length();
-                int seriesLength = maxSeriesLength - result.get(i + 1).length();
-                int descriptionLength = maxDescriptionLength - result.get(i + 2).length();
-
-                writer.write("||  " + result.get(i) + " ".repeat(nameLength) + "  |  " +
-                        result.get(i + 1) + " ".repeat(seriesLength) + "  |  " +
-                        result.get(i + 2) + " ".repeat(descriptionLength ) + "  ||" + "\n");
+            for (int i = 0; i < 102; i += 3) {
+                writer.write("||  " + result.get(i) + " ".repeat(maxNameLength - result.get(i).length()) + "  |  " +
+                        result.get(i + 1) + " ".repeat(maxSeriesLength - result.get(i + 1).length()) + "  |  " +
+                        result.get(i + 2) + " ".repeat(maxDescriptionLength - result.get(i + 2).length() ) + "  ||" + "\n");
             }
+            writer.write("-".repeat(count) + "\n\n");
 
-            writer.write("-".repeat(count));
+            writer.write("-".repeat(count) + "\n");
+            writer.write("||  " + "Название Сериала" + " ".repeat(maxNameLength - "Название Сериала".length()) +
+                    "  |  " + "Сезон / Серия" + " ".repeat(maxSeriesLength - "Сезон / Серия".length()) +
+                    "  |  " + "Описание" + " ".repeat(maxDescriptionLength - "Описание".length()) +  "  ||" + "\n");
+            writer.write("-".repeat(count) + "\n");
+            for (int i = 102; i < 429; i += 3) {
+                writer.write("||  " + result.get(i) + " ".repeat(maxNameLength - result.get(i).length()) + "  |  " +
+                        result.get(i + 1) + " ".repeat(maxSeriesLength - result.get(i + 1).length()) + "  |  " +
+                        result.get(i + 2) + " ".repeat(maxDescriptionLength - result.get(i + 2).length() ) + "  ||" + "\n");
+            }
+            writer.write("-".repeat(count) + "\n\n");
+
+            writer.write("-".repeat(count) + "\n");
+            writer.write("||  " + "Название Фильма" + " ".repeat(maxNameLength - "Название Фильма".length()) +
+                    "  |  " + "Название на Английском" + " ".repeat(maxSeriesLength - "Название на Английском".length()) +
+                    "  |  " + "Год" + " ".repeat(maxDescriptionLength - "Год".length()) +  "  ||" + "\n");
+            writer.write("-".repeat(count) + "\n");
+
+            for (int i = 429; i < result.size(); i += 3) {
+                writer.write("||  " + result.get(i) + " ".repeat(maxNameLength - result.get(i).length()) + "  |  " +
+                        result.get(i + 1) + " ".repeat(maxSeriesLength - result.get(i + 1).length()) + "  |  " +
+                        result.get(i + 2) + " ".repeat(maxDescriptionLength - result.get(i + 2).length() ) + "  ||" + "\n");
+            }
+            writer.write("-".repeat(count) + "\n\n");
+
             writer.close();
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+
     }
 
     public void makeLengthTableElements() {
@@ -120,11 +145,6 @@ public class readerMovies {
                 String[] firstSplit = line.split(splitSymbol);
                 bufferSplit[0] = firstSplit[0].trim();
                 bufferSplit[1] = splitSymbol + firstSplit[1].trim();
-                if (firstSplit.length > 2) {
-                    bufferSplit[1] = splitSymbol + firstSplit[1].trim() + splitSymbol + firstSplit[2];
-                } else {
-                    bufferSplit[1] = splitSymbol + firstSplit[1].trim();
-                }
                 bufferSplit[2] = "--";
             }
             case 2 -> {
@@ -148,12 +168,6 @@ public class readerMovies {
                             bufferSplit[2] = "???";
                         }
                     }
-                    case "13 " -> {
-                        String[] secondSplit = bufferSplit[1].split("13 ");
-                        System.out.println(Arrays.toString(secondSplit));
-                        bufferSplit[1] = secondSplit[0].trim();
-                        bufferSplit[2] = "13 " + secondSplit[1].trim();
-                    }
                     case "202" -> {
                         String[] secondSplit = bufferSplit[1].split("202");
                         bufferSplit[1] = secondSplit[0].trim();
@@ -164,9 +178,11 @@ public class readerMovies {
             }
             default -> System.out.println("Wrong split number.");
         }
+
     }
 
     public void secondSplit() {
+
         if (bufferSplit[1].contains("/")) {
             makeSplit(2, "/");
         }
@@ -182,7 +198,7 @@ public class readerMovies {
         if (bufferSplit[1].contains("202")) {
             makeSplit(2, "202");
         }
-
         result.addAll(Arrays.asList(bufferSplit));
+
     }
 }
