@@ -26,7 +26,7 @@ public class readerMovies {
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            for (int i = 0; i < 160; i++) {
+            for (int i = 0; i < 200; i++) {
                 line = reader.readLine();
 
                 if (!line.equals("")) {
@@ -40,8 +40,8 @@ public class readerMovies {
                         makeSplit(1, "#");
                         secondSplit();
                     } else if(line.contains("(")) {
-                        //makeSplit(1, "(");
-                        //secondSplit();
+                        makeSplit(11, "(");
+                        secondSplit();
                     } else {
                         makeSplit(0, "");
                         result.addAll(Arrays.asList(bufferSplit));
@@ -151,6 +151,13 @@ public class readerMovies {
                 String[] firstSplit = line.split(splitSymbol);
                 bufferSplit[0] = firstSplit[0].trim();
                 bufferSplit[1] = splitSymbol + firstSplit[1].trim();
+                bufferSplit[2] = "--";
+            }
+            case 11 -> {
+                System.out.println(line);
+                String[] firstSplit = line.split("\\(");
+                bufferSplit[0] = firstSplit[0].trim();
+                bufferSplit[1] = "(" + firstSplit[1].trim();
                 bufferSplit[2] = "--";
             }
             case 2 -> {
