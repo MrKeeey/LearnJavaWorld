@@ -40,8 +40,16 @@ public class readerMovies {
                         makeSplit(1, "#");
                         secondSplit();
                     } else if(line.contains("(")) {
-                        makeSplit(11, "(");
-                        secondSplit();
+                        if (line.contains("(2")) {
+                            makeSplit(12, "\\(2");
+                            secondSplit();
+                        } else if (line.contains("(1")) {
+                            makeSplit(13, "\\(1");
+                            secondSplit();
+                        } else {
+                                makeSplit(11, "(");
+                                secondSplit();
+                        }
                     } else {
                         makeSplit(0, "");
                         result.addAll(Arrays.asList(bufferSplit));
@@ -157,8 +165,22 @@ public class readerMovies {
                 System.out.println(line);
                 String[] firstSplit = line.split("\\(");
                 bufferSplit[0] = firstSplit[0].trim();
-                bufferSplit[1] = "(" + firstSplit[1].trim();
+                bufferSplit[1] = firstSplit[1].trim();
                 bufferSplit[2] = "--";
+            }
+            case 12 -> {
+                System.out.println(line);
+                String[] firstSplit = line.split("\\(2");
+                bufferSplit[0] = firstSplit[0].trim();
+                bufferSplit[1] = "--";
+                bufferSplit[2] = "2" + firstSplit[1].trim();
+            }
+            case 13 -> {
+                System.out.println(line);
+                String[] firstSplit = line.split("\\(1");
+                bufferSplit[0] = firstSplit[0].trim();
+                bufferSplit[1] = "--";
+                bufferSplit[2] = "1" + firstSplit[1].trim();
             }
             case 2 -> {
                 switch (splitSymbol) {
@@ -186,6 +208,10 @@ public class readerMovies {
                         bufferSplit[1] = secondSplit[0].trim();
                         bufferSplit[2] = "202" + secondSplit[1].trim();
                     }
+                    case ")" -> {
+                        String[] secondSplit = bufferSplit[2].split("\\)");
+                        bufferSplit[2] = secondSplit[0].trim();
+                    }
                     default -> System.out.println("Wrong split element");
                 }
             }
@@ -210,6 +236,9 @@ public class readerMovies {
         }
         if (bufferSplit[1].contains("202")) {
             makeSplit(2, "202");
+        }
+        if (bufferSplit[2].contains(")")) {
+            makeSplit(2, ")");
         }
         result.addAll(Arrays.asList(bufferSplit));
 
