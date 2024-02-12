@@ -17,10 +17,9 @@ public class Client {
             InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
             BufferedReader reader = new BufferedReader(inputStreamReader);
 
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
+            String line = reader.readLine();
+            System.out.println(line);
+
             reader.close();
 
         } catch (Exception exception) {
