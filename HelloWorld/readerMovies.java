@@ -26,7 +26,7 @@ public class readerMovies {
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            for (int i = 0; i < 250; i++) {
+            for (int i = 0; i < 550; i++) {
                 line = reader.readLine();
 
                 if (!line.equals("")) {
