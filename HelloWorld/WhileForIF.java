@@ -1,3 +1,5 @@
+package HelloWorld;
+
 public class WhileForIF {
     public static void main(String[] args) {
         int x = 15, y = 0;
