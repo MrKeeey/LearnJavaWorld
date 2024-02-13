@@ -26,12 +26,12 @@ class DungeonTest {
 
         try {
 
-            FileOutputStream fos = new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\dg.ser");
+            FileOutputStream fos = new FileOutputStream("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\dg.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(d);
             oos.close();
 
-            FileInputStream fis = new FileInputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\dg.ser");
+            FileInputStream fis = new FileInputStream("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\dg.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
             d = (DungeonGame) ois.readObject();
             ois.close();

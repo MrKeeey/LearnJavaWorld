@@ -1,4 +1,5 @@
 package LearnWithBook.chapter5;
+
 public class MixFor5 {
     public static void main(String[] args) {
         int x = 0, y = 30;

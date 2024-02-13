@@ -31,7 +31,7 @@ public class Box implements Serializable {
         myBox.setHeight(345);
         System.out.println(myBox.getWidth() + " " + myBox.getHeight());
 
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\box.res"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\box.res"))) {
             oos.writeObject(myBox);
             //don't need oos.close();
         } catch (Exception exception) {
@@ -45,7 +45,7 @@ public class Box implements Serializable {
 
         try {
 
-            FileInputStream fileInput = new FileInputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\box.res");
+            FileInputStream fileInput = new FileInputStream("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\box.res");
             ObjectInputStream is = new ObjectInputStream(fileInput);
             Object myBoxRestore = is.readObject();
             myBox = (Box) myBoxRestore;                 //Box myBoxRestore = (Box) is.readObject(); myBoxRestore.getWidth()

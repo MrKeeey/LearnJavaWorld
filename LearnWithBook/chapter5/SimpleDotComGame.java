@@ -1,4 +1,7 @@
+package LearnWithBook.chapter5;
+
 import java.util.Scanner;
+
 public class SimpleDotComGame {
     public static void main(String[] args) {
         SimpleDotCom play = new SimpleDotCom();

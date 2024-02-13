@@ -19,7 +19,7 @@ public class testSplit {
 
         try {
 
-            File myFile = new File("C:\\Users\\lineg\\Desktop\\123");
+            File myFile = new File("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\123");
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
@@ -43,7 +43,7 @@ public class testSplit {
 
         try {
 
-            FileWriter writer = new FileWriter("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\testSplit");
+            FileWriter writer = new FileWriter("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\testSplit");
             BufferedWriter fileWriter = new BufferedWriter(writer);
 
             for (int i = 0; i < result.size(); i++) {

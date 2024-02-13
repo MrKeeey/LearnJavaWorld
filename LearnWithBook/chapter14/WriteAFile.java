@@ -6,7 +6,7 @@ public class WriteAFile {
     public static void main(String[] args) {
         try {
 
-            FileWriter writer = new FileWriter("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\afile.meow");
+            FileWriter writer = new FileWriter("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\afile.meow");
             writer.write("Hello, the file was written successfully.");
             writer.close();
 

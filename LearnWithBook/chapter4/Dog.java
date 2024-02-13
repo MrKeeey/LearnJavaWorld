@@ -1,4 +1,5 @@
 package LearnWithBook.chapter4;
+
 public class Dog {
 
     int size;

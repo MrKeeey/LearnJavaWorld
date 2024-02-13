@@ -1,3 +1,5 @@
+package LearnWithBook.chapter2;
+
 public class Dog {
     int size;
     String breed, name;

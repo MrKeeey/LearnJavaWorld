@@ -1,7 +1,5 @@
 package LearnWithBook.chapter10;
 
-import javax.xml.namespace.QName;
-
 public class FooTest {
     public static void main(String[] args) {
         Foo foo = new Foo();

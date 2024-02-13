@@ -1,3 +1,5 @@
+package LearnWithBook.chapter6;
+
 import java.util.ArrayList;
 public class ArrayListMagnet {
     public static void printAl(ArrayList<String> al){

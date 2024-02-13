@@ -1,4 +1,5 @@
 package LearnWithBook.chapter4;
+
 class SumTest {
     public static void main(String[] args) {
 
@@ -10,6 +11,7 @@ class SumTest {
         summa.SummResult(firstnumber, secondnumber);
     }
 }
+
 public class Sum {
 
     void go (){

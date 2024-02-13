@@ -12,7 +12,7 @@ public class GameServerTest {
 
         try {
 
-            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\game.meow"));
+            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\game.meow"));
             os.writeObject(one);
             os.writeObject(two);
             os.writeObject(three);
@@ -27,7 +27,7 @@ public class GameServerTest {
 
         try {
 
-            ObjectInputStream is = new ObjectInputStream(new FileInputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\game.meow"));
+            ObjectInputStream is = new ObjectInputStream(new FileInputStream("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\game.meow"));
             GameCharacter oneRestore = (GameCharacter) is.readObject();
             GameCharacter twoRestore = (GameCharacter) is.readObject();
             GameCharacter threeRestore = (GameCharacter) is.readObject();

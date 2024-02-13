@@ -11,7 +11,7 @@ public class Test {
         System.out.println(rnd + " " + min + " " + abs);
 
         System.out.println(Player.playerCount);
-        Player player = new Player("SEMMII");
+        Player player = new Player("EMEOWII");
         System.out.println(Player.playerCount + " " + player.name);
         System.out.println(player.playerCount + " " + player.name);         //same but worst
         Player.playerCount = 53;

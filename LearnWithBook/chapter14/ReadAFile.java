@@ -8,7 +8,7 @@ public class ReadAFile {
     public static void main(String[] args) {
         try {
 
-            File myFile = new File("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\afile.meow");
+            File myFile = new File("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\afile.meow");
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 

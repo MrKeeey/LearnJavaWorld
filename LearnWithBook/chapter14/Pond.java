@@ -12,7 +12,7 @@ public class Pond implements Serializable {
         Pond myPond = new Pond();
 
         try {
-            FileOutputStream fs = new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter14\\pond.res");
+            FileOutputStream fs = new FileOutputStream("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\LearnWithBook\\chapter14\\pond.res");
             ObjectOutputStream os = new ObjectOutputStream(fs);
             os.writeObject(myPond);
             os.close();

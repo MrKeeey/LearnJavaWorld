@@ -1,3 +1,5 @@
+package LearnWithBook.chapter7;
+
 public class Mixed2 {
     public static void main(String[] args) {
         A a = new A();
