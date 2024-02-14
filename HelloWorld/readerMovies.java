@@ -22,7 +22,7 @@ public class readerMovies {
 
         try {
 
-            File myFile = new File("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\HelloWorld\\prosmfilms.txt");
+            File myFile = new File("HelloWorld\\prosmfilms.txt");
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
@@ -69,7 +69,7 @@ public class readerMovies {
 
         try {
 
-            FileWriter fileWriter = new FileWriter("Z:\\NW\\y\\LearnWorld\\IdeaProjects\\HelloWorld\\NewDataMovies.txt");
+            FileWriter fileWriter = new FileWriter("HelloWorld\\NewDataMovies.txt");
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
             makeLengthTableElements(0, 102, "Название Шоу".length(), "Сезон / Серия".length(), "Описание".length());
