@@ -8,7 +8,6 @@ public class readerMovies {
 
     ArrayList<String> result = new ArrayList<String>();
     String[] bufferSplit = new String [4];
-    //String[] bufferSplitForThirdTable = new String[4];
     String line = null, helperForThirdTable = "";
     private int maxNameLength, maxSeriesLength, maxDescriptionLength, maxYearLength;
 
@@ -27,7 +26,7 @@ public class readerMovies {
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            for (int i = 0; i < 170; i++) {
+            for (int i = 0; i < 660; i++) {
                 line = reader.readLine();
 
                 if (!line.equals("")) {
@@ -215,17 +214,17 @@ public class readerMovies {
                         bufferSplit[2] = secondSplit[1].trim();
                         bufferSplit[3] = "--";
                     }
-                    case "з"-> {
-                        String[] secondSplit = bufferSplit[1].split("з");
+                    case "за"-> {
+                        String[] secondSplit = bufferSplit[1].split("за");
                         bufferSplit[1] = secondSplit[0].trim();
-                        bufferSplit[2] = "з" + secondSplit[1].trim();
+                        bufferSplit[2] = "за" + secondSplit[1].trim();
                         bufferSplit[3] = "--";
                     }
                     case "?"-> {
                         String[] secondSplit = bufferSplit[1].split("\\?");
                         bufferSplit[1] = secondSplit[0].trim();
                         if (secondSplit.length > 1) {
-                            bufferSplit[2] = secondSplit[3].trim();
+                            bufferSplit[2] = "???         " + secondSplit[3].trim();
                         } else {
                             bufferSplit[2] = "???";
                         }
@@ -249,7 +248,6 @@ public class readerMovies {
                     }
                     case ")" -> {
                         String[] secondSplit = bufferSplit[2].split("\\)");
-                        System.out.println(secondSplit[0]);
                         bufferSplit[2] = secondSplit[0].trim();
                     }
                     default -> System.out.println("Wrong split element");
@@ -269,7 +267,6 @@ public class readerMovies {
                     }
                     case ")" -> {
                         String[] secondSplit = bufferSplit[3].split("\\)");
-                        System.out.println(secondSplit[0]);
                         bufferSplit[3] = secondSplit[0].trim();
                     }
                 }
@@ -284,8 +281,8 @@ public class readerMovies {
         if (bufferSplit[1].contains("/")) {
             makeSplit(2, "/");
         }
-        if (bufferSplit[1].contains("з")) {
-            makeSplit(2, "з");
+        if (bufferSplit[1].contains("за")) {
+            makeSplit(2, "за");
         }
         if (bufferSplit[1].contains("?")) {
             makeSplit(2, "?");
