@@ -1,5 +1,7 @@
 package HelloWorld;
 
+import com.sun.source.tree.WhileLoopTree;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,9 +28,9 @@ public class readerMovies {
             FileReader fileReader = new FileReader(myFile);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            for (int i = 0; i < 660; i++) {
+            //while ((line = reader.readLine()) != null) {
+            for (int i = 0; i < 157; i++) {
                 line = reader.readLine();
-
                 if (!line.equals("")) {
                     if (line.contains("s0")) {
                         makeSplit(1, "s0");
@@ -55,7 +57,13 @@ public class readerMovies {
                         result.addAll(Arrays.asList(bufferSplit));
                     }
                 }
+                if (i == 156) {
+                    while ((line = reader.readLine()) != null){
+                        result.addAll(Arrays.asList(line));
+                    }
+                }
             }
+
             reader.close();
             System.out.println(result);
 
@@ -101,7 +109,7 @@ public class readerMovies {
             }
             writer.write("-".repeat(count) + "\n\n");
 
-            makeLengthTableElements(572, result.size(), "Название Фильма".length(), "Название на Английском".length(), "Описание".length(), "Год".length());
+            /*makeLengthTableElements(572, result.size(), "Название Фильма".length(), "Название на Английском".length(), "Описание".length(), "Год".length());
             count = maxNameLength + maxSeriesLength + maxDescriptionLength + maxYearLength + 23;
             writer.write("-".repeat(count) + "\n");
             writer.write("||  " + "Название Фильма" + " ".repeat(maxNameLength - "Название Фильма".length()) +
@@ -116,7 +124,11 @@ public class readerMovies {
                         result.get(i + 2) + " ".repeat(maxYearLength - result.get(i + 2).length() ) + "  |  " +
                         result.get(i + 3) + " ".repeat(maxDescriptionLength - result.get(i + 3).length() ) + "  ||" + "\n");
             }
-            writer.write("-".repeat(count) + "\n\n");
+            writer.write("-".repeat(count) + "\n\n");*/
+
+            for (int i = 572; i < result.size(); i ++) {
+                writer.write(result.get(i) + "\n");
+            }
 
             writer.close();
 
@@ -224,7 +236,7 @@ public class readerMovies {
                         String[] secondSplit = bufferSplit[1].split("\\?");
                         bufferSplit[1] = secondSplit[0].trim();
                         if (secondSplit.length > 1) {
-                            bufferSplit[2] = "???         " + secondSplit[3].trim();
+                            bufferSplit[2] = "???      " + secondSplit[3].trim();
                         } else {
                             bufferSplit[2] = "???";
                         }
@@ -249,6 +261,7 @@ public class readerMovies {
                     case ")" -> {
                         String[] secondSplit = bufferSplit[2].split("\\)");
                         bufferSplit[2] = secondSplit[0].trim();
+                        bufferSplit[3] = "--";
                     }
                     default -> System.out.println("Wrong split element");
                 }
