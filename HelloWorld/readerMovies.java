@@ -77,7 +77,7 @@ public class readerMovies {
 
         try {
 
-            FileWriter fileWriter = new FileWriter("HelloWorld\\NewDataMovies.txt");
+            FileWriter fileWriter = new FileWriter("HelloWorld\\WatchedFilms.txt");
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
             makeLengthTableElements(0, 136, "Название Шоу".length(), "Сезон / Серия".length(), "Описание".length(), 0);
