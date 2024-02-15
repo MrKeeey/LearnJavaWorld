@@ -263,7 +263,6 @@ public class readerMovies {
                             helperForThirdTable = helperForThirdTable + secondSplit[i].trim() + ", ";
                             bufferSplit[3] = helperForThirdTable;
                         }
-
                     }
                     case ")" -> {
                         String[] secondSplit = bufferSplit[3].split("\\)");
