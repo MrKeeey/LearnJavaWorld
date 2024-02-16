@@ -18,7 +18,7 @@ public class RunThreads implements Runnable {
     public void run() {
         for (int i = 0; i < 10; i++) {
             String threadName = Thread.currentThread().getName();
-            System.out.println(threadName + " working now");
+            System.out.println(threadName + " is working now");
         }
     }
 }
