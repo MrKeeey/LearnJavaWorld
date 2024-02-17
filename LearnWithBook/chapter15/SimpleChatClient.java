@@ -9,6 +9,7 @@ import java.net.Socket;
 
 public class SimpleChatClient {
 
+    JTextArea incoming;
     JTextField outgoing;
     PrintWriter writer;
     Socket socket;
