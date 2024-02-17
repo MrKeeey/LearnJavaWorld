@@ -1,7 +1,8 @@
 package LearnWithBook.chapter15;
 
 class BankAccount {
-    private int balance = 100;
+
+    private int balance = 150;
 
     public int getBalance() {
         return balance;
