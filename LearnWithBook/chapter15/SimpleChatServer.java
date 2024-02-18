@@ -12,7 +12,7 @@ public class SimpleChatServer {
 
     ArrayList clientOutputStreams;
     public static void main(String[] args) {
-        new SimpleChatClient().go();
+        new SimpleChatServer().go();
     }
 
     public void go() {
