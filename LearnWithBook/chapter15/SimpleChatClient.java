@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.*;
 import java.net.Socket;
 
@@ -33,6 +35,11 @@ public class SimpleChatClient {
         qScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         outgoing = new JTextField(20);
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowOpened(WindowEvent e) {
+                outgoing.requestFocus();
+            }
+        });
         JButton sendButton = new JButton("Send");
         sendButton.addActionListener(new SendButtonListener());
 
@@ -45,7 +52,7 @@ public class SimpleChatClient {
         readerThread.start();
 
         frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
-        frame.setSize(400, 500);
+        frame.setSize(500, 400);
         frame.setVisible(true);
 
     }
@@ -67,7 +74,9 @@ public class SimpleChatClient {
         public void actionPerformed(ActionEvent e) {
             try {
 
-                writer.println(outgoing.getText());
+                if (!outgoing.getText().equals("")) {
+                    writer.println(outgoing.getText());
+                }
                 writer.flush();
 
             } catch (Exception exception) {
