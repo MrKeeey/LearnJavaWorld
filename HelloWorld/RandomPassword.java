@@ -17,7 +17,7 @@ public class RandomPassword {
         System.out.println(generatePassword);
 
         ArrayList<String> mass = new ArrayList<>();
-        mass.add("Peossenger");
+        mass.add("Possenger");
         mass.add("Piddnkb");
         mass.add("Passengercw");
         mass.add("Passengerc");
@@ -39,6 +39,7 @@ public class RandomPassword {
                     count++;
                     str = massiv.get(j);
                     second.add(massiv.get(j));
+                    System.out.println(str);
                 }
             }
 
@@ -74,7 +75,7 @@ public class RandomPassword {
             }
             count = 0;
         }
-        //System.out.println(meow + " 1");
+        //System.out.println(meow);
         //System.out.println(massiv);
 
     }
