@@ -51,7 +51,7 @@ public class RandomPassword {
                 //System.out.println(second);
                 elementForSort++;
                 lengthElement(second);
-                if (elementForSort > (minLength - 1) && second.size() >= 1) {
+                if (elementForSort > (minLength - 1)) {
                     System.out.println(elementForSort + " oh no " + minLength);
                     if (second.size() == 2) {
                         meow.add(minElement);

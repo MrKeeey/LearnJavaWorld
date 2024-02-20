@@ -38,13 +38,6 @@ public class JukeBox {
             for (int j = 0; j < songs.size(); j++) {
                 if (symbols.charAt(i) == songs.get(j).charAt(0)) {
                     sortArray.add(songs.get(j));
-                    /*count++;
-                    if (count >= 2) {
-                        System.out.println(count);
-                        count = 0;
-                    } else {
-                        sortArray.add(songs.get(j));
-                    }*/
                 }
             }
         }
