@@ -9,6 +9,5 @@ public class RandomPassword {
             generatePassword.append(symbols.charAt((int) (Math.random() * symbols.length())));
         }
         System.out.println(generatePassword);
-
     }
 }
