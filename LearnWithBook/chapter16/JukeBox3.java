@@ -38,7 +38,10 @@ public class JukeBox3 {
 
         ArtistCompare artistCompare = new ArtistCompare();
         Collections.sort(songList, artistCompare);
-        System.out.println(songList);
+        for (Song2 s : songList) {
+            System.out.println(s);
+        }
+        //System.out.println(songList);
 
     }
 
@@ -81,16 +84,21 @@ class Song2 {           //implements Comparable<Song2>
     public String getTitle() {
         return title;
     }
+
     public String getArtist() {
         return artist;
     }
+
     public String getRating() {
         return rating;
     }
+
     public String getBpm() {
         return bpm;
     }
+
     public String toString() {
-        return "\n" + title + ":" + artist;
+        return title + ": " + artist;
     }
+
 }
