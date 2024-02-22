@@ -9,15 +9,18 @@ import java.util.Collections;
 
 public class JukeBox2 {
     private ArrayList<Song> songList = new ArrayList<Song>();
+
     public static void main(String[] args) throws IOException {
         new JukeBox2().go();
     }
+
     public void go() throws IOException {
         getSongs();
         System.out.println(songList);
-        //Collections.sort(songList);
+        Collections.sort(songList);
         System.out.println(songList);
     }
+
     void getSongs() throws IOException {
         File file = new File("LearnWithBook\\chapter16\\data2.txt");
         BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -28,6 +31,7 @@ public class JukeBox2 {
         }
         reader.close();
     }
+
     void addSong(String lineToParse) {
         String[] buffer = lineToParse.split("/");
         Song nextSong = new Song(buffer[0], buffer[1], buffer[2], buffer[3]);
@@ -36,11 +40,15 @@ public class JukeBox2 {
 
 }
 
-class Song {
+class Song implements Comparable<Song> {
     String title;
     String artist;
     String rating;
     String bpm;
+
+    public int compareTo(Song s) {
+        return title.compareTo(s.getTitle());
+    }
 
     Song (String t, String a, String r, String b) {
         title = t;
@@ -64,4 +72,5 @@ class Song {
     public String toString() {
         return title;
     }
+
 }
