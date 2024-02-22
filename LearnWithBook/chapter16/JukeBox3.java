@@ -6,19 +6,40 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
-public class JukeBox2 {
-    private ArrayList<Song> songList = new ArrayList<Song>();
+public class JukeBox3 {
+    private ArrayList<Song2> songList = new ArrayList<Song2>();
 
     public static void main(String[] args) throws IOException {
-        new JukeBox2().go();
+        new JukeBox3().go();
+    }
+
+    static class TitleCompare implements Comparator<Song2> {
+        public int compare(Song2 one, Song2 two) {
+            return one.getTitle().compareTo(two.getTitle());
+        }
+    }
+
+    class ArtistCompare implements Comparator<Song2> {
+        public int compare(Song2 one, Song2 two) {
+            return one.getArtist().compareTo(two.getArtist());
+        }
     }
 
     public void go() throws IOException {
         getSongs();
         System.out.println(songList);
-        Collections.sort(songList);
+
+        TitleCompare titleCompare = new TitleCompare();
+        songList.sort(titleCompare);
+        //Collections.sort(songList);
         System.out.println(songList);
+
+        ArtistCompare artistCompare = new ArtistCompare();
+        Collections.sort(songList, artistCompare);
+        System.out.println(songList);
+
     }
 
     void getSongs() throws IOException {
@@ -34,24 +55,23 @@ public class JukeBox2 {
 
     void addSong(String lineToParse) {
         String[] buffer = lineToParse.split("/");
-        Song nextSong = new Song(buffer[0], buffer[1], buffer[2], buffer[3]);
+        Song2 nextSong = new Song2(buffer[0], buffer[1], buffer[2], buffer[3]);
         songList.add(nextSong);
     }
 
 }
 
-class Song implements Comparable<Song> {
+class Song2 {           //implements Comparable<Song2>
     String title;
     String artist;
     String rating;
     String bpm;
 
-    public int compareTo(Song s) {
-        //System.out.println(title + " ^ " + s.getTitle() + " ^ " + title.compareTo(s.getTitle()));
+    /*public int compareTo(Song2 s) {
         return title.compareTo(s.getTitle());
-    }
+    }*/
 
-    Song (String t, String a, String r, String b) {
+    Song2 (String t, String a, String r, String b) {
         title = t;
         artist = a;
         rating = r;
@@ -71,7 +91,6 @@ class Song implements Comparable<Song> {
         return bpm;
     }
     public String toString() {
-        return title;
+        return "\n" + title + ":" + artist;
     }
-
 }
