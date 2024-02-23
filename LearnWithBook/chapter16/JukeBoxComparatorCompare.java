@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class JukeBox3 {
+public class JukeBoxComparatorCompare {
     private ArrayList<Song2> songList = new ArrayList<Song2>();
 
     public static void main(String[] args) throws IOException {
-        new JukeBox3().go();
+        new JukeBoxComparatorCompare().go();
     }
 
     static class TitleCompare implements Comparator<Song2> {

@@ -4,10 +4,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class JukeBox {
+public class JukeBoxCollectionSort {
     private ArrayList<String> songList = new ArrayList<>();
     public static void main(String[] args) throws IOException {
-        new JukeBox().go();
+        new JukeBoxCollectionSort().go();
     }
     public void go() throws IOException {
         getSongs();
