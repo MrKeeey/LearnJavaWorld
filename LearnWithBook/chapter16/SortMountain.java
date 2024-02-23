@@ -10,14 +10,14 @@ public class SortMountain {
 
     static class NameCompare implements Comparator <Mountain> {
         public int compare(Mountain one, Mountain two) {
-            return one.name.compareTo(two.name);
+            return one.getName().compareTo(two.getName());
         }
     }
 
     static class HeightCompare implements Comparator <Mountain> {
         public int compare(Mountain one, Mountain two) {
             //return (Integer.compare(two.getHeight(), one.getHeight()));
-            return (two.height - one.height);
+            return (two.getHeight() - one.getHeight());
         }
     }
 

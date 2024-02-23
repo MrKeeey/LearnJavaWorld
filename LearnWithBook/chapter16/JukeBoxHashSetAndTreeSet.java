@@ -3,12 +3,12 @@ package LearnWithBook.chapter16;
 import java.io.*;
 import java.util.*;
 
-public class JukeBoxHashSet {
+public class JukeBoxHashSetAndTreeSet {
 
     private ArrayList<Song3> songList = new ArrayList<Song3>();
 
     public static void main(String[] args) throws IOException {
-        new JukeBoxHashSet().go();
+        new JukeBoxHashSetAndTreeSet().go();
     }
 
     public void go() throws IOException {
@@ -17,7 +17,8 @@ public class JukeBoxHashSet {
         Collections.sort(songList);
         System.out.println(songList);
 
-        HashSet<Song3> songSet = new HashSet<Song3>();
+        //HashSet<Song3> songSet = new HashSet<Song3>();        //just w\o duplicates
+        TreeSet<Song3> songSet = new TreeSet<Song3>();          //w\o duplicates + sorted
         songSet.addAll(songList);
         System.out.println(songSet);
     }
