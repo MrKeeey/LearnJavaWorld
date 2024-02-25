@@ -1,5 +1,5 @@
     Hello World!
-Here is my history of learning Java.
+Here is my story of learning Java.
 
 Folder HelloWorld contains some tasks for myself.
     RandomPassword - generate random password.
