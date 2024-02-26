@@ -7,6 +7,7 @@ public class testString {
         String byteLine = "3";
         String shortLine = "113";
         String intLine = "442";
+        String longLine = "34134762089";
         String floatLine = "43.88f";
         String doubleLine = "12345678901.333";
         String booleanLine = "true";
@@ -18,6 +19,7 @@ public class testString {
         System.out.println(Byte.parseByte(byteLine));
         System.out.println(Short.parseShort(shortLine));
         System.out.println(Integer.parseInt(intLine));
+        System.out.println(Long.parseLong(longLine));
         System.out.println(Float.parseFloat(floatLine));
         System.out.println(Double.parseDouble(doubleLine));
         System.out.println(Boolean.parseBoolean(booleanLine));
