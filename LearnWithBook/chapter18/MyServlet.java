@@ -14,8 +14,8 @@ public class MyServlet extends HttpServlet {
         String message = "Servlet is working";
 
         out.println("<HTML><BODY>");
-        out.println("<H1> + message + </H1>");
-        out.println("</HTML></BODY>");
+        out.println("<H1>" + message + "</H1>");
+        out.println("</BODY></HTML>");
         out.close();
     }
 
