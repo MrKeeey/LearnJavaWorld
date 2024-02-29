@@ -10,6 +10,10 @@ Each folder corresponds to a chapter
  from the book Head First Java
   and contains completed tasks.
 
-You can check Applications folder.
-Here are some java apps:
-    - Music player with chat, and you can send your build for another client.
+You can check App folder.
+Here are final java BeatBox app:
+    - Music player with chat,
+    - start and stop playing track,
+    - choose temp: faster or slower,
+    - save or load your build,
+    - and send your build for another clients.
