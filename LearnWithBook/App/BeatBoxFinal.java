@@ -237,6 +237,7 @@ public class BeatBoxFinal {
             try {
                 while ((obj = in.readObject()) != null) {
                     System.out.println("Got an object form server.");
+                    System.out.println(obj);
                     System.out.println(obj.getClass());
                     //String nameToShow = (String) obj;
                     nameToShow = (String) obj;
