@@ -64,92 +64,78 @@ public class BeatBoxFinal {
         checkboxList = new ArrayList<JCheckBox>();
 
         GridBagConstraints constraints = new GridBagConstraints();
-        constraints.insets = new Insets(2, 2, 2, 2);
+        constraints.insets = new Insets(2, 10, 2, 2);
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridBagLayout());
 
-        constraints.gridx = 0;
-        constraints.gridy = 0;
         constraints.ipadx = 10;
         constraints.ipady = 10;
-        constraints.anchor = GridBagConstraints.CENTER;
+        constraints.weightx = 1;
+        constraints.gridx = 0;
+        constraints.gridy = 0;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         JButton start = new JButton("Start");
         start.addActionListener(new MyStartListener());
         buttonPanel.add(start, constraints);
 
+        constraints.weightx = 0.3;
         constraints.gridx = 1;
         constraints.gridy = 0;
-        constraints.ipadx = 10;
-        constraints.ipady = 10;
-        constraints.anchor = GridBagConstraints.CENTER;
         JButton stop = new JButton("Stop");
         stop.addActionListener(new MyStopListener());
         buttonPanel.add(stop, constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 1;
-        constraints.ipadx = 10;
-        constraints.ipady = 10;
-        constraints.anchor = GridBagConstraints.CENTER;
         JButton unTempo = new JButton("Tempo Up");
         unTempo.addActionListener(new MyUpTempoListener());
         buttonPanel.add(unTempo, constraints);
 
         constraints.gridx = 1;
         constraints.gridy = 1;
-        constraints.ipadx = 10;
-        constraints.ipady = 10;
-        constraints.anchor = GridBagConstraints.CENTER;
         JButton downTempo = new JButton("Tempo Down");
         downTempo.addActionListener(new MyDownTempoListener());
         buttonPanel.add(downTempo, constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 2;
-        constraints.ipadx = 10;
-        constraints.ipady = 10;
-        constraints.anchor = GridBagConstraints.CENTER;
         JButton saveCheckboxInstruments = new JButton("Save Build");
         saveCheckboxInstruments.addActionListener(new SaveCheckboxInstrumentsListener());
         buttonPanel.add(saveCheckboxInstruments, constraints);
 
         constraints.gridx = 1;
         constraints.gridy = 2;
-        constraints.ipadx = 10;
-        constraints.ipady = 10;
-        constraints.anchor = GridBagConstraints.CENTER;
         JButton loadCheckboxInstruments = new JButton("Load Build");
         loadCheckboxInstruments.addActionListener(new LoadCheckboxInstrumentsListener());
         buttonPanel.add(loadCheckboxInstruments, constraints);
-
-        constraints.gridx = 0;
-        constraints.gridy = 3;
-        constraints.ipadx = 10;
-        constraints.ipady = 10;
-        constraints.gridwidth = 2;
-        constraints.anchor = GridBagConstraints.CENTER;
-        JButton sendIt = new JButton("Send It");
-        sendIt.addActionListener(new MySendListener());
-        buttonPanel.add(sendIt, constraints);
 
         incomingList = new JList();
         incomingList.addListSelectionListener(new MyListSelectionListener());
         incomingList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane theList = new JScrollPane(incomingList);
         constraints.gridx = 0;
-        constraints.gridy = 4;
-        constraints.ipadx = 10;
-        constraints.ipady = 10;
+        constraints.gridy = 3;
+        constraints.gridwidth = 2;
+        constraints.insets = new Insets(20, 10, 10, 2);
         buttonPanel.add(theList, constraints);
         incomingList.setListData(listVector);
 
-        userMessage = new JTextField(28);
+        userMessage = new JTextField(19);
         constraints.gridx = 0;
-        constraints.gridy = 5;
-        constraints.ipadx = 10;
-        constraints.ipady = 10;
+        constraints.gridy = 4;
+        constraints.fill = GridBagConstraints.NONE;
+        constraints.anchor = GridBagConstraints.WEST;
+        constraints.insets = new Insets(2, 10, 2, 2);
         buttonPanel.add(userMessage, constraints);
+
+        constraints.gridx = 1;
+        constraints.gridy = 4;
+        constraints.ipadx = 3;
+        constraints.ipady = 3;
+        constraints.anchor = GridBagConstraints.EAST;
+        JButton sendIt = new JButton("Send It");
+        sendIt.addActionListener(new MySendListener());
+        buttonPanel.add(sendIt, constraints);
 
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
@@ -173,7 +159,7 @@ public class BeatBoxFinal {
             mainPanel.add(c);
         }
 
-        theFrame.setBounds(50, 50, 800, 500);
+        theFrame.setBounds(50, 50, 800, 450);
         theFrame.pack();
         theFrame.setVisible(true);
     }
