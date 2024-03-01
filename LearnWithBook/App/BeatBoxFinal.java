@@ -63,43 +63,100 @@ public class BeatBoxFinal {
 
         checkboxList = new ArrayList<JCheckBox>();
 
-        Box buttonBox = new Box(BoxLayout.Y_AXIS);
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.insets = new Insets(2, 2, 2, 2);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridBagLayout());
+
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        constraints.anchor = GridBagConstraints.CENTER;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         JButton start = new JButton("Start");
         start.addActionListener(new MyStartListener());
-        buttonBox.add(start);
+        buttonPanel.add(start, constraints);
 
+        constraints.gridx = 1;
+        constraints.gridy = 0;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        constraints.anchor = GridBagConstraints.CENTER;
         JButton stop = new JButton("Stop");
         stop.addActionListener(new MyStopListener());
-        buttonBox.add(stop);
+        buttonPanel.add(stop, constraints);
 
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        constraints.anchor = GridBagConstraints.CENTER;
         JButton unTempo = new JButton("Tempo Up");
         unTempo.addActionListener(new MyUpTempoListener());
-        buttonBox.add(unTempo);
+        buttonPanel.add(unTempo, constraints);
 
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        constraints.anchor = GridBagConstraints.CENTER;
         JButton downTempo = new JButton("Tempo Down");
         downTempo.addActionListener(new MyDownTempoListener());
-        buttonBox.add(downTempo);
+        buttonPanel.add(downTempo, constraints);
 
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        constraints.anchor = GridBagConstraints.CENTER;
+        JButton saveCheckboxInstruments = new JButton("Save Build");
+        saveCheckboxInstruments.addActionListener(new SaveCheckboxInstrumentsListener());
+        buttonPanel.add(saveCheckboxInstruments, constraints);
+
+        constraints.gridx = 1;
+        constraints.gridy = 2;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        constraints.anchor = GridBagConstraints.CENTER;
+        JButton loadCheckboxInstruments = new JButton("Load Build");
+        loadCheckboxInstruments.addActionListener(new LoadCheckboxInstrumentsListener());
+        buttonPanel.add(loadCheckboxInstruments, constraints);
+
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        constraints.gridwidth = 2;
+        constraints.anchor = GridBagConstraints.CENTER;
         JButton sendIt = new JButton("Send It");
         sendIt.addActionListener(new MySendListener());
-        buttonBox.add(sendIt);
-
-        userMessage = new JTextField();
-        buttonBox.add(userMessage);
+        buttonPanel.add(sendIt, constraints);
 
         incomingList = new JList();
         incomingList.addListSelectionListener(new MyListSelectionListener());
         incomingList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane theList = new JScrollPane(incomingList);
-        buttonBox.add(theList);
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        buttonPanel.add(theList, constraints);
         incomingList.setListData(listVector);
+
+        userMessage = new JTextField(28);
+        constraints.gridx = 0;
+        constraints.gridy = 5;
+        constraints.ipadx = 10;
+        constraints.ipady = 10;
+        buttonPanel.add(userMessage, constraints);
 
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
             nameBox.add(new Label(instrumentNames[i]));
         }
 
-        background.add(BorderLayout.EAST, buttonBox);
+        background.add(BorderLayout.EAST, buttonPanel);
         background.add(BorderLayout.WEST, nameBox);
 
         theFrame.getContentPane().add(background);
@@ -116,7 +173,7 @@ public class BeatBoxFinal {
             mainPanel.add(c);
         }
 
-        theFrame.setBounds(50, 50, 300, 300);
+        theFrame.setBounds(50, 50, 800, 500);
         theFrame.pack();
         theFrame.setVisible(true);
     }
@@ -193,6 +250,64 @@ public class BeatBoxFinal {
         }
     }
 
+    public class SaveCheckboxInstrumentsListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
+            boolean[] checkboxState = new boolean[256];
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox checkBox = checkboxList.get(i);
+                if (checkBox.isSelected()) {
+                    checkboxState[i] = true;
+                }
+            }
+
+            JFileChooser fileSave = new JFileChooser();
+            fileSave.showSaveDialog(theFrame);
+
+            //try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter13\\Checkbox.ser"))) {
+            if (fileSave.getSelectedFile() != null) {
+                try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileSave.getSelectedFile()))) {
+                    oos.writeObject(checkboxState);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+
+        }
+    }
+
+    public class LoadCheckboxInstrumentsListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
+            boolean[] checkboxState = new boolean[256];
+
+            JFileChooser fileOpen = new JFileChooser();
+            fileOpen.showOpenDialog(theFrame);
+
+            if (fileOpen.getSelectedFile() != null) {
+                try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileOpen.getSelectedFile()))) {
+                    checkboxState = (boolean[]) ois.readObject();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox checkBox = checkboxList.get(i);
+                if (checkboxState[i]) {
+                    checkBox.setSelected(true);
+                } else {
+                    checkBox.setSelected(false);
+                }
+            }
+
+            sequencer.stop();
+            buildTrackAndStart();
+
+        }
+    }
+
     public class MySendListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -238,8 +353,7 @@ public class BeatBoxFinal {
                 while ((obj = in.readObject()) != null) {
                     System.out.println("Got an object form server.");
                     System.out.println(obj);
-                    System.out.println(obj.getClass());
-                    //String nameToShow = (String) obj;
+                    //System.out.println(obj.getClass());
                     nameToShow = (String) obj;
                     checkBoxState = (boolean[]) in.readObject();
                     otherSeqsMap.put(nameToShow, checkBoxState);

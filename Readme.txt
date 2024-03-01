@@ -11,8 +11,9 @@ Each folder corresponds to a chapter
   and contains completed tasks.
 
 You can check App folder.
-Here are final java BeatBox app:
-    - Music player with chat,
+Here are final java BeatBox app. First step start server: MusicServer.
+Second step start client: BitBoxFinal. It's music player with chat.
+    You can:
     - start and stop playing track,
     - choose temp: faster or slower,
     - save or load your build,

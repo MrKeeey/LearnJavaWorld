@@ -1,6 +1,5 @@
 package LearnWithBook.App;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
@@ -35,13 +34,15 @@ public class MusicServer {
     }
 
     public void tellEveryone(Object one, Object two) {
-        Iterator it = clientOutputStreams.iterator();
+        Iterator<ObjectOutputStream> it = clientOutputStreams.iterator();
         while (it.hasNext()) {
             try {
                 ObjectOutputStream out = (ObjectOutputStream) it.next();
                 out.writeObject(one);
                 out.writeObject(two);
+                System.out.println("fine");
             } catch (Exception exception) {
+                System.out.println("here");
                 exception.printStackTrace();
             }
         }
@@ -70,13 +71,11 @@ public class MusicServer {
                     System.out.println("Read two objects.");
                     tellEveryone(o1, o2);
                 }
-
             } catch (Exception exception) {
                 boolean connected = clientSocket.isClosed() && !clientSocket.isConnected();
                 if (!connected) {
                     System.out.println("Client left");
                 }
-                //exception.printStackTrace();
             }
         }
     }
