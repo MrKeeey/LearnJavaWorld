@@ -16,6 +16,7 @@ public class BeatBoxFinal {
     JList incomingList;
     JTextField userMessage;
     JTextField loginField;
+    JFrame saveFrame;
     ArrayList<JCheckBox> checkboxList;
     int nextNum;
     Vector<String> listVector = new Vector<String>();
@@ -61,8 +62,7 @@ public class BeatBoxFinal {
 
     }
 
-    public void startUp(String name) {
-        userName = name;
+    public void startUp() {
         try {
 
             Socket socket = new Socket("localhost", 5000);
@@ -235,11 +235,10 @@ public class BeatBoxFinal {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (!loginField.getText().equals("")) {
-                String chatName = loginField.getText();
-                System.out.println(chatName);
+                userName = loginField.getText();
                 theFrame.setVisible(false);
                 theFrame.dispose();
-                startUp(chatName);
+                startUp();
             }
         }
     }
@@ -342,10 +341,11 @@ public class BeatBoxFinal {
                     checkBoxState[i] = true;
                 }
             }
-            //String messageToSend = null;
             try {
-                out.writeObject(userName + ": " + userMessage.getText());
-                out.writeObject(checkBoxState);
+                if (!userMessage.getText().equals("")) {
+                    out.writeObject(userName + ": " + userMessage.getText());
+                    out.writeObject(checkBoxState);
+                }
             } catch (Exception exception) {
                 System.out.println("Sorry dude. Couldn't send it to the server.");
             }
@@ -358,12 +358,54 @@ public class BeatBoxFinal {
             if (!le.getValueIsAdjusting()) {
                 String selected = (String) incomingList.getSelectedValue();
                 if (selected != null) {
+                    saveCurrentBuild();
                     boolean[] selectedState = (boolean[]) otherSeqsMap.get(selected);
                     changeSequence(selectedState);
                     sequencer.stop();
                     buildTrackAndStart();
                 }
             }
+        }
+    }
+
+    public void saveCurrentBuild() {
+
+        saveFrame  = new JFrame("Save");
+        saveFrame.setDefaultCloseOperation(saveFrame.EXIT_ON_CLOSE);
+
+        JPanel savePanel = new JPanel();
+        savePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        JLabel saveLabel = new JLabel("Save your current build?");
+        JButton saveYes = new JButton("Yes");
+        saveYes.addActionListener(new SaveCurrentBuildYesButtonListener());
+        JButton saveNo = new JButton("No");
+        saveNo.addActionListener(new SaveCurrentBuildNoButtonListener());
+
+        savePanel.add(saveLabel);
+        savePanel.add(saveYes);
+        savePanel.add(saveNo);
+
+        saveFrame.getContentPane().add(BorderLayout.CENTER, savePanel);
+        saveFrame.setBounds(100, 100, 400, 80);
+        saveFrame.pack();
+        saveFrame.setVisible(true);
+    }
+
+    public class SaveCurrentBuildYesButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new SaveCheckboxInstrumentsListener().actionPerformed(e);
+            saveFrame.setVisible(false);
+            saveFrame.dispose();
+        }
+    }
+
+    public class SaveCurrentBuildNoButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            saveFrame.setVisible(false);
+            saveFrame.dispose();
         }
     }
 
