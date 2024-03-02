@@ -288,7 +288,6 @@ public class BeatBoxFinal {
             JFileChooser fileSave = new JFileChooser();
             fileSave.showSaveDialog(theFrame);
 
-            //try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Z:\\NW\\y\\LearnWorld\\LearnWithBook\\chapter13\\Checkbox.ser"))) {
             if (fileSave.getSelectedFile() != null) {
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileSave.getSelectedFile()))) {
                     oos.writeObject(checkboxState);
@@ -302,6 +301,9 @@ public class BeatBoxFinal {
 
     public class LoadCheckboxInstrumentsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+
+            //saveCurrentBuild();
+            //guiForSaveCurrentBuild();
 
             boolean[] checkboxState = new boolean[256];
 
@@ -359,6 +361,7 @@ public class BeatBoxFinal {
                 String selected = (String) incomingList.getSelectedValue();
                 if (selected != null) {
                     saveCurrentBuild();
+                    guiForSaveCurrentBuild();
                     boolean[] selectedState = (boolean[]) otherSeqsMap.get(selected);
                     changeSequence(selectedState);
                     sequencer.stop();
@@ -368,34 +371,73 @@ public class BeatBoxFinal {
         }
     }
 
-    public void saveCurrentBuild() {
+    public void guiForSaveCurrentBuild() {
 
         saveFrame  = new JFrame("Save");
-        saveFrame.setDefaultCloseOperation(saveFrame.EXIT_ON_CLOSE);
-
         JPanel savePanel = new JPanel();
-        savePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.insets = new Insets(2, 2, 20, 2);
+        savePanel.setLayout(new GridBagLayout());
+
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.gridwidth = 2;
         JLabel saveLabel = new JLabel("Save your current build?");
+        savePanel.add(saveLabel, constraints);
+
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        constraints.gridwidth = 1;
         JButton saveYes = new JButton("Yes");
         saveYes.addActionListener(new SaveCurrentBuildYesButtonListener());
+        savePanel.add(saveYes, constraints);
+
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        constraints.anchor = GridBagConstraints.EAST;
         JButton saveNo = new JButton("No");
         saveNo.addActionListener(new SaveCurrentBuildNoButtonListener());
-
-        savePanel.add(saveLabel);
-        savePanel.add(saveYes);
-        savePanel.add(saveNo);
+        savePanel.add(saveNo, constraints);
 
         saveFrame.getContentPane().add(BorderLayout.CENTER, savePanel);
-        saveFrame.setBounds(100, 100, 400, 80);
-        saveFrame.pack();
+        saveFrame.setBounds(100, 100, 250, 150);
         saveFrame.setVisible(true);
+
+    }
+
+    public boolean[] saveCurrentBuild () {
+
+        boolean[] checkBoxState = new boolean[256];
+
+        for (int i = 0; i < 256; i++) {
+            JCheckBox checkBox = checkboxList.get(i);
+            if (checkBox.isSelected()) {
+                checkBoxState[i] = true;
+            }
+        }
+        return checkBoxState;
+    }
+
+    public void saveInFileCurrentBuild(boolean[] checkBoxState) {
+
+        JFileChooser fileSave = new JFileChooser();
+        fileSave.showSaveDialog(theFrame);
+
+        if (fileSave.getSelectedFile() != null) {
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileSave.getSelectedFile()))) {
+                oos.writeObject(checkBoxState);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }
+
     }
 
     public class SaveCurrentBuildYesButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new SaveCheckboxInstrumentsListener().actionPerformed(e);
+            saveInFileCurrentBuild(saveCurrentBuild());
             saveFrame.setVisible(false);
             saveFrame.dispose();
         }
@@ -419,7 +461,6 @@ public class BeatBoxFinal {
                 while ((obj = in.readObject()) != null) {
                     System.out.println("Got an object form server.");
                     System.out.println(obj);
-                    //System.out.println(obj.getClass());
                     nameToShow = (String) obj;
                     checkBoxState = (boolean[]) in.readObject();
                     otherSeqsMap.put(nameToShow, checkBoxState);
