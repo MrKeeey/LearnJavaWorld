@@ -8,6 +8,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.net.Socket;
 import java.util.*;
+import java.util.Timer;
 
 public class BeatBoxFinal {
 
@@ -302,8 +303,9 @@ public class BeatBoxFinal {
     public class LoadCheckboxInstrumentsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
-            //saveCurrentBuild();
-            //guiForSaveCurrentBuild();
+            saveCurrentBuild();
+            guiForSaveCurrentBuild();
+            //new SaveCheckboxInstrumentsListener().actionPerformed(e);
 
             boolean[] checkboxState = new boolean[256];
 
