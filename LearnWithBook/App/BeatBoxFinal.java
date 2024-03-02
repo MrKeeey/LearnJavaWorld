@@ -15,6 +15,7 @@ public class BeatBoxFinal {
     JPanel mainPanel;
     JList incomingList;
     JTextField userMessage;
+    JTextField loginField;
     ArrayList<JCheckBox> checkboxList;
     int nextNum;
     Vector<String> listVector = new Vector<String>();
@@ -33,7 +34,31 @@ public class BeatBoxFinal {
     int[] instruments = {35, 42, 46, 38, 49, 39, 50, 60, 70, 72, 64, 56, 58, 47, 67, 63};
 
     public static void main(String[] args) {
-        new BeatBoxFinal().startUp("meow");
+        new BeatBoxFinal().startName();
+    }
+
+    public void startName() {
+
+        theFrame  = new JFrame("Login");
+        theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel loginPanel = new JPanel();
+        loginPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        JLabel loginLabel = new JLabel("Enter your name:");
+        loginField = new JTextField(20);
+        JButton loginEnter = new JButton("Enter");
+        loginEnter.addActionListener(new StartLoginEnterButtonListener());
+
+        loginPanel.add(loginLabel);
+        loginPanel.add(loginField);
+        loginPanel.add(loginEnter);
+
+        theFrame.getContentPane().add(BorderLayout.CENTER, loginPanel);
+        theFrame.setBounds(50, 50, 400, 80);
+        theFrame.pack();
+        theFrame.setVisible(true);
+
     }
 
     public void startUp(String name) {
@@ -203,6 +228,19 @@ public class BeatBoxFinal {
             sequencer.setTempoInBPM(120);
         } catch (Exception exception) {
             exception.printStackTrace();
+        }
+    }
+
+    public class StartLoginEnterButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (!loginField.getText().equals("")) {
+                String chatName = loginField.getText();
+                System.out.println(chatName);
+                theFrame.setVisible(false);
+                theFrame.dispose();
+                startUp(chatName);
+            }
         }
     }
 
