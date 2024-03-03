@@ -365,10 +365,12 @@ public class BeatBoxFinal {
                 if (selected != null) {
                     //saveCurrentBuild();
                     guiForSaveCurrentBuild();
-                    boolean[] selectedState = (boolean[]) otherSeqsMap.get(selected);
-                    changeSequence(selectedState);
-                    sequencer.stop();
-                    buildTrackAndStart();
+                    if (!saveFrame.isVisible()) {                                              //need to wait
+                        boolean[] selectedState = (boolean[]) otherSeqsMap.get(selected);
+                        changeSequence(selectedState);
+                        sequencer.stop();
+                        buildTrackAndStart();
+                    }
                 }
             }
         }
