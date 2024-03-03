@@ -14,6 +14,7 @@ public class TestStaticInnerAnonymousClasses {
 
 
         JFrame frame = new JFrame("Test Anonymous class");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
         JTextField textField = new JTextField(15);
         textField.setEnabled(false);
