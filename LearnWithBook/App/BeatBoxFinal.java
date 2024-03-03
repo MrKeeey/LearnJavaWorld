@@ -303,8 +303,8 @@ public class BeatBoxFinal {
     public class LoadCheckboxInstrumentsListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
-            saveCurrentBuild();
-            guiForSaveCurrentBuild();
+            //saveCurrentBuild();
+            //guiForSaveCurrentBuild();
             //new SaveCheckboxInstrumentsListener().actionPerformed(e);
 
             boolean[] checkboxState = new boolean[256];
@@ -362,8 +362,8 @@ public class BeatBoxFinal {
             if (!le.getValueIsAdjusting()) {
                 String selected = (String) incomingList.getSelectedValue();
                 if (selected != null) {
-                    saveCurrentBuild();
-                    guiForSaveCurrentBuild();
+                    //saveCurrentBuild();
+                    //guiForSaveCurrentBuild();
                     boolean[] selectedState = (boolean[]) otherSeqsMap.get(selected);
                     changeSequence(selectedState);
                     sequencer.stop();
