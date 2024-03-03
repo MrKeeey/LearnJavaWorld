@@ -12,6 +12,7 @@ import java.util.Timer;
 
 public class BeatBoxFinal {
 
+    String work = "";
     JFrame theFrame;
     JPanel mainPanel;
     JList incomingList;
@@ -363,7 +364,7 @@ public class BeatBoxFinal {
                 String selected = (String) incomingList.getSelectedValue();
                 if (selected != null) {
                     //saveCurrentBuild();
-                    //guiForSaveCurrentBuild();
+                    guiForSaveCurrentBuild();
                     boolean[] selectedState = (boolean[]) otherSeqsMap.get(selected);
                     changeSequence(selectedState);
                     sequencer.stop();
@@ -439,7 +440,8 @@ public class BeatBoxFinal {
     public class SaveCurrentBuildYesButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            saveInFileCurrentBuild(saveCurrentBuild());
+            //saveInFileCurrentBuild(saveCurrentBuild());
+            new SaveCheckboxInstrumentsListener().actionPerformed(e);
             saveFrame.setVisible(false);
             saveFrame.dispose();
         }
