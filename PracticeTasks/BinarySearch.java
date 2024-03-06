@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class BinarySearch {
 
-    int enterGuess = 0;
-
     public static void main(String[] args) {
 
         int[] data = new int[100];
@@ -17,8 +15,24 @@ public class BinarySearch {
             data[i] = i + 1;
         }
 
+        Scanner console = new Scanner(System.in);
         System.out.print("Enter your number: ");
-        int guess = new BinarySearch().enter();
+
+        boolean flag = true;
+        int guess = 0;
+        while (flag) {
+            if (!console.hasNextInt()) {
+                System.out.print("Wrong enter. Enter a number from 1 to 100: ");
+                console.next();
+            } else {
+                guess = console.nextInt();
+                if (guess > 100 || guess <= 0) {
+                    System.out.print("Wrong enter. Enter a number from 1 to 100: ");
+                } else {
+                    flag = false;
+                }
+            }
+        }
 
         while (low <= high) {
 
@@ -37,23 +51,5 @@ public class BinarySearch {
             }
 
         }
-    }
-
-    public int enter () {
-
-        Scanner console = new Scanner(System.in);
-
-        if (!console.hasNextInt()) {
-            System.out.print("Wrong enter. Enter a number from 0 to 100: " );
-            console.next();
-            enter();
-        } else {
-            enterGuess = console.nextInt();
-            if (enterGuess > 100 || enterGuess < 0) {
-                System.out.print("Wrong enter. Enter a number from 0 to 100: " );
-                enter();
-            }
-        }
-        return enterGuess;
     }
 }
