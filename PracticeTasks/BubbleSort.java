@@ -18,17 +18,33 @@ public class BubbleSort {
         }
         System.out.println(Arrays.toString(array));
 
-        boolean flag = true;
-        while (flag) {
-            flag = false;
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
             for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] < array[i + 1]) {
                     int buffer = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = buffer;
-                    flag = true;
+                    isSorted = false;
                 }
             }
+        }
+        System.out.println(Arrays.toString(array));
+
+        isSorted = false;
+        int skipLast = array.length - 1;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < skipLast; i++) {
+                if (array[i] > array[i + 1]) {
+                    int buffer = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = buffer;
+                    isSorted = false;
+                }
+            }
+            skipLast--;
         }
         System.out.println(Arrays.toString(array));
     }
