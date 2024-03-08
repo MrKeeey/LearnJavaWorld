@@ -40,17 +40,16 @@ public class BinarySearch {
 
         int left = 0;
         int right = array.length - 1;
-        int mid;
 
         while (left <= right) {
 
-            mid = (left + right) / 2;
+            int mid = (left + right) / 2;
 
             if (key == array[mid]) {
                 return mid;
             }
 
-            if (array[mid] < key) {
+            if (key > array[mid]) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
