@@ -7,9 +7,6 @@ public class BinarySearch {
     public static void main(String[] args) {
 
         int[] data = new int[100];
-        int low = 0;
-        int high = data.length - 1;
-        int count = 0;
 
         for (int i = 0; i < data.length; i++) {
             data[i] = i + 1;
@@ -18,9 +15,9 @@ public class BinarySearch {
         Scanner console = new Scanner(System.in);
         System.out.print("Enter your number: ");
 
-        boolean flag = true;
+        boolean incorrectNumber = true;
         int guess = 0;
-        while (flag) {
+        while (incorrectNumber) {
             if (!console.hasNextInt()) {
                 System.out.print("Wrong enter. Enter a number from 1 to 100: ");
                 console.next();
@@ -29,27 +26,37 @@ public class BinarySearch {
                 if (guess > 100 || guess <= 0) {
                     System.out.print("Wrong enter. Enter a number from 1 to 100: ");
                 } else {
-                    flag = false;
+                    incorrectNumber = false;
                 }
             }
         }
 
-        while (low <= high) {
+        int index = new BinarySearch().binarySearch(data, guess);
+        System.out.println("Index: " + index);
 
-            count++;
-            int mid = (low + high) / 2;
+    }
 
-            if (guess == data[mid]) {
-                System.out.println("Find your guess: " + data[mid] + ", in " + count + " attempts.");
-                break;
+    public int binarySearch(int[] array, int key) {
+
+        int left = 0;
+        int right = array.length - 1;
+        int mid;
+
+        while (left <= right) {
+
+            mid = (left + right) / 2;
+
+            if (key == array[mid]) {
+                return mid;
             }
 
-            if (data[mid] < guess) {
-                low = mid + 1;
+            if (array[mid] < key) {
+                left = mid + 1;
             } else {
-                high = mid - 1;
+                right = mid - 1;
             }
 
         }
+        return -1;
     }
 }
