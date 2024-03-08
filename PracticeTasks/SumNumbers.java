@@ -9,13 +9,15 @@ public class SumNumbers {
     public static void main(String[] args) {
 
         for (int i = 0; i < MAX_LIMIT; i++) {
-            int sum = 0;
+
             if (i % 3 == 0 && i % 5 != 0) {
                 if (i < 10) {
                     System.out.print(i + " ");
                 } else {
                     //new SumNumbers().sum(i);
+
                     int buff = i;
+                    int sum = 0;
 
                     while (buff != 0) {
                         sum += (buff % 10);
@@ -41,7 +43,7 @@ public class SumNumbers {
         }
 
         if (result < 10) {
-            System.out.print(buffer + " ");
+            System.out.print(number + " ");
         }
 
     }
