@@ -17,12 +17,10 @@ public class InsertionSort {
         for (int i = 1; i < array.length; i++) {
             int element = array[i];
             int j = i;
-
             while (j > 0 && array[j - 1] > element) {
                 array[j] = array[j - 1];
                 j--;
             }
-
             array[j] = element;
         }
         return array;
@@ -32,15 +30,9 @@ public class InsertionSort {
         for (int i = 1; i < array.length; i++) {
             int element = array[i];
             int j = i;
-
-            for (; j > 0; j--) {
-                if (array[j - 1] > element) {
-                    array[j] = array[j - 1];
-                } else {
-                    break;
-                }
+            for (; j > 0 && element > array[j - 1]; j--) {
+                array[j] = array[j - 1];
             }
-
             array[j] = element;
         }
         return array;
