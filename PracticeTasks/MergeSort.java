@@ -42,10 +42,8 @@ public class MergeSort {
                 }
             }
             if (j == right.length) {
-                while (i < left.length) {
+                for (; i < left.length; i++, k++) {
                     result[k] = left[i];
-                    k++;
-                    i++;
                 }
             }
         }
