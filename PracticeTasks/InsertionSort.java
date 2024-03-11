@@ -2,6 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
+//Сортировка вставками
 public class InsertionSort {
     public static void main(String[] args) {
         int[] array = {-5, 6, 234, -23, 4, 6, -8, 0, -1};
