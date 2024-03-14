@@ -41,16 +41,27 @@ public class FibonachiTest {
     }
 
     public static int getNthFibonacci(int n) {
-        if (n == 0 || n == 1) {
+        if (n == -1 || n == 0 || n == 1) {
             return n;
         }
-        int first = 0;
-        int second = 1;
-        for (int i = 3; i <= n; i++) {
-            int sum = first + second;
-            first = second;
-            second = sum;
+        if (n < 0) {
+            int first = 0;
+            int second = -1;
+            for (int i = -3; i >= n; i--) {
+                int sum = first + second;
+                first = second;
+                second = sum;
+            }
+            return second;
+        } else {
+            int first = 0;
+            int second = 1;
+            for (int i = 3; i <= n; i++) {
+                int sum = first + second;
+                first = second;
+                second = sum;
+            }
+            return second;
         }
-        return second;
     }
 }
