@@ -1,7 +1,5 @@
 package PracticeTasks;
 
-import javax.sound.midi.Soundbank;
-
 public class PalindromeInSubstring {
     public static void main(String[] args) {
         String s = "kipolpikaba";
@@ -20,7 +18,7 @@ public class PalindromeInSubstring {
     }
 
     private static boolean isPalindrome(int left, int right, String str) {
-        System.out.println(str.substring(left, right));
+        //System.out.println(str.substring(left, right));
         if (left < right - 1) {
             for (int i = left; i < (right - 1); i++, right--) {
                 if (str.charAt(i) != str.charAt(right - 1)) {
