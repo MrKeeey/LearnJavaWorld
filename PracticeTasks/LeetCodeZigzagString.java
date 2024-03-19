@@ -26,27 +26,28 @@ public class LeetCodeZigzagString {
             buffer[i] = new StringBuilder();
         }
         int count = 0;
-//        while (count < s.length()) {
-//            for (int i = 0; i < numRows && count < s.length(); i++, count++) {
-//                buffer[i].append(s.charAt(count));
-//            }
-//            for (int i = numColumns; i > 0 && count < s.length(); i--, count++) {
-//                buffer[i].append(s.charAt(count));
-//            }
-//        }
-        for (int i = 0; i < s.length(); i += numRows + numColumns) {
-            for (int j = i; j < i + numRows + numColumns && j < s.length(); j++) {
-                if (j < numRows + i) {
-                    buffer[count].append(s.charAt(j));
-                    count++;
-                } else {
-                    buffer[count - 2].append(s.charAt(j));
-                    count--;
-                }
+        while (count < s.length()) {
+            for (int i = 0; i < numRows && count < s.length(); i++, count++) {
+                buffer[i].append(s.charAt(count));
             }
-            count = 0;
+            for (int i = numColumns; i > 0 && count < s.length(); i--, count++) {
+                buffer[i].append(s.charAt(count));
+            }
         }
-        System.out.println(Arrays.toString(buffer));
+        //my version
+//        for (int i = 0; i < s.length(); i += numRows + numColumns) {
+//            for (int j = i; j < i + numRows + numColumns && j < s.length(); j++) {
+//                if (j < numRows + i) {
+//                    buffer[count].append(s.charAt(j));
+//                    count++;
+//                } else {
+//                    buffer[count - 2].append(s.charAt(j));
+//                    count--;
+//                }
+//            }
+//            count = 0;
+//        }
+//        System.out.println(Arrays.toString(buffer));
         StringBuilder result = new StringBuilder();
         for (StringBuilder str : buffer) {
             result.append(str);
