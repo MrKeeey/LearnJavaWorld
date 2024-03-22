@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LeetCode {
+public class LeetCodeIntegerToRoman {
     public static void main(String[] args) {
         System.out.println(intToRoman(1994));
     }
