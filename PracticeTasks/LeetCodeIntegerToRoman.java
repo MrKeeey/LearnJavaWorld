@@ -8,17 +8,16 @@ public class LeetCodeIntegerToRoman {
 
 
     public static String intToRoman2(int num) {
-        final int[] val = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
-        final String[] rom = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
-
+        final int[] val = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        final String[] rom = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         StringBuilder ans = new StringBuilder();
-        for(int i=0; num>0; i++){
-            while(num >= val[i]){
+
+        for (int i = 0; num > 0; i++) {
+            while (num >= val[i]) {
                 ans.append(rom[i]);
                 num = num - val[i];
             }
         }
-
         return ans.toString();
     }
 
@@ -27,15 +26,15 @@ public class LeetCodeIntegerToRoman {
         int buff = num % 10;
 
         switch (buff) {
-            case (1) : result[0] = "I"; break;
-            case (2) : result[0] = "II"; break;
-            case (3) : result[0] = "III"; break;
-            case (4) : result[0] = "IV"; break;
-            case (5) : result[0] = "V"; break;
-            case (6) : result[0] = "VI"; break;
-            case (7) : result[0] = "VII"; break;
-            case (8) : result[0] = "VIII"; break;
-            case (9) : result[0] = "IX"; break;
+            case (1) -> result[0] = "I";
+            case (2) -> result[0] = "II";
+            case (3) -> result[0] = "III";
+            case (4) -> result[0] = "IV";
+            case (5) -> result[0] = "V";
+            case (6) -> result[0] = "VI";
+            case (7) -> result[0] = "VII";
+            case (8) -> result[0] = "VIII";
+            case (9) -> result[0] = "IX";
         }
         if (num >= 10) {
             buff = num % 100 - num % 10;
@@ -74,7 +73,7 @@ public class LeetCodeIntegerToRoman {
             }
         }
         StringBuilder val = new StringBuilder();
-        for (int i = result.length - 1; i >= 0 ; i--) {
+        for (int i = result.length - 1; i >= 0; i--) {
             if (result[i] != null) {
                 val.append(result[i]);
             }
