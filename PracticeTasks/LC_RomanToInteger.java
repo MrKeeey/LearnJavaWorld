@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LeetCodeRomanToInteger {
+public class LC_RomanToInteger {
     public static void main(String[] args) {
         System.out.println(romanToInt("LVIII"));
         System.out.println(romanToInt2("LVIII"));

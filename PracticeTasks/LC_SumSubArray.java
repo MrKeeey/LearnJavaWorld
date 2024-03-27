@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LeetCodeSumSubArray {
+public class LC_SumSubArray {
 
     public static void main(String[] args) {
         int[] nums = {1, 0, 1, 0, 1};

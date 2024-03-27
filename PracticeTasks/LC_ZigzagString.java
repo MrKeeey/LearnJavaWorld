@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LeetCodeZigzagString {
+public class LC_ZigzagString {
     public static void main(String[] args) {
 //        P   A   H   N
 //        A P L S I I G

@@ -1,7 +1,7 @@
 package PracticeTasks;
 
 
-public class LeetCodeLongestSubstring {
+public class LC_LongestSubstring {
     public static void main(String[] args) {
         String s = "aabaab!bb";
         System.out.println(lengthOfLongestSubstring2(s));

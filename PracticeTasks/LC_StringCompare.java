@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LeetCodeStringCompare {
+public class LC_StringCompare {
     public static void main(String[] args) {
         System.out.println(backspaceCompare("a##c", "#a#c"));
         System.out.println(preparedString("a##c").equals(preparedString("#a#c")));

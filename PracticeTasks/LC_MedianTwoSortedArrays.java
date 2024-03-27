@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LeetCodeMedianTwoSortedArrays {
+public class LC_MedianTwoSortedArrays {
     public static void main(String[] args) {
         int[] nums1 = {};
         int[] nums2 = {3};

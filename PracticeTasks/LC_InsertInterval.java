@@ -2,10 +2,9 @@ package PracticeTasks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-public class LeetCodeInsertInterval {
+public class LC_InsertInterval {
     public static void main(String[] args) {
         int[][] array = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] interval = {4, 8};

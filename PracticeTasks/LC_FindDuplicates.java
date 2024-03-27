@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeetCodeFindDuplicates {
+public class LC_FindDuplicates {
     public static void main(String[] args) {
         int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
         System.out.println(findDuplicates(nums));

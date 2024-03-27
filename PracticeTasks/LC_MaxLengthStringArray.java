@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeetCodeMaxLengthStringArray {
+public class LC_MaxLengthStringArray {
     public static void main(String[] args) {
         List<String> inputArray= new ArrayList<String>();
         inputArray.add("cha");

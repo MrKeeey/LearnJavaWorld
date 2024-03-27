@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class LeetCodeFirstMissingPositive {
+public class LC_FirstMissingPositive {
     public static void main(String[] args) {
         int[] num = {1, 2, 0, 12345678};
         System.out.println(firstMissingPositive(num));

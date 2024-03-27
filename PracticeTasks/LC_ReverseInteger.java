@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LeetCodeReverseInteger {
+public class LC_ReverseInteger {
     public static void main(String[] args) {
         System.out.println(reverse(1534236469));
     }
