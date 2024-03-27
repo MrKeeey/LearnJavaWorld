@@ -28,21 +28,17 @@ public class LC_LongestCommonPrefix {
         int count = 0;
         while (result.size() != 0) {
             for (int elem = 0; elem < str1.size(); elem++) {
-                for (int i = 0; i < result.size();) {
-                    if (str1.get(elem).contains(result.get(i))) {
-                        count++;
-                        if (count == str1.size()) {
-                            return result.get(i);
-                        }
-                        break;
-                    } else {
-                        result.remove(i);
-                        count--;
-                        break;
+                if (str1.get(elem).contains(result.get(0))) {
+                    count++;
+                    if (count == str1.size()) {
+                        return result.get(0);
                     }
+                } else {
+                    result.remove(0);
+                    count = 0;
+                    break;
                 }
             }
-
         }
         return "";
     }
