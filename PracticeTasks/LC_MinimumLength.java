@@ -2,40 +2,73 @@ package PracticeTasks;
 
 public class LC_MinimumLength {
     public static void main(String[] args) {
-        String str = "cabaabac";
+        String str = "bbbbbbbbbbbbbbbbbbb";
         System.out.println(minimumLength(str));
+        System.out.println(minimumLength2(str));
     }
 
     public static int minimumLength(String s) {
-        StringBuilder str = new StringBuilder(s);
-        int length = str.length() - 1;
-        while (str.charAt(0) == str.charAt(length)) {
-
-
-            for (int i = length; i > 0; i--) {
-                if (str.charAt(length) == str.charAt(i - 1)) {
-                    str.deleteCharAt(i - 1);
+        int len = s.length() - 1;
+        int count = 0;
+        while (s.charAt(count) == s.charAt(len) && count < len) {
+            for (int i = 0; i < s.length(); i++) {
+                if (count < len && s.charAt(count) == s.charAt(count + 1)) {
+                    count++;
                 } else {
-                    str.deleteCharAt(i);
                     break;
                 }
             }
-            System.out.println(str);
-            if (str.length() <= 1) return str.length();
-            for (int i = 0; i < length; i++) {
-                if (str.charAt(0) == str.charAt(i + 1)) {
-                    str.deleteCharAt(i + 1);
+            for (int i = s.length() - 1; i >= 0; i--) {
+                if (count < len && s.charAt(len) == s.charAt(len - 1)) {
+                    len--;
                 } else {
-                    str.deleteCharAt(0);
                     break;
                 }
             }
-
-            length = str.length() - 1;
-            if (str.length() <= 1) return str.length();
-            System.out.println(str + " : " + length);
-
+            count++;
+            len--;
+            if (count > len) return 0;
         }
-        return str.length();
+
+        if (count < len) {
+            return s.substring(count, len + 1).length();
+        } else if (count == len) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public static int minimumLength2(String s) {
+        StringBuilder str = new StringBuilder(s);
+        int len = str.length() - 1;
+        int count = 0;
+        while (str.charAt(count) == str.charAt(len) && count < len) {
+            for (int i = 0; i < str.length(); i++) {
+                if (count < len && str.charAt(count) == str.charAt(count + 1)) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+            for (int i = str.length() - 1; i >= 0; i--) {
+                if (count < len && str.charAt(len) == str.charAt(len - 1)) {
+                    len--;
+                } else {
+                    break;
+                }
+            }
+            count++;
+            len--;
+            if (count > len) return 0;
+        }
+
+        if (count < len) {
+            return str.substring(count, len + 1).length();
+        } else if (count == len) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }
