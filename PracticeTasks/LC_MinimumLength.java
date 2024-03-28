@@ -2,7 +2,7 @@ package PracticeTasks;
 
 public class LC_MinimumLength {
     public static void main(String[] args) {
-        String str = "bbbbbbbbbbbbbbbbbbb";
+        String str = "bbbbbbb12bbbbbbbbbbbb";
         System.out.println(minimumLength(str));
         System.out.println(minimumLength2(str));
     }
@@ -10,33 +10,22 @@ public class LC_MinimumLength {
     public static int minimumLength(String s) {
         int len = s.length() - 1;
         int count = 0;
-        while (s.charAt(count) == s.charAt(len) && count < len) {
-            for (int i = 0; i < s.length(); i++) {
-                if (count < len && s.charAt(count) == s.charAt(count + 1)) {
-                    count++;
-                } else {
-                    break;
-                }
+        while (count < len && s.charAt(count) == s.charAt(len)) {
+            char element = s.charAt(count);
+            while (count <= len && element == s.charAt(count)) {
+                count++;
             }
-            for (int i = s.length() - 1; i >= 0; i--) {
-                if (count < len && s.charAt(len) == s.charAt(len - 1)) {
-                    len--;
-                } else {
-                    break;
-                }
+            if (count > len) {
+                return 0;
             }
-            count++;
-            len--;
-            if (count > len) return 0;
+            while (count <= len && element == s.charAt(len)) {
+                len--;
+            }
+            if (count == len) {
+                return 1;
+            }
         }
-
-        if (count < len) {
-            return s.substring(count, len + 1).length();
-        } else if (count == len) {
-            return 1;
-        } else {
-            return 0;
-        }
+        return len - count + 1;
     }
 
     public static int minimumLength2(String s) {
