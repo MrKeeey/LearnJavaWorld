@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_SumOfLeftLeaves2 {
+public class LC_TreeSumOfLeftLeaves {
     public static void main(String[] args) {
         int[] tree = {3, 9, 20, 0, 0, 15, 7};
         TreeNode treeNode = new TreeNode(3, new TreeNode(9, null, null), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
@@ -26,7 +26,7 @@ public class LC_SumOfLeftLeaves2 {
         if (root == null) return 0;
         int sum = 0;
 
-        if (root.left != null && root.left.left == null & root.left.right == null) {
+        if (root.left != null && root.left.left == null && root.left.right == null) {
             sum += root.left.val;
         }
 
