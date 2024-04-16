@@ -1,7 +1,5 @@
 package PracticeTasks;
 
-import com.sun.source.tree.Tree;
-
 public class LC_TreeSumNumbers {
     public static void main(String[] args) {
         TreeNode tree = new TreeNode(4, new TreeNode(9, new TreeNode(5), new TreeNode(1)), new TreeNode(0, null, null));
