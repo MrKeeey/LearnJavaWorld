@@ -2,7 +2,6 @@ package PracticeTasks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class LC_FindFarmland {
     public static void main(String[] args) {
