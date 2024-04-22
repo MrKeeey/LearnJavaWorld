@@ -35,6 +35,7 @@ public class LC_ValidPath {
         }
         return check(new boolean[edges.length][2], edges, source, destination);
     }
+    
     public static boolean check (boolean[][] isChecked, int[][] edges, int source, int destination) {
         boolean result = false;
 
