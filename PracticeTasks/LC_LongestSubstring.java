@@ -3,7 +3,7 @@ package PracticeTasks;
 
 public class LC_LongestSubstring {
     public static void main(String[] args) {
-        String s = "aabaab!bb";
+        String s = "abcbada";
         System.out.println(lengthOfLongestSubstring2(s));
         System.out.println(lengthOfLongestSubstring(s));
     }
@@ -15,18 +15,14 @@ public class LC_LongestSubstring {
         int max = 0;
         for (int i = 0; i < s.length(); i++) {
             if (result.toString().contains(String.valueOf(s.charAt(i)))) {
-                if (max < result.length()) {
-                    max = result.length();
-                }
+                max = Math.max(max, result.length());
                 while (result.toString().contains(String.valueOf(s.charAt(i)))) {
                     result.deleteCharAt(0);
                 }
                 result.append(s.charAt(i));
             } else {
                 result.append(s.charAt(i));
-                if (max < result.length()) {
-                    max = result.length();
-                }
+                max = Math.max(max, result.length());
             }
         }
         return max;
@@ -40,16 +36,12 @@ public class LC_LongestSubstring {
         for (int j = 0; j < s.length(); j++) {
             for (int i = j; i < s.length(); i++) {
                 if (result.contains(String.valueOf(s.charAt(i)))) {
-                    if (max < result.length()) {
-                        max = result.length();
-                    }
+                    max = Math.max(max, result.length());
                     result = String.valueOf(s.charAt(i));
                 } else {
                     result += s.charAt(i);
                     if (i == s.length() - 1) {
-                        if (max < result.length()) {
-                            max = result.length();
-                        }
+                        max = Math.max(max, result.length());
                     }
                 }
             }
