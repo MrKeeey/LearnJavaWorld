@@ -1,9 +1,9 @@
 package PracticeTasks;
 
-public class LC_ {
+public class LC_FirstSubstrStr {
     public static void main(String[] args) {
-        System.out.println(new LC_().strStr("sadbutsad", "ad"));
-        System.out.println(new LC_().strStr2("sadbutsad", "ad"));
+        System.out.println(new LC_FirstSubstrStr().strStr("sadbutsad", "ad"));
+        System.out.println(new LC_FirstSubstrStr().strStr2("sadbutsad", "ad"));
     }
 
     public int strStr(String haystack, String needle) {
