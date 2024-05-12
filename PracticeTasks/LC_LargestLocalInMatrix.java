@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC_ {
+public class LC_LargestLocalInMatrix {
     public static void main(String[] args) {
         int[][] matrix = {{1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 2, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}};
         System.out.println(Arrays.deepToString(largestLocal(matrix)));
