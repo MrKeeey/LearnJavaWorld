@@ -1,7 +1,5 @@
 package PracticeTasks;
 
-import java.util.ArrayDeque;
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class LC_MergeKLists {
