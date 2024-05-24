@@ -27,7 +27,6 @@ public class LC_BeautifulSubsets {
             }
             totalSubsets.addAll(buffer);
         }
-        System.out.println(totalSubsets);
 
         return totalSubsets.size() - 1;
     }
