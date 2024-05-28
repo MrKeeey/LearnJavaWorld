@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LC_ {
+public class LC_EqualSubstring_SW {
     public static void main(String[] args) {
         System.out.println(equalSubstring("krrgw", "zjxss", 19));
     }
