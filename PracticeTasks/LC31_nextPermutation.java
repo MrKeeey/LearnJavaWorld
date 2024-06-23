@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC31_NextPermutation {
+public class LC31_nextPermutation {
     public static void main(String[] args) {
         int[] array = {1, 2, 3};
         nextPermutation(array);

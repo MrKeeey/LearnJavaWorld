@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.time.LocalTime;
 
-public class LC633_JudgeSquareSum {
+public class LC633_judgeSquareSum {
     public static void main(String[] args) {
         LocalTime time = LocalTime.now();
         System.out.println(judgeSquareSum(Integer.MAX_VALUE));

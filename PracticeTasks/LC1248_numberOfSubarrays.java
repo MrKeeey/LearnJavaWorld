@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC1248_NumberOfSubarrays {
+public class LC1248_numberOfSubarrays {
     public static void main(String[] args) {
         int[] array = {2, 2, 2, 1, 2, 2, 1, 2, 2, 2};
         System.out.println(numberOfSubarrays(array, 2));

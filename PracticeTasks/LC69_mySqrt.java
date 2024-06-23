@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC69_MySqrt {
+public class LC69_mySqrt {
     public static void main(String[] args) {
         System.out.println(mySqrt(Integer.MAX_VALUE));
     }

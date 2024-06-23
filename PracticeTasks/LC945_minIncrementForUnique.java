@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC945_MinIncrementForUnique {
+public class LC945_minIncrementForUnique {
     public static void main(String[] args) {
         int[] array = {3, 2, 1, 2, 1, 7, 1};
         System.out.println(minIncrementForUnique(array));

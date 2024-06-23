@@ -1,10 +1,10 @@
 package PracticeTasks;
 
-public class LC76_AddBinary {
+public class LC76_addBinary {
     StringBuilder result = new StringBuilder();
 
     public static void main(String[] args) {
-        System.out.println(new LC76_AddBinary().addBinary("1010", "1011"));
+        System.out.println(new LC76_addBinary().addBinary("1010", "1011"));
     }
 
     public String addBinary(String a, String b) {

@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC826_MaxProfitAssignment {
+public class LC826_maxProfitAssignment {
     public static void main(String[] args) {
         int[] difficulty = {68, 35, 52, 47, 86};
         int[] profit = {67, 17, 1, 81, 3};

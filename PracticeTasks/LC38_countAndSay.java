@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC38_CountAndSay {
+public class LC38_countAndSay {
     public static void main(String[] args) {
         System.out.println(countAndSay(4));
     }
