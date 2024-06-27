@@ -1,9 +1,7 @@
-package PracticeTasks;
+package HelloWorld;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StreamTest {
     private static List<Owner> owners;
