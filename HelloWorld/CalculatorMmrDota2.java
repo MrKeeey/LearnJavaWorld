@@ -85,6 +85,10 @@ class SoloBoostMmr {
     }
 }
 
+class DuoBoostMmr {
+
+}
+
 class calibrationMmr {
 
 }
