@@ -85,6 +85,6 @@ class SoloBoostMmr {
     }
 }
 
-class calibrationMrr {
+class calibrationMmr {
 
 }
