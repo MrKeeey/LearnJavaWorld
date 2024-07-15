@@ -1,0 +1,14 @@
+# Default ignored countFilesInFolders
+/shelf/
+/workspace.xml
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+out/*
+.idea/
+/countFilesInFolders/
+*.iml
