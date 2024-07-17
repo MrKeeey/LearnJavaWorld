@@ -3,17 +3,17 @@ package PracticeTasks;
 public class LC_DistributeCoins {
     static int result = 0;
     public static void main(String[] args) {
-        TreeNodes tree = new TreeNodes(0, new TreeNodes(0, new TreeNodes(4), new TreeNodes(0)), new TreeNodes(2, new TreeNodes(1), new TreeNodes(0)));
+        TreeNode tree = new TreeNode(0, new TreeNode(0, new TreeNode(4), new TreeNode(0)), new TreeNode(2, new TreeNode(1), new TreeNode(0)));
         System.out.println(distributeCoins(tree));
         System.out.println(tree);
     }
 
-    public static int distributeCoins(TreeNodes root) {
+    public static int distributeCoins(TreeNode root) {
         countWays(root);
         return result;
     }
 
-    public static int countWays(TreeNodes root) {
+    public static int countWays(TreeNode root) {
         if (root == null) return 0;
 
         int left = countWays(root.left);
