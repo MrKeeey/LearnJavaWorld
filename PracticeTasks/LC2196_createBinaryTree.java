@@ -18,6 +18,7 @@ public class LC2196_createBinaryTree {
             rootNode.add(description[0]);
             childs.add(description[1]);
 
+            //вместо метода computeIfAbsent
 //            int[] buff = {description[1], description[2]};
 //            List<int[]> temp = new ArrayList<>();
 //
