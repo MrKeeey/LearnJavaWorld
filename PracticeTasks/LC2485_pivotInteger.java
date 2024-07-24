@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_SumToXAndAfterX {
+public class LC2485_pivotInteger {
     public static void main(String[] args) {
         System.out.println(pivotInteger(-8));
         System.out.println(pivotInteger2(8));

@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.math.BigInteger;
 
 
-public class LC_StringToInteger {
+public class LC8_myAtoi {
     public static void main(String[] args) {
         System.out.println(myAtoi("-5-"));
     }

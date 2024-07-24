@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC_SortColors {
+public class LC75_sortColors {
     public static void main(String[] args) {
         int[] array = {2, 0, 2, 1, 1, 0};
         sortColors(array);

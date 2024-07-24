@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_StringCompare {
+public class LC844_backspaceCompare {
     public static void main(String[] args) {
         System.out.println(backspaceCompare("a##c", "#a#c"));
         System.out.println(preparedString("a##c").equals(preparedString("#a#c")));

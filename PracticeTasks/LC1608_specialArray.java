@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LC_SpecialArray {
+public class LC1608_specialArray {
     public static void main(String[] args) {
         int[] array = {8, 7, 5, 6, 6, 0};
         System.out.println(specialArray(array));

@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_IntegerToRoman {
+public class LC12_intToRoman {
     public static void main(String[] args) {
         System.out.println(intToRoman2(2994));
         System.out.println(intToRoman(2994));

@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ZigzagString {
+public class LC6_zigZagConversion {
     public static void main(String[] args) {
 //        P   A   H   N
 //        A P L S I I G

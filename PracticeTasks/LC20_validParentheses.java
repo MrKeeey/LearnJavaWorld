@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ValidParentheses {
+public class LC20_validParentheses {
     public static void main(String[] args) {
         String str = "([]}{}[]{";
         System.out.println(isValid(str));

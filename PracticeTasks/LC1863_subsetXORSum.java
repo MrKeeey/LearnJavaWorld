@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_SubsetXORSum {
+public class LC1863_subsetXORSum {
     public static void main(String[] args) {
         int[] array = {3, 4, 5, 6, 7, 8};
         System.out.println(subsetXORSum(array));

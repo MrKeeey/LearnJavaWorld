@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC_SubsetsNEWARRAYLIST {
+public class LC78_subsets {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4};
         System.out.println(subsets(array));

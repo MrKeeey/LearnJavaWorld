@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ScoreOfString {
+public class LC3110_scoreOfString {
     public static void main(String[] args) {
         System.out.println(scoreOfString("hello"));
     }

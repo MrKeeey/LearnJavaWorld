@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_SearchInsert {
+public class LC35_searchInsert {
     public static void main(String[] args) {
         int[] sortArray = {1, 3, 5, 7};
         System.out.println(searchInsert(sortArray, 8));

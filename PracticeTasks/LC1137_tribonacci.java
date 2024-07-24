@@ -1,13 +1,9 @@
 package PracticeTasks;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-public class LC_Tribonacci {
+public class LC1137_tribonacci {
     public static void main(String[] args) {
         System.out.println(tribonacci(5));
         System.out.println(tribonacci2(5));
-        System.out.println(Integer.MAX_VALUE);
     }
 
     public static int tribonacci(int n) {

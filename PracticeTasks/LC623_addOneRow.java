@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_TreeAddOneRow {
+public class LC623_addOneRow {
     public static void main(String[] args) {
         TreeNode tree = new TreeNode(4, new TreeNode(2, new TreeNode(3), new TreeNode(1)), new TreeNode(6, new TreeNode(5), null));
         System.out.println(addOneRow(tree, 1, 2));
