@@ -28,7 +28,6 @@ public class LC1334_findTheCity {
         for (int i = 0; i < n; i++) {
             dijkstra(distances, countCities, i, distanceThreshold);
         }
-        System.out.println(Arrays.toString(countCities));
 
         int minCount = Integer.MAX_VALUE;
         int resultCity = -1;
