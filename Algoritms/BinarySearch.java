@@ -1,4 +1,4 @@
-package PracticeTasks;
+package Algoritms;
 
 import java.util.Scanner;
 

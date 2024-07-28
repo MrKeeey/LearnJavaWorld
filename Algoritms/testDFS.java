@@ -1,4 +1,4 @@
-package HelloWorld;
+package Algoritms;
 
 import PracticeTasks.TreeNode;
 public class testDFS {
