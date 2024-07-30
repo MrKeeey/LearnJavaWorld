@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC_PlusOne {
+public class LC66_plusOne {
     public static void main(String[] args) {
         int[] array = {9, 9, 9, 9};
         System.out.println(Arrays.toString(plusOne(array)));

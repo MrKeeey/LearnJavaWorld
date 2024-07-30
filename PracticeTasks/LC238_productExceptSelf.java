@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC_ProductArrayExceptSelf {
+public class LC238_productExceptSelf {
     public static void main(String[] args) {
         int[] array = {-1, 1, 0, -3, 3};
         System.out.println(Arrays.toString(productExceptSelf(array)));

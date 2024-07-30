@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ReversePrefix {
+public class LC2000_reversePrefix {
     public static void main(String[] args) {
         System.out.println(reversePrefix("abcdefd", 'q'));
     }

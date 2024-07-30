@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC_RemoveDuplicates {
+public class LC25_removeDuplicates {
     public static void main(String[] args) {
         int[] array = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         int[] array2 = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};

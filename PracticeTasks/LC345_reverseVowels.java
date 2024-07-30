@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.ArrayList;
-
-public class LC_ReverseVowels {
+public class LC345_reverseVowels {
     public static void main(String[] args) {
         String str = "race car";
         System.out.println(reverseVowels(str));

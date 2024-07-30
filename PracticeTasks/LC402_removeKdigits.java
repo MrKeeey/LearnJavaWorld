@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_RemoveKdigits {
+public class LC402_removeKdigits {
     public static void main(String[] args) {
         String s = "10001";
         System.out.println(removeKdigits(s, 4));

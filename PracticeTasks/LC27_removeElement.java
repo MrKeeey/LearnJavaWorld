@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC_RemoveElement {
+public class LC27_removeElement {
     public static void main(String[] args) {
         int[] array = {0, 1, 2, 2, 3, 0, 4, 2};
         System.out.println(removeElement(array, 2));

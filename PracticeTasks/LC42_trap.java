@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LC_RainWater {
+public class LC42_trap {
     public static void main(String[] args) {
         int[] array = {4, 2, 0, 3, 2, 5};
         System.out.println(trap(array));

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class LC_ThreeSum {
+public class LC15_threeSum {
     public static void main(String[] args) {
         int[] num = {-4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0};
         System.out.println(threeSum(num));

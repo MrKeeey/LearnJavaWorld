@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ReverseInteger {
+public class LC7_reverseInteger {
     public static void main(String[] args) {
         System.out.println(reverse(1534236469));
     }

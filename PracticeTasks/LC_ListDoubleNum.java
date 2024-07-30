@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-import static PracticeTasks.LC_RemoveNodes.reverse;
+import static PracticeTasks.LC2487_removeNodes.reverse;
 
 public class LC_ListDoubleNum {
     public static void main(String[] args) {

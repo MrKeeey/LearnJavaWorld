@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ReverseString {
+public class LC344_reverseString {
     public static void main(String[] args) {
         char[] array = {'h', 'e', 'l', 'l', 'o'};
         reverseString(array);

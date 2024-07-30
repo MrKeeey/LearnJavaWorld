@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.ArrayList;
 
-public class LC_RemoveNodes {
+public class LC2487_removeNodes {
     public static void main(String[] args) {
         ListNode list = new ListNode(5, new ListNode(2, new ListNode(13, new ListNode(3, new ListNode(8)))));
         System.out.println(removeNodes(list));

@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class LC_ReverseWords {
+public class LC151_reverseWords {
     public static void main(String[] args) {
         String str = "  Bob    Loves  Alice   ";
         System.out.println(reverseWords(str));

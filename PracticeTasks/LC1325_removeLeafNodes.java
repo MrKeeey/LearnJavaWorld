@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_RemoveLeafNodes {
+public class LC1325_removeLeafNodes {
     public static void main(String[] args) {
         TreeNode tree = new TreeNode(1, new TreeNode(2, new TreeNode(2), null), new TreeNode(3, new TreeNode(2), new TreeNode(4)));
         System.out.println(removeLeafNodes(tree, 2));
