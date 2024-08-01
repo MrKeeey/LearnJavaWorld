@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ValidPath {
+public class LC1971_validPath {
     public static void main(String[] args) {
         int[][] array = {{0, 1}, {0, 2}, {3, 5}, {5, 4}, {5, 4}};
         System.out.println(validPath(6, array, 0, 5));

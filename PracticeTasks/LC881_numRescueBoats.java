@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.*;
-
-public class LC_NumRescueBoats {
+public class LC881_numRescueBoats {
     public static void main(String[] args) {
         int[] array = {3, 2, 3, 2, 2};
         System.out.println(numRescueBoats(array, 6));

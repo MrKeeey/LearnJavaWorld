@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC_MinMovesToSeat {
+public class LC2037_minMovesToSeat {
     public static void main(String[] args) {
         int[] seats = {2, 2, 6, 6};
         int[] students = {1, 3, 2, 6};

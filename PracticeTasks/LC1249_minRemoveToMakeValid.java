@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_MinRemoveToMakeValid {
+public class LC1249_minRemoveToMakeValid {
     public static void main(String[] args) {
         String s = "a)b(c)d";
         System.out.println(minRemoveToMakeValid(s));

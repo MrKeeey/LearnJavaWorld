@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_NumSteps {
+public class LC1404_numSteps {
     public static void main(String[] args) {
         System.out.println(numSteps2("1111110011101010110011100100101110010100101110111010111110110010"));
         System.out.println(numSteps("1111110011101010110011100100101110010100101110111010111110110010"));

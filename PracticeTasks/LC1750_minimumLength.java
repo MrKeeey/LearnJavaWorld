@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_MinimumLength {
+public class LC1750_minimumLength {
     public static void main(String[] args) {
         String str = "bbbbbbb12bbbbbbbbbbbb";
         System.out.println(minimumLength(str));

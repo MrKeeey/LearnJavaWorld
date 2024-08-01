@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_NumIslands {
+public class LC200_numIslands {
     static int col;
     static int row;
 

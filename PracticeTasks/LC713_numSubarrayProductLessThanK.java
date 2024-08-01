@@ -1,9 +1,8 @@
 package PracticeTasks;
 
-public class LC_NumSubarrayProductLessThanK {
+public class LC713_numSubarrayProductLessThanK {
     public static void main(String[] args) {
         int[] array = {10, 5, 2, 6};
-        int k = 100;
         System.out.println(numSubarrayProductLessThanK(array, 100));
         System.out.println(numSubarrayProductLessThanK2(array, 100));
     }

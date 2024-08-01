@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LC_MinFallingPathSum {
+public class LC1289_minFallingPathSum {
     public static void main(String[] args) {
         int[][] matrix = {
                 {-37, 51, -36, 34, -22},
