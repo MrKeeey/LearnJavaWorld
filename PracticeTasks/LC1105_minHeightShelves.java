@@ -6,6 +6,7 @@ public class LC1105_minHeightShelves {
         System.out.println(minHeightShelves(array, 4));
     }
 
+    //not understanding how that working
     public static int minHeightShelves(int[][] books, int shelfWidth) {
         int[] dp = new int[books.length + 1];
 
