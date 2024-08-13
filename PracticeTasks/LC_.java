@@ -8,9 +8,9 @@ public class LC_ {
     public static int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
         int[][] result = new int[rows*cols][2];
 
-        while () {
-
-        }
+//        while () {
+//
+//        }
 
         return result;
     }
