@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ {
+public class LC885_spiralMatrixIII {
     public static void main(String[] args) {
         System.out.println(spiralMatrixIII(1, 4, 0, 0));
     }
