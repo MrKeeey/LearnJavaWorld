@@ -1,4 +1,4 @@
-package PracticeTasks;
+package HelloWorld;
 
 import java.util.Arrays;
 
@@ -55,9 +55,9 @@ public class testArraysClass {
         int index3 = Arrays.binarySearch(x, 0);
         System.out.println(index + " " + index2 + " " + index3 + "\n");     //return index element in sort array, if don't have element return -number
 
-        System.out.println("less array = bigger array is work!");
+        System.out.println("change object reference");
         int[] array = { 1, 2, 3, 4, 5 };
-        int[] mass = new int[3];
+        int[] mass = new int[30];
         mass = array;
         System.out.println(Arrays.toString(mass));
     }

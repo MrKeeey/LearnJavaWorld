@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_LongestPalindrome {
+public class LC409_longestPalindrome {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("bananas"));
     }

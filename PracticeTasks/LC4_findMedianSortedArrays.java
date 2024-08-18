@@ -1,13 +1,13 @@
 package PracticeTasks;
 
-public class LC_MedianTwoSortedArrays {
+public class LC4_findMedianSortedArrays {
     public static void main(String[] args) {
         int[] nums1 = {};
         int[] nums2 = {3};
-        System.out.println(mediana(nums1, nums2));
+        System.out.println(findMedianSortedArrays(nums1, nums2));
     }
 
-    private static double mediana (int[] nums1, int[] nums2) {
+    private static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int[] resultArray = new int[nums1.length + nums2.length];
         int i = 0;
         int j = 0;

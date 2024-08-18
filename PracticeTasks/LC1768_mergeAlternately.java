@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_MergeAlternately {
+public class LC1768_mergeAlternately {
     public static void main(String[] args) {
         String str1 = "abckkk";
         String str2 = "pqr";

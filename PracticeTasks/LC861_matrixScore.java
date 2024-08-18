@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_MatrixScore {
+public class LC861_matrixScore {
     public static void main(String[] args) {
         int[][] matrix = {{0}, {1}};
         System.out.println(matrixScore(matrix));

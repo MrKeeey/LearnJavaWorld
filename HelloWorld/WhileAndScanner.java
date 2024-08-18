@@ -1,4 +1,4 @@
-package PracticeTasks;
+package HelloWorld;
 
 import java.util.Scanner;
 

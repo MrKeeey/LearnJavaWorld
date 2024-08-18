@@ -1,6 +1,4 @@
-package PracticeTasks;
-
-import java.util.Arrays;
+package HelloWorld;
 
 public class Array2xAnd3x {
     public static void main(String[] args) {

@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LC_MatrixGetMaximumGold {
+public class LC1219_getMaximumGold {
     private static final int[] DIRECTIONS = new int[] { 0, 1, 0, -1, 0 };
     public static void main(String[] args) {
         int[][] array = {
@@ -14,7 +12,6 @@ public class LC_MatrixGetMaximumGold {
 
         //System.out.println(getMaximumGold(array));
         System.out.println(getMaximumGold2(array));
-
     }
 
     //wrong method

@@ -1,1 +1,1 @@
-PracticeTasks.sumFirst100Square-Class:  HeadFirst.chapter17.TestJar
+HelloWorld.sumFirst100Square-Class:  HeadFirst.chapter17.TestJar

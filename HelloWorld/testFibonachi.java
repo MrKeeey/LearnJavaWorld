@@ -1,6 +1,6 @@
-package PracticeTasks;
+package HelloWorld;
 
-public class FibonachiTest {
+public class testFibonachi {
     public static void main(String[] args) {
         displayFibonachi(8);
         System.out.println("\n" + fibonachi(-8));

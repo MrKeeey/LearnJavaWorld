@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_MaximalRectangle {
+public class LC85_maximalRectangle {
     public static void main(String[] args) {
         char[][] matrix = {
                 {'1', '0', '1', '0', '0'},

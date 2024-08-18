@@ -1,6 +1,6 @@
-package PracticeTasks;
+package HelloWorld;
 
-public class BreakAndContinue {
+public class testBreakAndContinue {
     public static void main(String[] args) {
 
         int count = 0;

@@ -1,6 +1,6 @@
-package PracticeTasks;
+package HelloWorld;
 
-public class FactorialTest {
+public class testFactorial {
     public static void main(String[] args) {
         System.out.println(factorial(6));
     }

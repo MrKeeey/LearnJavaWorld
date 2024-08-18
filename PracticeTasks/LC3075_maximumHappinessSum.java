@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import java.util.Arrays;
 
-public class LC_MaximumHappinessSum {
+public class LC3075_maximumHappinessSum {
     public static void main(String[] args) {
         int[] happy = {1, 2, 3};
         System.out.println(maximumHappinessSum(happy, 2));

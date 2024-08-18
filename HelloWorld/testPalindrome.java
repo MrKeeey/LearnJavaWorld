@@ -1,6 +1,6 @@
-package PracticeTasks;
+package HelloWorld;
 
-public class PalindromeTest {
+public class testPalindrome {
 
     private static boolean palindrome(int num) {
         String str = String.valueOf(num);

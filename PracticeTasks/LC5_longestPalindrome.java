@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class PalindromeInSubstring {
+public class LC5_longestPalindrome {
     public static void main(String[] args) {
         String s = "kipolopikaba";
         System.out.println(longestPalindrome(s));

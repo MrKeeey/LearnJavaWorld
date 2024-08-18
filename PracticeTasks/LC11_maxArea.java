@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_MaxArea {
+public class LC11_maxArea {
     public static void main(String[] args) {
         int[] water = {1, 8, 6, 2, 5, 4, 8, 3, 7};
         System.out.println(maxArea(water));

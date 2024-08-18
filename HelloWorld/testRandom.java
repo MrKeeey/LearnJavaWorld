@@ -1,7 +1,7 @@
 package HelloWorld;
 
 import java.util.Random;
-public class RandomTest {
+public class testRandom {
     public static void main(String[] args) {
         //Test how work random
         Random random = new Random();

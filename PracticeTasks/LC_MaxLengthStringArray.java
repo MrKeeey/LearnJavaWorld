@@ -5,12 +5,12 @@ import java.util.List;
 
 public class LC_MaxLengthStringArray {
     public static void main(String[] args) {
-        List<String> inputArray= new ArrayList<String>();
+        List<String> inputArray= new ArrayList<>();
         inputArray.add("cha");
         inputArray.add("r");
         inputArray.add("act");
         inputArray.add("ers");
-        maxLength(inputArray);
+        System.out.println(maxLength(inputArray));
     }
 
     private static int maxLength (List<String> arr) {

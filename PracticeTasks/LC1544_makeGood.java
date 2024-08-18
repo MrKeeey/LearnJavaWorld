@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import javax.print.DocFlavor;
-
-public class LC_makeGoodString {
+public class LC1544_makeGood {
     public static void main(String[] args) {
         String s = "djrDdRJDs";
         System.out.println(makeGood(s));
@@ -63,7 +61,7 @@ public class LC_makeGoodString {
         StringBuilder sb = new StringBuilder(s);
         for (int i = 0; i < sb.length() - 1; i++) {
             if (Math.abs(sb.charAt(i) - sb.charAt(i + 1)) == 32) {
-                return makeGood(sb.substring(0, i) + sb.substring(i + 2));
+                return makeGood3(sb.substring(0, i) + sb.substring(i + 2));
             }
         }
         return sb.toString();

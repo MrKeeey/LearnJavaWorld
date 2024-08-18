@@ -1,4 +1,4 @@
-package PracticeTasks;
+package HelloWorld;
 
 public class sumFirst100Square {
     public static void main(String[] args) {

@@ -1,7 +1,4 @@
-package PracticeTasks;
-
-import javax.sound.midi.Soundbank;
-import java.net.Socket;
+package HelloWorld;
 
 public class SumNumbers {
     public static final int MAX_LIMIT = 1000;

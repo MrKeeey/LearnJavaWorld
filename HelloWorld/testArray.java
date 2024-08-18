@@ -1,8 +1,8 @@
-package PracticeTasks;
+package HelloWorld;
 
 import java.util.Arrays;
 
-public class ArrayTest {
+public class testArray {
     public static void main(String[] args) {
 
         int nums[];
