@@ -1,7 +1,7 @@
 package PracticeTasks;
 
 
-public class LC_LongestSubstring {
+public class LC3_lengthOfLongestSubstring {
     public static void main(String[] args) {
         String s = "abcbada";
         System.out.println(lengthOfLongestSubstring2(s));

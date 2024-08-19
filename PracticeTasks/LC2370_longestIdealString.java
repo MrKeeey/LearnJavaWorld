@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_LongestIdealString {
+public class LC2370_longestIdealString {
     public static void main(String[] args) {
         System.out.println(longestIdealString("acfgbd", 2));
         System.out.println(longestIdealString2("acfgbd", 2));

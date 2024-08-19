@@ -2,7 +2,7 @@ package PracticeTasks;
 
 import static PracticeTasks.LC2487_removeNodes.reverse;
 
-public class LC_ListDoubleNum {
+public class LC2816_doubleIt {
     public static void main(String[] args) {
         System.out.println(doubleIt(new ListNode(1, new ListNode(9, new ListNode(9)))));
         System.out.println(doubleIt2(new ListNode(1, new ListNode(9, new ListNode(9)))));

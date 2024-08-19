@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_ListNodeSwapPairs {
+public class LC24_swapPairs {
     public static void main(String[] args) {
         System.out.println(swapPairs(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))))));
         System.out.println(swapPairs2(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))))));

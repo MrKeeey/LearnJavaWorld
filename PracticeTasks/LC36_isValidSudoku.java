@@ -1,6 +1,6 @@
 package PracticeTasks;
 
-public class LC_IsValidSudoku {
+public class LC36_isValidSudoku {
     public static void main(String[] args) {
         char[][] array = {
                 {'.', '.', '4', '.', '7', '.', '.', '.', '.'},

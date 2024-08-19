@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.time.LocalDateTime;
 import java.util.*;
 
-public class LC_LetterCombinations {
+public class LC17_letterCombinations {
     public static void main(String[] args) {
         LocalDateTime time1 = LocalDateTime.now();
         System.out.println(letterCombinations("234"));

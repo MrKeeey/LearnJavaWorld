@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC_KidsWithCandies {
+public class LC1431_kidsWithCandies {
     public static void main(String[] args) {
         int[] candies = {4, 2, 1, 1, 2};
         int myCandies = 1;

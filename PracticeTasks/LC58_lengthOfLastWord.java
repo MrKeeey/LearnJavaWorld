@@ -1,8 +1,6 @@
 package PracticeTasks;
 
-import java.util.Arrays;
-
-public class LC_LengthOfLastWord {
+public class LC58_lengthOfLastWord {
     public static void main(String[] args) {
         System.out.println(lengthOfLastWord("   moon  "));
         System.out.println(lengthOfLastWord2(" meow "));

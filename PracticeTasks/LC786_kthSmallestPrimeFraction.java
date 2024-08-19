@@ -2,11 +2,11 @@ package PracticeTasks;
 
 import java.util.*;
 
-public class LC_KthSmallestPrimeFraction {
+public class LC786_kthSmallestPrimeFraction {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 5};
         System.out.println(Arrays.toString(kthSmallestPrimeFraction(array, 3)));
-        System.out.println(Arrays.toString(new LC_KthSmallestPrimeFraction().kthSmallestPrimeFraction2(array, 3)));
+        System.out.println(Arrays.toString(new LC786_kthSmallestPrimeFraction().kthSmallestPrimeFraction2(array, 3)));
     }
 
     public static int[] kthSmallestPrimeFraction(int[] arr, int k) {
@@ -48,7 +48,7 @@ public class LC_KthSmallestPrimeFraction {
         return new int[]{pair.top, pair.bottom};
     }
 
-    class Pair {
+    private class Pair {
         int top;
         int bottom;
         double result;

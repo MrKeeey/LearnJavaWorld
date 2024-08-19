@@ -3,7 +3,7 @@ package PracticeTasks;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class LC_LongestCommonPrefix {
+public class LC14_longestCommonPrefix {
     public static void main(String[] args) {
         String[] strs = {"flower", "flowlower", "flightlower"};
         System.out.println(longestCommonPrefix(strs));
