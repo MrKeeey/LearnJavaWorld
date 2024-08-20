@@ -13,7 +13,7 @@ public class LC1140_stoneGameII {
         int length = piles.length;
         int[] suffixSum = Arrays.copyOf(piles, length);
 
-        for (int i = length - 2; i >= 0 ; i--) {
+        for (int i = length - 2; i >= 0; i--) {
             suffixSum[i] += suffixSum[i + 1];
         }
 
@@ -37,12 +37,12 @@ public class LC1140_stoneGameII {
         int[][] dp = new int[length + 1][length + 1];
 
         int[] suffixSum = new int[length + 1];
-        for (int i = length - 1; i >= 0 ; i--) {
+        for (int i = length - 1; i >= 0; i--) {
             suffixSum[i] = suffixSum[i + 1] + piles[i];
             dp[i][length] = suffixSum[i];
         }
 
-        for (int i = length - 1; i >= 0 ; i--) {
+        for (int i = length - 1; i >= 0; i--) {
             for (int max = length - 1; max >= 1; max--) {
                 for (int x = 1; x <= max * 2 && i + x <= length; x++) {
                     dp[i][max] = Math.max(dp[i][max], suffixSum[i] - dp[i + x][Math.max(max, x)]);
