@@ -2,9 +2,9 @@ package PracticeTasks;
 
 public class LC2220_minBitFlips {
     public static void main(String[] args) {
-        System.out.println(new LC2220_minBitFlips().minBitFlips(10, 1));
-        System.out.println(new LC2220_minBitFlips().minBitFlips2(10, 1));
-        System.out.println(new LC2220_minBitFlips().minBitFlips3(10, 1));
+        System.out.println(new LC2220_minBitFlips().minBitFlips(10, 7));
+        System.out.println(new LC2220_minBitFlips().minBitFlips2(10, 7));
+        System.out.println(new LC2220_minBitFlips().minBitFlips3(10, 7));
     }
 
     public int minBitFlips(int start, int goal) {
