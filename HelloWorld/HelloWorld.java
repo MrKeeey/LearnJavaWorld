@@ -43,5 +43,7 @@ public class HelloWorld {
         //Test char array
         char[] arr = {'T','s','2'};
         System.out.print(arr);
+
+        System.out.println("Meow");
     }
 }
