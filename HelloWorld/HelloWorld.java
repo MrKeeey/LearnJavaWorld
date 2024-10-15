@@ -16,6 +16,7 @@ public class HelloWorld {
             System.out.print(GW.charAt(i - 1));
         }
         System.out.println();
+
         StringBuilder str = new StringBuilder(GW);
         System.out.println(str.reverse());
 
@@ -24,6 +25,7 @@ public class HelloWorld {
             System.out.print("Hello World!".substring(i - 1, i));
         }
         System.out.println();
+
         str = new StringBuilder("Hello World!");
         System.out.println(str.reverse());
 
@@ -44,6 +46,5 @@ public class HelloWorld {
         char[] arr = {'T','s','2'};
         System.out.print(arr);
 
-        System.out.println("Meow");
     }
 }
