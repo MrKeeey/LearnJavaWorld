@@ -6,6 +6,7 @@ public class LC2185_prefixCount {
 
         for (String word : words) {
             if (word.startsWith(pref)) count++;
+//            slower
 //            if (word.indexOf(pref) == 0) count++;
         }
 
