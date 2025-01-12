@@ -21,6 +21,7 @@ public class LC1400_canConstruct {
         return count <= k;
     }
 
+    //slower
     public boolean canConstruct2(String s, int k) {
         if (s.length() < k) return false;
         if (s.length() == k) return true;
