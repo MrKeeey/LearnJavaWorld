@@ -11,14 +11,11 @@ public class LC3223_minimumLength {
         }
 
         for (int freq : freqs) {
-            if (freq <= 2) {
-                result += freq;
+            if (freq == 0) continue;
+            if (freq % 2 == 0) {
+                result += 2;
             } else {
-                if (freq % 2 == 0) {
-                    result += 2;
-                } else {
-                    result += 1;
-                }
+                result += 1;
             }
         }
 
