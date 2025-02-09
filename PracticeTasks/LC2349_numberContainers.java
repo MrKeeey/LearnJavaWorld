@@ -6,14 +6,14 @@ import java.util.TreeSet;
 public class LC2349_numberContainers {
     public static void main(String[] args) {
         NumberContainers numberContainers = new NumberContainers();
-        numberContainers.find(10);
+        System.out.println(numberContainers.find(10));
         numberContainers.change(2, 10);
         numberContainers.change(1, 10);
         numberContainers.change(3, 10);
         numberContainers.change(5, 10);
-        numberContainers.find(10);
+        System.out.println(numberContainers.find(10));
         numberContainers.change(1, 20);
-        numberContainers.find(10);
+        System.out.println(numberContainers.find(10));
     }
 }
 
