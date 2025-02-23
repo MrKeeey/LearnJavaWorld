@@ -28,7 +28,7 @@ public class LC1028_recoverFromPreorder {
         return node;
     }
 
-    //2
+    //2 slower
     public TreeNode recoverFromPreorder2(String traversal) {
         int index = 0;
         TreeNode[] parents = new TreeNode[1000];
