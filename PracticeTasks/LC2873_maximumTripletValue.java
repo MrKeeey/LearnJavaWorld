@@ -25,6 +25,7 @@ public class LC2873_maximumTripletValue {
         return maxTriplet;
     }
 
+    //great code
     public long maximumTripletValue2(int[] nums) {
         long maxTriplet = 0;
         long maxElement = 0;
