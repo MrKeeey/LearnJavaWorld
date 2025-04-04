@@ -54,7 +54,7 @@ public class LC2976_minimumCost {
     //Time Limit
     public static long minimumCost2(String source, String target, char[] original, char[] changed, int[] cost) {
         long minCost = 0;
-        Map<Character, List<Pair>> graph = new HashMap<>();
+        Map<Character, List<Pairs>> graph = new HashMap<>();
         Set<Character> usedChars = new HashSet<>();
 
         for (char c : source.toCharArray()) usedChars.add(c);
@@ -64,7 +64,7 @@ public class LC2976_minimumCost {
 
         for (int i = 0; i < original.length; i++) {
             graph.putIfAbsent(original[i], new ArrayList<>());
-            graph.get(original[i]).add(new Pair(changed[i], cost[i]));
+            graph.get(original[i]).add(new Pairs(changed[i], cost[i]));
         }
 
         for (int i = 0; i < source.length(); i++) {
@@ -78,7 +78,7 @@ public class LC2976_minimumCost {
         return minCost;
     }
 
-    private static long getMinDijkstra(char start, char end, Map<Character, List<Pair>> graph, Set<Character> usedChars) {
+    private static long getMinDijkstra(char start, char end, Map<Character, List<Pairs>> graph, Set<Character> usedChars) {
         if (start == end) return 0;
 
         Map<Character, Integer> distances = new HashMap<>();
@@ -87,11 +87,11 @@ public class LC2976_minimumCost {
         }
         distances.put(start, 0);
 
-        PriorityQueue<Pair> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(Pair::getCost));
-        priorityQueue.add(new Pair(start, 0));
+        PriorityQueue<Pairs> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(Pairs::getCost));
+        priorityQueue.add(new Pairs(start, 0));
 
         while (!priorityQueue.isEmpty()) {
-            Pair current = priorityQueue.poll();
+            Pairs current = priorityQueue.poll();
             char currentChar = current.getChanged();
             int currentCost = current.getCost();
 
@@ -100,11 +100,11 @@ public class LC2976_minimumCost {
             }
 
             if (graph.containsKey(currentChar)) {
-                for (Pair neighbor : graph.get(currentChar)) {
+                for (Pairs neighbor : graph.get(currentChar)) {
                     int newCost = currentCost + neighbor.getCost();
                     if (newCost < distances.get(neighbor.getChanged())) {
                         distances.put(neighbor.getChanged(), newCost);
-                        priorityQueue.add(new Pair(neighbor.getChanged(), newCost));
+                        priorityQueue.add(new Pairs(neighbor.getChanged(), newCost));
                     }
                 }
             }
@@ -114,11 +114,11 @@ public class LC2976_minimumCost {
     }
 }
 
-class Pair {
+class Pairs {
     Character changed;
     Integer cost;
 
-    public Pair(Character changed, Integer cost) {
+    public Pairs(Character changed, Integer cost) {
         this.changed = changed;
         this.cost = cost;
     }
