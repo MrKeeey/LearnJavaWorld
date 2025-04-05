@@ -1,21 +1,28 @@
 package PracticeTasks;
 
 public class LC1863_subsetXORSum {
+    public int subsetXORSum(int[] nums) {
+        int result = 0;
+        for (int num : nums) {
+            result |= num;
+        }
+        return result << nums.length - 1;
+    }
+
+    public int subsetXORSum2(int[] nums) {
+        return XORAll(nums, 0, 0);
+    }
+
+    private int XORAll(int[] nums, int index, int currentXOR) {
+        if (index == nums.length) return currentXOR;
+        int withElement = XORAll(nums, index + 1, currentXOR ^ nums[index]);
+        int withoutElement = XORAll(nums, index + 1, currentXOR);
+        return withElement + withoutElement;
+    }
+
     public static void main(String[] args) {
         int[] array = {3, 4, 5, 6, 7, 8};
-        System.out.println(subsetXORSum(array));
-    }
-
-    public static int subsetXORSum(int[] nums) {
-        return sumXOR(nums, 0, 0);
-    }
-
-    public static int sumXOR(int[] nums, int index, int currentXOR) {
-        if (index == nums.length) return currentXOR;
-
-        int withElement = sumXOR(nums, index + 1, nums[index] ^ currentXOR);
-        int withoutElement = sumXOR(nums, index + 1, currentXOR);
-
-        return withElement + withoutElement;
+        System.out.println(new LC1863_subsetXORSum().subsetXORSum(array));
+        System.out.println(new LC1863_subsetXORSum().subsetXORSum2(array));
     }
 }
