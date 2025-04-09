@@ -1,7 +1,9 @@
 package PracticeTasks;
 
+import java.util.Arrays;
 import java.util.BitSet;
 import java.util.HashSet;
+import java.util.Random;
 
 public class LC3375_minOperations {
     public int minOperations(int[] nums, int k) {
@@ -41,9 +43,28 @@ public class LC3375_minOperations {
     }
 
     public static void main(String[] args) {
+        Random rand = new Random(42); // фиксируем seed, чтобы результат всегда один и тот же
+        int[] nums = new int[100];
+        for (int i = 0; i < 100; i++) {
+            nums[i] = rand.nextInt(100) + 1; // от 1 до 101
+        }
+        System.out.println(Arrays.toString(nums));
         int[] array = {9, 7, 5, 3};
-        System.out.println(new LC3375_minOperations().minOperations(array, 2));
-        System.out.println(new LC3375_minOperations().minOperations2(array, 2));
-        System.out.println(new LC3375_minOperations().minOperations3(array, 2));
+
+        long start, end;
+        start = System.nanoTime();
+        System.out.println(new LC3375_minOperations().minOperations(nums, 0));
+        end = System.nanoTime();
+        System.out.println("boolean[] Time: " + (end - start) + " ns");
+
+        start = System.nanoTime();
+        System.out.println(new LC3375_minOperations().minOperations2(nums, 0));
+        end = System.nanoTime();
+        System.out.println("HashSet Time: " + (end - start) + " ns");
+
+        start = System.nanoTime();
+        System.out.println(new LC3375_minOperations().minOperations3(nums, 0));
+        end = System.nanoTime();
+        System.out.println("BitSet Time: " + (end - start) + " ns");
     }
 }
