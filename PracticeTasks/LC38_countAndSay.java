@@ -2,18 +2,19 @@ package PracticeTasks;
 
 public class LC38_countAndSay {
     public static void main(String[] args) {
-        System.out.println(countAndSay(4));
+        System.out.println(new LC38_countAndSay().countAndSay(2));
     }
 
-    public static String countAndSay(int n) {
+    public String countAndSay(int n) {
         String result = "1";
         for (int i = 0; i < n - 1; i++) {
             result = makeNewStr(result);
         }
+
         return result;
     }
 
-    private static String makeNewStr(String str) {
+    private String makeNewStr(String str) {
         StringBuilder newString = new StringBuilder();
 
         for (int i = 0; i < str.length(); i++) {
@@ -27,6 +28,7 @@ public class LC38_countAndSay {
             i--;
             newString.append(count).append(str.charAt(i));
         }
+
         return newString.toString();
     }
 }
