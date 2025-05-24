@@ -1,6 +1,7 @@
 package PracticeTasks;
 
 public class LC3355_isZeroArray {
+    //difference array method from l++ to (r+1)--
     public boolean isZeroArray(int[] nums, int[][] queries) {
         int n = nums.length;
         int[] diff = new int[n + 1];
