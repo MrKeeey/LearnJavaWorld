@@ -2,11 +2,11 @@ package HelloWorld;
 
 import java.util.Arrays;
 
-public class Smestiteli {
+public class Smesiteli {
     public static void main(String[] args) {
         String ekko = "E26020-3 E22072 E22151 E4608 E22028 E22151-B E32019 E32072 E32151 E26019 E2213 E3274 EKKO E26020-1 E22105 EM4619 E2208-2 E22001 E26020-2 " +
                 "E22703 MN2227-2 E22024 E32105 E3273 E6966 E32001 E3277 E3291 E22118-7 E4708 GA90089MD02MB E2401-22 E1083-8 E1081-21 E1082-21 E1083-21 E1083-22 " +
-                "E1081-22 E1082-22 E10072 E10001 E10019 E1091 E1091 E1082 E1077 E1172 GA90089MD02 E4091 E4263-7 E4072 E4073/2 E4077 E4082 E4352 E4801/3 E4352-7 " +
+                "E1081-22 E1082-22 E10072 E10001 E10019 E1013 E1091 E1082 E1077 E1172 GA90089MD02 E4091 E4263-7 E4072 E4073/2 E4077 E4082 E4352 E4801/3 E4352-7 " +
                 "E4460/2 EM70112-8 E4460-27 E4352-4 E1173-8 E4166 E41072 E41001 E10703 E4908 E41105 E41109 EM6013 E4263-8 E4066 E10151-8 EM4116 E1191 E1173 E1182 E10105";
         printCodes(splitCodes(ekko));
 
@@ -31,7 +31,7 @@ public class Smestiteli {
 
     private static void printCodes(String[] codes) {
         for (String code : codes) {
-            System.out.println(code + " -");
+            System.out.println(code);
         }
         System.out.println();
     }
